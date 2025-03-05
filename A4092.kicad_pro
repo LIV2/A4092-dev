@@ -607,6 +607,39 @@
     "subpart_first_id": 65,
     "subpart_id_separator": 0
   },
-  "sheets": [],
+  "sheets": [
+    [
+      "8f9f4021-47aa-41d9-bea7-f6ccf72098bb",
+      "Root"
+    ],
+    [
+      "80a30a4b-0d8b-4200-801f-3e30e443e45d",
+      "Overview"
+    ],
+    [
+      "53e9e23b-3b92-4a87-a15c-9c224d6145c5",
+      "Termination & Connectors"
+    ],
+    [
+      "2daf4fe3-1e72-4ad5-914a-264df02f69b3",
+      "SCSI-2 Controller"
+    ],
+    [
+      "6ae4417c-9681-4757-b289-033d6e31deb3",
+      "CPLD"
+    ],
+    [
+      "54ff82a5-3c96-49ab-8139-25683e385401",
+      "Zorro III bus"
+    ],
+    [
+      "166c366c-e5f9-4398-87d9-75fc4b57be99",
+      "Caps & Power"
+    ],
+    [
+      "97c10e53-7421-4a8c-b5c9-df668acd9538",
+      "Active Terminator"
+    ]
+  ],
   "text_variables": {}
 }
