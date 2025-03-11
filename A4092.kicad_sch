@@ -5,6 +5,16 @@
 	(uuid "8f9f4021-47aa-41d9-bea7-f6ccf72098bb")
 	(paper "A4")
 	(lib_symbols)
+	(text "GitHub Project:\nhttps://github.com/A4091/\n\nSchematics:\nhttps://github.com/A4091/a4091-hardware/blob/main/schematics/ReA4091_Rev4_2023-05-15_Schematic.pdf"
+		(exclude_from_sim no)
+		(at 151.638 110.236 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+		)
+		(uuid "b26551c3-a6a4-43fd-b17b-3a63f4664a89")
+	)
 	(sheet
 		(at 222.25 25.4)
 		(size 34.29 30.48)
