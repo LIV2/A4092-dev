@@ -4,4 +4,6 @@
   (lib (name "Zorro3")(type "KiCad")(uri "${KIPRJMOD}/Libraries/Zorro3.kicad_sym")(options "")(descr ""))
   (lib (name "NCRSCSI")(type "KiCad")(uri "${KIPRJMOD}/Libraries/NCRSCSI.kicad_sym")(options "")(descr ""))
   (lib (name "39SF010-TSOP")(type "KiCad")(uri "${KIPRJMOD}/Libraries/39SF010-TSOP.kicad_sym")(options "")(descr ""))
+  (lib (name "ATF1508AS")(type "KiCad")(uri "${KIPRJMOD}/Libraries/ATF1508AS.kicad_sym")(options "")(descr ""))
+  (lib (name "CY74FCT543ATQCT")(type "KiCad")(uri "${KIPRJMOD}/Libraries/CY74FCT543ATQCT.kicad_sym")(options "")(descr ""))
 )
