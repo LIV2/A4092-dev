@@ -5,6 +5,16 @@
 	(uuid "8f9f4021-47aa-41d9-bea7-f6ccf72098bb")
 	(paper "A4")
 	(lib_symbols)
+	(text "Commodore A4091\nRev B Advanced SCSI II Controller Board\nThis Zorro III board was originally designed and sold by Commodore, which did a single\nrun of the Rev A design before shelving it. Commodore was running out of money at the\ntime and didn't want to risk a second production run. The Rev B design was given to\nDKB Software for production, marketing, sales, distribution, and support.\nFeatures:\n􂀢 Boot ROM\n􂀢 NCR 53C710 SCSI II controller\n􂀢 50 pin internal connector\n􂀢 50 pin external SCSI2 connector\n􂀢 3.5\" hard drive mounts on the card\n􂀢 Active SCSI termination\n􂀢 Zorro III bus support\nCaveats:\n􂀢 Requires Buster 11\n􂀢 Does not work with with A3640 Rev 3.0\n􂀢 No RAM option\n􂀢 No wide SCSI support\nThe Commodore A4091 was reverse-engineered by Stefan Reinauer and Chris Hooper."
+		(exclude_from_sim no)
+		(at 89.916 155.448 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "363a9f3a-b894-40a2-9e9f-dc4ebfc1fee5")
+	)
 	(text "GitHub Project:\nhttps://github.com/A4091/\n\nSchematics:\nhttps://github.com/A4091/a4091-hardware/blob/main/schematics/ReA4091_Rev4_2023-05-15_Schematic.pdf"
 		(exclude_from_sim no)
 		(at 151.638 110.236 0)
