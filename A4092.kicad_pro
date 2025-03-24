@@ -613,10 +613,6 @@
       "Root"
     ],
     [
-      "80a30a4b-0d8b-4200-801f-3e30e443e45d",
-      "Overview"
-    ],
-    [
       "53e9e23b-3b92-4a87-a15c-9c224d6145c5",
       "Termination & Connectors"
     ],
@@ -635,10 +631,6 @@
     [
       "166c366c-e5f9-4398-87d9-75fc4b57be99",
       "Caps & Power"
-    ],
-    [
-      "97c10e53-7421-4a8c-b5c9-df668acd9538",
-      "Active Terminator"
     ]
   ],
   "text_variables": {}
