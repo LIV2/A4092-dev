@@ -11341,7 +11341,7 @@
 	)
 	(rectangle
 		(start 16.51 91.44)
-		(end 177.8 154.94)
+		(end 177.165 160.655)
 		(stroke
 			(width 0)
 			(type default)
