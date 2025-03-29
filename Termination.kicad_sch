@@ -17674,7 +17674,7 @@
 				)
 			)
 		)
-		(property "Value" "~"
+		(property "Value" "DS21S07A"
 			(at 48.895 55.88 0)
 			(effects
 				(font
@@ -18709,7 +18709,7 @@
 				)
 			)
 		)
-		(property "Value" "~"
+		(property "Value" "DS21S07A"
 			(at 48.895 21.59 0)
 			(effects
 				(font
