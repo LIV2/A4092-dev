@@ -17805,7 +17805,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "CONN_5787170-5_TYC"
+		(property "Footprint" "5787170_5:CONN_5787170-5_TYC"
 			(at 262.89 19.05 0)
 			(effects
 				(font
@@ -17815,7 +17815,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "5787170-5"
+		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773938-5_AMPLIMITE_.050_Series_QRG&DocType=Data+Sheet&DocLang=English&DocFormat=pdf&PartCntxt=5787170-5"
 			(at 262.89 19.05 0)
 			(effects
 				(font
@@ -18020,7 +18020,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "CAP_CA0612_3P2X1P6_YAG"
+		(property "Footprint" "CA0612KRNPO9BN101:CAP_CA0612_3P2X1P6_YAG"
 			(at 249.936 110.744 0)
 			(effects
 				(font
@@ -18448,7 +18448,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "CAP_CA0612_3P2X1P6_YAG"
+		(property "Footprint" "CA0612KRNPO9BN101:CAP_CA0612_3P2X1P6_YAG"
 			(at 247.396 150.876 0)
 			(effects
 				(font
@@ -18528,7 +18528,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100uF"
+		(property "Value" "100nF"
 			(at 17.272 84.328 0)
 			(effects
 				(font
@@ -18537,7 +18537,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 21.59 82.55 0)
 			(effects
 				(font
@@ -18605,7 +18605,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SO16_219-8_CTS"
+		(property "Footprint" "219_8MST:SO16_219-8_CTS"
 			(at 142.24 123.19 0)
 			(effects
 				(font
@@ -19039,7 +19039,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_4x5.7"
 			(at 26.67 48.26 0)
 			(effects
 				(font
@@ -19108,7 +19108,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_4x5.7"
 			(at 26.67 82.55 0)
 			(effects
 				(font
@@ -19177,7 +19177,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "CAP_CA0612_3P2X1P6_YAG"
+		(property "Footprint" "CA0612KRNPO9BN101:CAP_CA0612_3P2X1P6_YAG"
 			(at 232.156 68.834 0)
 			(effects
 				(font
@@ -19664,7 +19664,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "CAP_CA0612_3P2X1P6_YAG"
+		(property "Footprint" "CA0612KRNPO9BN101:CAP_CA0612_3P2X1P6_YAG"
 			(at 244.856 68.834 0)
 			(effects
 				(font
@@ -19951,7 +19951,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DB20"
+		(property "Footprint" "SN74F244DB:DB20"
 			(at 24.13 115.57 0)
 			(effects
 				(font
@@ -20067,7 +20067,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100uF"
+		(property "Value" "100nF"
 			(at 17.272 50.038 0)
 			(effects
 				(font
@@ -20076,7 +20076,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 21.59 48.26 0)
 			(effects
 				(font
@@ -20742,7 +20742,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "CAP_CA0612_3P2X1P6_YAG"
+		(property "Footprint" "CA0612KRNPO9BN101:CAP_CA0612_3P2X1P6_YAG"
 			(at 237.744 150.876 0)
 			(effects
 				(font
@@ -20831,7 +20831,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_IDC:IDC-Header_2x25_P2.54mm_Vertical"
 			(at 127 34.29 0)
 			(effects
 				(font

@@ -2717,6 +2717,157 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:FerriteBead_Small"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "FB"
+				(at 1.905 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "FerriteBead_Small"
+				(at 1.905 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Ferrite bead, small symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "L ferrite bead inductor filter"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Inductor_* L_* *Ferrite*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "FerriteBead_Small_0_1"
+				(polyline
+					(pts
+						(xy -1.8288 0.2794) (xy -1.1176 1.4986) (xy 1.8288 -0.2032) (xy 1.1176 -1.4224) (xy -1.8288 0.2794)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.889) (xy 0 1.2954)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 0 -0.7874)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "FerriteBead_Small_1_1"
+				(pin passive line
+					(at 0 2.54 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "SN74ABT16245ADGGR:SN74ABT16245ADGGR"
 			(pin_names
 				(offset 0.254)
@@ -8101,6 +8252,16 @@
 	)
 	(wire
 		(pts
+			(xy 186.69 223.52) (xy 190.5 223.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8aa0430-25e9-4671-aa56-e901b5189fa3")
+	)
+	(wire
+		(pts
 			(xy 35.56 217.17) (xy 38.1 217.17)
 		)
 		(stroke
@@ -8118,6 +8279,16 @@
 			(type default)
 		)
 		(uuid "b29c200d-8178-45bc-9fcc-1073e2b9c236")
+	)
+	(wire
+		(pts
+			(xy 180.34 223.52) (xy 181.61 223.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bdeff794-b978-49ff-a2ca-3a944e3a4145")
 	)
 	(wire
 		(pts
@@ -8198,6 +8369,16 @@
 			(type default)
 		)
 		(uuid "f8b27e2d-9816-48f9-ae54-a80e416dbb92")
+	)
+	(wire
+		(pts
+			(xy 185.42 220.98) (xy 190.5 220.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb26a15e-9e0e-4c55-8a75-270e13fe16f5")
 	)
 	(wire
 		(pts
@@ -8457,28 +8638,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Z_DS3"
-		(shape input)
-		(at 190.5 220.98 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "0a2fc767-0ff7-4b70-9b63-8a71b6ee53ad")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 181.6487 220.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -9865,6 +10024,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Z_DS2"
+		(shape input)
+		(at 180.34 223.52 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2a034d5b-2a04-4ee7-9613-37a71c5fecff")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 171.4887 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -12654,6 +12835,28 @@
 		(uuid "74976c67-f215-4df2-ad37-cb5a586932e0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 83.6167 218.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Z_DS3"
+		(shape input)
+		(at 180.34 220.98 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "74ad1100-3980-4fc3-b283-21915d542926")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 171.4887 220.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15677,28 +15880,6 @@
 			)
 		)
 	)
-	(global_label "Z_DS2"
-		(shape input)
-		(at 190.5 223.52 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "caf74fbd-aac0-4338-8800-f236c6ab4709")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 181.6487 223.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "A8"
 		(shape input)
 		(at 27.94 146.05 180)
@@ -17792,7 +17973,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DL56"
+		(property "Footprint" "74FCT16543:DL56"
 			(at 226.06 26.67 0)
 			(effects
 				(font
@@ -18024,7 +18205,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DBQ24"
+		(property "Footprint" "74FCT16543:DL56"
 			(at 27.94 123.19 0)
 			(effects
 				(font
@@ -18160,7 +18341,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Zorro3:Zorro3-CardEdge"
 			(at 472.44 22.86 0)
 			(effects
 				(font
@@ -18525,7 +18706,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DL56"
+		(property "Footprint" "74FCT16543:DL56"
 			(at 27.94 27.94 0)
 			(effects
 				(font
@@ -18732,6 +18913,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:FerriteBead_Small")
+		(at 182.88 220.98 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "92749991-453f-4d83-8ade-0709ccefeef2")
+		(property "Reference" "FB4"
+			(at 182.88 218.44 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "60"
+			(at 182.88 220.98 90)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 182.88 219.202 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/281/QNFA9101-1915702.pdf"
+			(at 182.88 220.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Ferrite bead, small symbol"
+			(at 182.88 220.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "938b6963-c9f2-48c9-a605-fae1c6a96942")
+		)
+		(pin "2"
+			(uuid "e2926574-ddd2-432a-b107-4eacf078365e")
+		)
+		(instances
+			(project "A4092"
+				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/54ff82a5-3c96-49ab-8139-25683e385401"
+					(reference "FB4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "74LVC07APW_118:74LVC07APW_118")
 		(at 344.17 220.98 0)
 		(unit 1)
@@ -18757,7 +19005,7 @@
 				)
 			)
 		)
-		(property "Footprint" "TSSOP14_5P1X4P5_NEX"
+		(property "Footprint" "74LVC07APW_118:TSSOP14_5P1X4P5_NEX"
 			(at 344.17 220.98 0)
 			(effects
 				(font
@@ -18863,7 +19111,7 @@
 				)
 			)
 		)
-		(property "Footprint" "TSSOP20_4P4X6P5_ONS"
+		(property "Footprint" "74ACT521MTCX:TSSOP20_4P4X6P5_ONS"
 			(at 22.86 181.61 0)
 			(effects
 				(font
@@ -18987,7 +19235,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Zorro3:Zorro3-CardEdge"
 			(at 471.17 113.03 0)
 			(effects
 				(font
@@ -19354,7 +19602,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 322.58 49.53 0)
 			(effects
 				(font
@@ -19561,7 +19809,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DGG48"
+		(property "Footprint" "SN74ABT16245ADGGR:DGG48"
 			(at 190.5 175.26 0)
 			(effects
 				(font
@@ -19769,7 +20017,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DGG48"
+		(property "Footprint" "SN74ABT16374ADGGR:DGG48"
 			(at 88.9 175.26 0)
 			(effects
 				(font
@@ -19952,6 +20200,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:FerriteBead_Small")
+		(at 184.15 223.52 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "efea8775-7907-4dd7-ae9d-602e2faacbda")
+		(property "Reference" "FB5"
+			(at 187.452 222.504 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "60"
+			(at 184.15 223.52 90)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 184.15 221.742 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/281/QNFA9101-1915702.pdf"
+			(at 184.15 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Ferrite bead, small symbol"
+			(at 184.15 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "63bbde77-4b77-4925-be9e-3e728e98b06d")
+		)
+		(pin "2"
+			(uuid "c33424b1-6765-4da2-b33b-218cc9de2f13")
+		)
+		(instances
+			(project "A4092"
+				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/54ff82a5-3c96-49ab-8139-25683e385401"
+					(reference "FB5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "74FCT16543:CY74FCT16543TPVCT")
 		(at 125.73 26.67 0)
 		(unit 1)
@@ -19977,7 +20292,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DL56"
+		(property "Footprint" "74FCT16543:DL56"
 			(at 125.73 26.67 0)
 			(effects
 				(font

@@ -4891,7 +4891,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical"
 			(at 166.37 25.4 0)
 			(effects
 				(font
@@ -4971,7 +4971,7 @@
 				)
 			)
 		)
-		(property "Footprint" "100A_ATM"
+		(property "Footprint" "ATF1508AS:100A_ATM"
 			(at 31.75 29.21 0)
 			(effects
 				(font
@@ -5328,7 +5328,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0.1uF"
+		(property "Value" "100nF"
 			(at 160.02 62.2362 0)
 			(effects
 				(font
@@ -5337,7 +5337,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 157.48 60.96 0)
 			(effects
 				(font
@@ -5398,7 +5398,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0.1uF"
+		(property "Value" "100nF"
 			(at 180.34 62.2362 0)
 			(effects
 				(font
@@ -5407,7 +5407,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 177.8 60.96 0)
 			(effects
 				(font
@@ -5468,7 +5468,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0.1uF"
+		(property "Value" "100nF"
 			(at 179.07 53.3462 0)
 			(effects
 				(font
@@ -5477,7 +5477,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 176.53 52.07 0)
 			(effects
 				(font
@@ -5538,7 +5538,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0.1uF"
+		(property "Value" "100nF"
 			(at 160.02 53.3462 0)
 			(effects
 				(font
@@ -5547,7 +5547,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 157.48 52.07 0)
 			(effects
 				(font
@@ -5608,7 +5608,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0.1uF"
+		(property "Value" "100nF"
 			(at 189.23 53.3462 0)
 			(effects
 				(font
@@ -5617,7 +5617,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 186.69 52.07 0)
 			(effects
 				(font
@@ -5678,7 +5678,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0.1uF"
+		(property "Value" "100nF"
 			(at 170.18 53.3462 0)
 			(effects
 				(font
@@ -5687,7 +5687,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 167.64 52.07 0)
 			(effects
 				(font
@@ -5748,7 +5748,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0.1uF"
+		(property "Value" "100nF"
 			(at 170.18 62.2362 0)
 			(effects
 				(font
@@ -5757,7 +5757,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 167.64 60.96 0)
 			(effects
 				(font
