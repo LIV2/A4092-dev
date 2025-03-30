@@ -17965,7 +17965,7 @@
 				)
 			)
 		)
-		(property "Value" "CY74FCT16543TPVCT"
+		(property "Value" "SN74ABT16543DGGR"
 			(at 261.62 19.05 0)
 			(effects
 				(font
@@ -17983,7 +17983,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "CY74FCT16543TPVCT"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74abt16543.pdf"
 			(at 226.06 26.67 0)
 			(effects
 				(font
@@ -18698,7 +18698,7 @@
 				)
 			)
 		)
-		(property "Value" "CY74FCT16543TPVCT"
+		(property "Value" "SN74ABT16543DGGR"
 			(at 63.5 20.32 0)
 			(effects
 				(font
@@ -18716,7 +18716,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "CY74FCT16543TPVCT"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74abt16543.pdf"
 			(at 27.94 27.94 0)
 			(effects
 				(font
@@ -20284,7 +20284,7 @@
 				)
 			)
 		)
-		(property "Value" "CY74FCT16543TPVCT"
+		(property "Value" "SN74ABT16543DGGR"
 			(at 161.29 19.05 0)
 			(effects
 				(font
@@ -20302,7 +20302,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "CY74FCT16543TPVCT"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74abt16543.pdf"
 			(at 125.73 26.67 0)
 			(effects
 				(font
