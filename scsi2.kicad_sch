@@ -15163,7 +15163,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "189716e4-e12c-434f-8943-d13c843238e1")
-		(property "Reference" "R6"
+		(property "Reference" "RN6"
 			(at 135.89 101.5999 90)
 			(effects
 				(font
@@ -15181,7 +15181,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "YC324-FK-071KL:RESCAXS127P508X320X70-8N"
+		(property "Footprint" "CAY16_102J4LF:BO_CAY16"
 			(at 129.54 102.87 0)
 			(effects
 				(font
@@ -15286,7 +15286,7 @@
 		(instances
 			(project ""
 				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/2daf4fe3-1e72-4ad5-914a-264df02f69b3"
-					(reference "R6")
+					(reference "RN6")
 					(unit 1)
 				)
 			)
@@ -15372,7 +15372,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2e35f6ad-ad58-4da1-8dd2-5a1b623c44ca")
-		(property "Reference" "R10"
+		(property "Reference" "RN10"
 			(at 154.94 137.1599 90)
 			(effects
 				(font
@@ -15390,7 +15390,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "YC324-FK-071KL:RESCAXS127P508X320X70-8N"
+		(property "Footprint" "CAY16_102J4LF:BO_CAY16"
 			(at 148.59 138.43 0)
 			(effects
 				(font
@@ -15495,7 +15495,7 @@
 		(instances
 			(project ""
 				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/2daf4fe3-1e72-4ad5-914a-264df02f69b3"
-					(reference "R10")
+					(reference "RN10")
 					(unit 1)
 				)
 			)
@@ -15511,7 +15511,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3f4ff0fc-8dee-406f-be39-c2599e558bae")
-		(property "Reference" "R7"
+		(property "Reference" "RN7"
 			(at 154.94 101.5999 90)
 			(effects
 				(font
@@ -15529,7 +15529,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "YC324-FK-071KL:RESCAXS127P508X320X70-8N"
+		(property "Footprint" "CAY16_102J4LF:BO_CAY16"
 			(at 148.59 102.87 0)
 			(effects
 				(font
@@ -15634,7 +15634,7 @@
 		(instances
 			(project ""
 				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/2daf4fe3-1e72-4ad5-914a-264df02f69b3"
-					(reference "R7")
+					(reference "RN7")
 					(unit 1)
 				)
 			)
@@ -16345,7 +16345,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "75e13aa0-d218-40af-86a5-acad3da25f22")
-		(property "Reference" "R8"
+		(property "Reference" "RN8"
 			(at 135.89 137.1599 90)
 			(effects
 				(font
@@ -16363,7 +16363,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "YC324-FK-071KL:RESCAXS127P508X320X70-8N"
+		(property "Footprint" "CAY16_102J4LF:BO_CAY16"
 			(at 129.54 138.43 0)
 			(effects
 				(font
@@ -16468,7 +16468,7 @@
 		(instances
 			(project ""
 				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/2daf4fe3-1e72-4ad5-914a-264df02f69b3"
-					(reference "R8")
+					(reference "RN8")
 					(unit 1)
 				)
 			)
@@ -17107,7 +17107,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9b509a22-43f5-4386-bea7-11d0559f00dd")
-		(property "Reference" "R17"
+		(property "Reference" "RN17"
 			(at 135.89 171.4499 90)
 			(effects
 				(font
@@ -17125,7 +17125,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "YC324-FK-071KL:RESCAXS127P508X320X70-8N"
+		(property "Footprint" "CAY16_102J4LF:BO_CAY16"
 			(at 129.54 172.72 0)
 			(effects
 				(font
@@ -17230,7 +17230,7 @@
 		(instances
 			(project "A4092"
 				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/2daf4fe3-1e72-4ad5-914a-264df02f69b3"
-					(reference "R17")
+					(reference "RN17")
 					(unit 1)
 				)
 			)

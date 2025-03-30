@@ -17128,8 +17128,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0b5b2964-c262-4e60-bb36-4922f9c7491d")
-		(property "Reference" "R4"
-			(at 112.268 102.362 90)
+		(property "Reference" "RN4"
+			(at 110.744 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17137,17 +17137,16 @@
 				(justify right)
 			)
 		)
-		(property "Value" "YC324-FK-071KL"
-			(at 129.54 107.9499 90)
+		(property "Value" "1K"
+			(at 112.014 105.156 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
 			)
 		)
-		(property "Footprint" "YC324-FK-071KL:RESCAXS127P508X320X70-8N"
+		(property "Footprint" "CAY16_102J4LF:BO_CAY16"
 			(at 123.19 106.68 0)
 			(effects
 				(font
@@ -17252,7 +17251,7 @@
 		(instances
 			(project ""
 				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/53e9e23b-3b92-4a87-a15c-9c224d6145c5"
-					(reference "R4")
+					(reference "RN4")
 					(unit 1)
 				)
 			)
@@ -18290,7 +18289,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "43222bf4-30a6-4011-9cbc-ac5ded070ff7")
-		(property "Reference" "R5"
+		(property "Reference" "RN5"
 			(at 143.256 102.616 90)
 			(effects
 				(font
@@ -18299,17 +18298,16 @@
 				(justify right)
 			)
 		)
-		(property "Value" "YC324-FK-071KL"
-			(at 143.51 107.9499 90)
+		(property "Value" "1K"
+			(at 143.256 105.156 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
 			)
 		)
-		(property "Footprint" "YC324-FK-071KL:RESCAXS127P508X320X70-8N"
+		(property "Footprint" "CAY16_102J4LF:BO_CAY16"
 			(at 137.16 106.68 0)
 			(effects
 				(font
@@ -18414,7 +18412,7 @@
 		(instances
 			(project ""
 				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/53e9e23b-3b92-4a87-a15c-9c224d6145c5"
-					(reference "R5")
+					(reference "RN5")
 					(unit 1)
 				)
 			)
