@@ -4017,6 +4017,28 @@
 			)
 		)
 	)
+	(global_label "V5"
+		(shape input)
+		(at 123.19 52.07 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9c7c5e16-2b09-4cc6-8efe-5f9c9a4d591e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 128.4733 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "A18"
 		(shape input)
 		(at 31.75 67.31 180)
