@@ -7548,16 +7548,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "USE 74ABT16543 instead of 74FCT16543"
-		(exclude_from_sim no)
-		(at 228.6 151.384 0)
-		(effects
-			(font
-				(size 5.08 5.08)
-			)
-		)
-		(uuid "06a4a9d1-184a-4d7a-a6eb-4b761f2df8e9")
-	)
 	(text "Z_DS3 + Z_DS2 have FBs on original\nbut not Z_DS1 and Z_DS0"
 		(exclude_from_sim no)
 		(at 224.536 241.554 0)
