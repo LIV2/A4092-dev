@@ -7401,42 +7401,28 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Oscillator:ACO-xxxMHz"
-			(pin_names
-				(offset 0.254)
-			)
+		(symbol "Oscillator:FT5HV"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "Y"
-				(at -5.08 6.35 0)
+				(at 5.08 11.43 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Value" "ACO-xxxMHz"
-				(at 1.27 -6.35 0)
+			(property "Value" "FT5HV"
+				(at 6.35 8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Footprint" "Oscillator:Oscillator_DIP-14"
-				(at 11.43 -8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.conwin.com/datasheets/cx/cx030.pdf"
-				(at -2.54 0 0)
+			(property "Footprint" "Oscillator:Oscillator_SMD_Fox_FT5H_5.0x3.2mm"
+				(at 0 -19.05 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -7444,7 +7430,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "HCMOS Crystal Clock Oscillator, DIP14-style metal package"
+			(property "Datasheet" "https://foxonline.com/wp-content/uploads/pdfs/T5HN_T5HV.pdf"
 				(at 0 0 0)
 				(effects
 					(font
@@ -7453,7 +7439,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "Crystal Clock Oscillator"
+			(property "Description" "HCMOS temperature compensated voltage controlled oscillator"
 				(at 0 0 0)
 				(effects
 					(font
@@ -7462,7 +7448,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "Oscillator*DIP*14*"
+			(property "ki_keywords" "TXCO VCTCXO"
 				(at 0 0 0)
 				(effects
 					(font
@@ -7471,7 +7457,16 @@
 					(hide yes)
 				)
 			)
-			(symbol "ACO-xxxMHz_0_1"
+			(property "ki_fp_filters" "Oscillator*SMD*Fox*FT5H*5.0x3.2mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "FT5HV_0_1"
 				(rectangle
 					(start -5.08 5.08)
 					(end 5.08 -5.08)
@@ -7485,8 +7480,8 @@
 				)
 				(polyline
 					(pts
-						(xy -2.54 -0.635) (xy -1.905 -0.635) (xy -1.905 0.635) (xy -1.27 0.635) (xy -1.27 -0.635) (xy -0.635 -0.635)
-						(xy -0.635 0.635) (xy 0 0.635) (xy 0 -0.635)
+						(xy -4.445 2.54) (xy -3.81 2.54) (xy -3.81 3.81) (xy -3.175 3.81) (xy -3.175 2.54) (xy -2.54 2.54)
+						(xy -2.54 3.81) (xy -1.905 3.81) (xy -1.905 2.54)
 					)
 					(stroke
 						(width 0)
@@ -7497,12 +7492,11 @@
 					)
 				)
 			)
-			(symbol "ACO-xxxMHz_1_1"
-				(pin no_connect line
-					(at -5.08 2.54 0)
+			(symbol "FT5HV_1_1"
+				(pin input line
+					(at -7.62 0 0)
 					(length 2.54)
-					(hide yes)
-					(name "NC"
+					(name "VC"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -7520,14 +7514,14 @@
 				(pin power_in line
 					(at 0 7.62 270)
 					(length 2.54)
-					(name "Vcc"
+					(name "VDD"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "14"
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -7545,7 +7539,7 @@
 							)
 						)
 					)
-					(number "7"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -7563,7 +7557,7 @@
 							)
 						)
 					)
-					(number "8"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -8458,7 +8452,7 @@
 	(text_box "LED headers\n"
 		(exclude_from_sim no)
 		(at 165.735 86.36 0)
-		(size 48.26 46.99)
+		(size 48.26 71.755)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -9011,7 +9005,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 139.7) (xy 240.03 139.7)
+			(xy 252.73 139.7) (xy 234.95 139.7)
 		)
 		(stroke
 			(width 0)
@@ -9531,7 +9525,7 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 139.7) (xy 240.03 132.08)
+			(xy 234.95 139.7) (xy 234.95 132.08)
 		)
 		(stroke
 			(width 0)
@@ -9681,7 +9675,7 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 123.19) (xy 240.03 127)
+			(xy 234.95 123.19) (xy 234.95 127)
 		)
 		(stroke
 			(width 0)
@@ -9901,7 +9895,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 123.19) (xy 240.03 123.19)
+			(xy 252.73 123.19) (xy 234.95 123.19)
 		)
 		(stroke
 			(width 0)
@@ -10102,6 +10096,28 @@
 		(uuid "0196944c-42c2-450e-a6e0-222c5752100b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 96.3604 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LED3KPWR"
+		(shape input)
+		(at 176.53 121.92 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "01d18fb7-a1cb-40a8-bc59-859884ef21ec")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 189.4332 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10349,6 +10365,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "V5"
+		(shape input)
+		(at 176.53 116.84 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0e17f788-0cbf-4227-bbff-2645453175da")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 181.8133 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -10685,7 +10723,7 @@
 	)
 	(global_label "V5"
 		(shape input)
-		(at 184.15 128.27 180)
+		(at 184.15 146.05 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10695,7 +10733,7 @@
 		)
 		(uuid "1ce279a0-28ca-481d-8ba5-51a0406f3922")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 178.8667 128.27 0)
+			(at 178.8667 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11343,6 +11381,28 @@
 			)
 		)
 	)
+	(global_label "LEDR"
+		(shape input)
+		(at 176.53 119.38 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "43b49031-7db1-4ee0-9ffd-898d1abba874")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 184.2323 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "IORST"
 		(shape input)
 		(at 152.4 154.94 0)
@@ -11587,7 +11647,7 @@
 	)
 	(global_label "LEDR"
 		(shape input)
-		(at 190.5 116.84 0)
+		(at 190.5 134.62 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11597,7 +11657,7 @@
 		)
 		(uuid "55a4832a-c79d-4b64-88f8-de0f2793ca21")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 198.2023 116.84 0)
+			(at 198.2023 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11647,6 +11707,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LED3KPWR"
+		(shape input)
+		(at 198.12 121.92 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5a8404c8-5292-43e4-b97e-599b82c75536")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 211.0232 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -12511,7 +12593,7 @@
 	)
 	(global_label "LED"
 		(shape input)
-		(at 185.42 116.84 180)
+		(at 185.42 134.62 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12521,7 +12603,7 @@
 		)
 		(uuid "88494aa6-ef12-4f77-939d-fa7967339205")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 178.9877 116.84 0)
+			(at 178.9877 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12654,6 +12736,28 @@
 		(uuid "9094e18e-6a66-48f7-a88b-00d6c8d9fe44")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 95.3927 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LEDR"
+		(shape input)
+		(at 198.12 119.38 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "91c7566a-20fd-40a7-a1d4-d943393439e8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 205.8223 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13215,7 +13319,7 @@
 	)
 	(global_label "LED"
 		(shape input)
-		(at 194.31 128.27 0)
+		(at 194.31 146.05 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13225,7 +13329,7 @@
 		)
 		(uuid "b8e720a2-15b3-4b57-820e-0e3fe4efb2b3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 200.7423 128.27 0)
+			(at 200.7423 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14357,6 +14461,28 @@
 			)
 		)
 	)
+	(global_label "V5"
+		(shape input)
+		(at 198.12 116.84 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f73273d5-b62a-4b20-884d-a855d79a27ea")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 203.4033 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "NCR_INT"
 		(shape input)
 		(at 86.36 161.29 0)
@@ -15160,16 +15286,15 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 240.03 129.54 180)
+		(at 234.95 129.54 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "45b7d07e-46c4-41ef-b7b4-4186cb115b95")
 		(property "Reference" "C32"
-			(at 242.57 128.2635 0)
+			(at 236.22 127.762 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15178,7 +15303,7 @@
 			)
 		)
 		(property "Value" "10nF"
-			(at 242.57 130.8035 0)
+			(at 235.966 131.572 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15187,7 +15312,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
-			(at 240.03 129.54 0)
+			(at 234.95 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15196,7 +15321,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 240.03 129.54 0)
+			(at 234.95 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15205,7 +15330,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 240.03 129.54 0)
+			(at 234.95 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15296,7 +15421,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Oscillator:ACO-xxxMHz")
+		(lib_id "Oscillator:FT5HV")
 		(at 252.73 130.81 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -15322,8 +15447,8 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Oscillator:Oscillator_DIP-14"
-			(at 264.16 139.7 0)
+		(property "Footprint" "Oscillator:Oscillator_SMD_Fox_FT5H_5.0x3.2mm"
+			(at 252.73 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15331,16 +15456,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.conwin.com/datasheets/cx/cx030.pdf"
-			(at 250.19 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "HCMOS Crystal Clock Oscillator, DIP14-style metal package"
+		(property "Datasheet" "https://foxonline.com/wp-content/uploads/pdfs/T5HN_T5HV.pdf"
 			(at 252.73 130.81 0)
 			(effects
 				(font
@@ -15349,16 +15465,25 @@
 				(hide yes)
 			)
 		)
-		(pin "14"
+		(property "Description" "HCMOS temperature compensated voltage controlled oscillator"
+			(at 252.73 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
 			(uuid "0426e867-76cf-4139-8ef5-199eab563eac")
 		)
 		(pin "1"
 			(uuid "94a8e380-2a8e-4f04-81d7-c54a22372313")
 		)
-		(pin "8"
+		(pin "4"
 			(uuid "a1eeefb7-e834-427b-91c4-716c4bd86e39")
 		)
-		(pin "7"
+		(pin "3"
 			(uuid "f90847d3-d50f-4f0c-ab78-993bca99027c")
 		)
 		(instances
@@ -15649,7 +15774,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED_Small")
-		(at 186.69 128.27 180)
+		(at 186.69 146.05 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15657,7 +15782,7 @@
 		(dnp no)
 		(uuid "5f37d85f-4f2f-4c46-8754-a8091a16e61f")
 		(property "Reference" "D2"
-			(at 186.69 131.318 0)
+			(at 186.69 149.098 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15665,7 +15790,7 @@
 			)
 		)
 		(property "Value" "LED (green)"
-			(at 184.15 124.968 0)
+			(at 184.15 142.748 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15673,7 +15798,7 @@
 			)
 		)
 		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
-			(at 186.69 128.27 90)
+			(at 186.69 146.05 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15682,7 +15807,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 186.69 128.27 90)
+			(at 186.69 146.05 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15691,7 +15816,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode, small symbol"
-			(at 186.69 128.27 0)
+			(at 186.69 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15700,7 +15825,7 @@
 			)
 		)
 		(property "Sim.Pin" "1=K 2=A"
-			(at 186.69 128.27 0)
+			(at 186.69 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16071,7 +16196,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 187.96 116.84 90)
+		(at 187.96 134.62 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -16079,7 +16204,7 @@
 		(dnp no)
 		(uuid "7ed22250-c59c-4b4a-8b51-011149aa9a02")
 		(property "Reference" "R9"
-			(at 187.96 114.808 90)
+			(at 187.96 132.588 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16087,7 +16212,7 @@
 			)
 		)
 		(property "Value" "120"
-			(at 187.96 116.84 90)
+			(at 187.96 134.62 90)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -16095,7 +16220,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 187.96 116.84 0)
+			(at 187.96 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16104,7 +16229,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 187.96 116.84 0)
+			(at 187.96 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16113,7 +16238,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 187.96 116.84 0)
+			(at 187.96 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16478,6 +16603,146 @@
 			(project "A4092"
 				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/2daf4fe3-1e72-4ad5-914a-264df02f69b3"
 					(reference "RN17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x03_Pin")
+		(at 193.04 119.38 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b3b7a2df-6ff1-4461-b9b5-3671f8c14bcd")
+		(property "Reference" "J9"
+			(at 193.675 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TO-A3000-MB"
+			(at 199.136 114.046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+			(at 193.04 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 193.04 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x03, script generated"
+			(at 193.04 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "3887110f-de0f-449d-89b3-476c92a9457d")
+		)
+		(pin "1"
+			(uuid "4d991d16-2b21-4252-818a-3d557b514099")
+		)
+		(pin "3"
+			(uuid "25aa0c12-bd44-4418-89a7-2fed1eecea74")
+		)
+		(instances
+			(project "A4092"
+				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/2daf4fe3-1e72-4ad5-914a-264df02f69b3"
+					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x03_Pin")
+		(at 171.45 119.38 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b704c79e-a79e-434c-a5ff-214a243d0eba")
+		(property "Reference" "J8"
+			(at 172.085 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TO-A3000-LED"
+			(at 177.038 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+			(at 171.45 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 171.45 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x03, script generated"
+			(at 171.45 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "019fee22-1fa9-48ac-a032-b411548a3fbd")
+		)
+		(pin "2"
+			(uuid "c4462a39-e8ae-4353-b77d-966dfa37e2d2")
+		)
+		(pin "3"
+			(uuid "ac5787ad-31c7-4051-ab45-fcd252dba0ac")
+		)
+		(instances
+			(project "A4092"
+				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/2daf4fe3-1e72-4ad5-914a-264df02f69b3"
+					(reference "J8")
 					(unit 1)
 				)
 			)
@@ -17099,7 +17364,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 191.77 128.27 90)
+		(at 191.77 146.05 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17107,7 +17372,7 @@
 		(dnp no)
 		(uuid "d51b03f6-5352-4107-81b4-14857a65d719")
 		(property "Reference" "R10"
-			(at 191.77 126.238 90)
+			(at 191.77 144.018 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17115,7 +17380,7 @@
 			)
 		)
 		(property "Value" "2.2k"
-			(at 191.77 128.27 90)
+			(at 191.77 146.05 90)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -17123,7 +17388,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 191.77 128.27 0)
+			(at 191.77 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17132,7 +17397,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 191.77 128.27 0)
+			(at 191.77 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17141,7 +17406,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 191.77 128.27 0)
+			(at 191.77 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)

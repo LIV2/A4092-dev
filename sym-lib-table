@@ -19,4 +19,5 @@
   (lib (name "74ACT521MTCX")(type "KiCad")(uri "${KIPRJMOD}/Libraries/74ACT521MTCX.kicad_sym")(options "")(descr ""))
   (lib (name "350543_1")(type "KiCad")(uri "${KIPRJMOD}/Libraries/350543_1.kicad_sym")(options "")(descr ""))
   (lib (name "22112042")(type "KiCad")(uri "${KIPRJMOD}/Libraries/22112042.kicad_sym")(options "")(descr ""))
+  (lib (name "XC95144XL_5TQG144C")(type "KiCad")(uri "${KIPRJMOD}/Libraries/XC95144XL_5TQG144C.kicad_sym")(options "")(descr ""))
 )
