@@ -669,6 +669,18 @@
       {
         "netclass": "PWR",
         "pattern": "V3_3"
+      },
+      {
+        "netclass": "PWR",
+        "pattern": "Net-(U8-VREF1)"
+      },
+      {
+        "netclass": "PWR",
+        "pattern": "SCSI_TERMPWR"
+      },
+      {
+        "netclass": "PWR",
+        "pattern": "Net-(U9-VREF1)"
       }
     ]
   },
