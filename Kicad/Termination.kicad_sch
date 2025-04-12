@@ -14787,6 +14787,28 @@
 			)
 		)
 	)
+	(global_label "GND"
+		(shape input)
+		(at 36.83 62.23 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "09407dd3-35cf-46ce-995f-2ff2204e251a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 29.9743 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "D5"
 		(shape input)
 		(at 72.39 130.81 0)
@@ -16362,6 +16384,28 @@
 		(uuid "97d2eed3-feb8-4f56-8c7c-b479405f1049")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 189.3291 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 36.83 27.94 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "985565c1-b91c-4411-9613-e9c5464fa200")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 29.9743 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
