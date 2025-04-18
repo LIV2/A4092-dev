@@ -14252,7 +14252,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "44301ac1-5e50-4b9d-8eb1-e51ced8dd618")
-		(property "Reference" "U3"
+		(property "Reference" "U1"
 			(at 161.29 104.14 0)
 			(effects
 				(font
@@ -14468,7 +14468,7 @@
 		(instances
 			(project ""
 				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/54ff82a5-3c96-49ab-8139-25683e385401"
-					(reference "U3")
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -14849,7 +14849,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5e1558fc-2396-4175-ab6a-a644132d9fba")
-		(property "Reference" "U1"
+		(property "Reference" "U3"
 			(at 63.5 17.78 0)
 			(effects
 				(font
@@ -15065,7 +15065,7 @@
 		(instances
 			(project ""
 				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/54ff82a5-3c96-49ab-8139-25683e385401"
-					(reference "U1")
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -15081,7 +15081,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "66f6b13a-a45d-442e-97d2-05cff1581a13")
-		(property "Reference" "U6"
+		(property "Reference" "U4"
 			(at 63.5 104.14 0)
 			(effects
 				(font
@@ -15297,7 +15297,7 @@
 		(instances
 			(project "A4092"
 				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/54ff82a5-3c96-49ab-8139-25683e385401"
-					(reference "U6")
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -15380,7 +15380,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "971a6287-338a-4638-928e-6dffbd7ef6dd")
-		(property "Reference" "U12"
+		(property "Reference" "U5"
 			(at 63.5 209.55 0)
 			(effects
 				(font
@@ -15470,7 +15470,7 @@
 		(instances
 			(project ""
 				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/54ff82a5-3c96-49ab-8139-25683e385401"
-					(reference "U12")
+					(reference "U5")
 					(unit 1)
 				)
 			)
@@ -16060,7 +16060,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d260c193-27bb-4366-b7b9-157fa6e95e3b")
-		(property "Reference" "U13"
+		(property "Reference" "U6"
 			(at 267.97 16.51 0)
 			(effects
 				(font
@@ -16252,7 +16252,7 @@
 		(instances
 			(project ""
 				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/54ff82a5-3c96-49ab-8139-25683e385401"
-					(reference "U13")
+					(reference "U6")
 					(unit 1)
 				)
 			)
