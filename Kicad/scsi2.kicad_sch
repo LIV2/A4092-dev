@@ -17,7 +17,7 @@
 					)
 				)
 			)
-			(property "Value" "SST39SF010"
+			(property "Value" "SST39SF010/020/040"
 				(at 0 -30.48 0)
 				(effects
 					(font
@@ -34,7 +34,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/25022B.pdf"
+			(property "Datasheet" "https://ww1.microchip.com/downloads/aemDocuments/documents/MPD/ProductDocuments/DataSheets/SST39SF010A-SST39SF020A-SST39SF040-Data-Sheet-DS20005022.pdf"
 				(at 0 7.62 0)
 				(effects
 					(font
@@ -393,7 +393,7 @@
 				(pin input line
 					(at -15.24 -12.7 0)
 					(length 5.08)
-					(name "NC"
+					(name "NC/A17"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -411,7 +411,7 @@
 				(pin input line
 					(at -15.24 -15.24 0)
 					(length 5.08)
-					(name "NC"
+					(name "NC/A18"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -14656,7 +14656,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "SST39SF010"
+		(property "Value" "SST39SF010/020/040"
 			(at 259.9533 26.67 0)
 			(effects
 				(font
@@ -14674,7 +14674,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/25022B.pdf"
+		(property "Datasheet" "https://ww1.microchip.com/downloads/aemDocuments/documents/MPD/ProductDocuments/DataSheets/SST39SF010A-SST39SF020A-SST39SF040-Data-Sheet-DS20005022.pdf"
 			(at 257.81 53.34 0)
 			(effects
 				(font
