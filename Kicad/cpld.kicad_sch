@@ -4766,6 +4766,10 @@
 		(uuid "9f5600ad-ba54-4855-888a-87f36c150ad3")
 	)
 	(no_connect
+		(at 34.29 127)
+		(uuid "a9ce9730-65e2-4a46-988c-ee62007ac132")
+	)
+	(no_connect
 		(at 100.33 111.76)
 		(uuid "ae2340c3-08c5-495c-96d8-62088396dc1d")
 	)
@@ -7077,28 +7081,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "PLD_NACK"
-		(shape input)
-		(at 34.29 127 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "c82ce547-7559-40bb-9a80-308509959b96")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 21.81 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
