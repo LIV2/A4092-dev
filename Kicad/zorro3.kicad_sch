@@ -11475,7 +11475,7 @@
 			)
 		)
 	)
-	(global_label "PLD_DS1"
+	(global_label "PLD_DS0"
 		(shape input)
 		(at 298.45 82.55 0)
 		(fields_autoplaced yes)
