@@ -12729,7 +12729,7 @@
 			)
 		)
 	)
-	(global_label "Z_SENSE3"
+	(global_label "Z_SENSEZ3"
 		(shape input)
 		(at 257.81 163.83 270)
 		(fields_autoplaced yes)
@@ -12741,7 +12741,7 @@
 		)
 		(uuid "997abfb4-8547-4ce4-b441-7bd94ca69819")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 257.81 176.2493 90)
+			(at 257.81 177.4588 90)
 			(effects
 				(font
 					(size 1.27 1.27)
