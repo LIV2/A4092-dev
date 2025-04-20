@@ -11717,7 +11717,7 @@
 			)
 		)
 	)
-	(global_label "Z_A1"
+	(global_label "Z_LOCK"
 		(shape input)
 		(at 378.46 27.94 0)
 		(fields_autoplaced yes)
@@ -11729,7 +11729,7 @@
 		)
 		(uuid "6c3a6f0b-c49b-40a2-87ba-60c90e5c81c8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 385.9204 27.94 0)
+			(at 388.5209 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
