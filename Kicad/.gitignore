@@ -8,3 +8,4 @@ Gerbers
 *-drc.txt
 kibot_errors.*
 *.lck
+*.kicad_prl
