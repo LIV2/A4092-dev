@@ -4,6 +4,11 @@
 	(generator_version "9.0")
 	(uuid "bfc88efc-9e1a-4a35-a915-827714d7aa1d")
 	(paper "A4")
+	(title_block
+		(title "A4092")
+		(rev "PROTO0")
+		(company "amiga.technology")
+	)
 	(lib_symbols
 		(symbol "CPLD_Xilinx:XC95144XL-TQ144"
 			(exclude_from_sim no)

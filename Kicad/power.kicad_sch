@@ -4,6 +4,11 @@
 	(generator_version "9.0")
 	(uuid "33a526a2-ef4e-4440-a5b7-6278e2bfdff9")
 	(paper "A4")
+	(title_block
+		(title "A4092")
+		(rev "PROTO0")
+		(company "amiga.technology")
+	)
 	(lib_symbols
 		(symbol "22112042:22112042"
 			(pin_names

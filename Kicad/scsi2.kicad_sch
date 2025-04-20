@@ -4,6 +4,11 @@
 	(generator_version "9.0")
 	(uuid "faf7f748-b428-4627-b77d-df9de07f3373")
 	(paper "A4")
+	(title_block
+		(title "A4092")
+		(rev "PROTO0")
+		(company "amiga.technology")
+	)
 	(lib_symbols
 		(symbol "39SF010-TSOP:SST39SF010"
 			(exclude_from_sim no)
@@ -7568,6 +7573,131 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "R_Small_1"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+				)
+			)
+			(property "Value" "R_Small"
+				(at 1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor, small symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_Small_1_0_1"
+				(rectangle
+					(start -0.762 1.778)
+					(end 0.762 -1.778)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_Small_1_1_1"
+				(pin passive line
+					(at 0 2.54 270)
+					(length 0.762)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 0.762)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "YC324-FK-071KL:YC324-FK-071KL"
 			(pin_names
 				(offset 1.016)
@@ -8511,8 +8641,8 @@
 	)
 	(text_box "Flash\n"
 		(exclude_from_sim no)
-		(at 229.87 14.605 0)
-		(size 51.435 91.44)
+		(at 215.9 14.605 0)
+		(size 65.405 91.44)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -8572,6 +8702,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2cbae83e-3284-4758-9e20-c2045de240f7")
+	)
+	(junction
+		(at 229.87 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "311967ed-c7dd-464e-81a7-4ac347f0b5ec")
 	)
 	(junction
 		(at 111.76 22.86)
@@ -9134,6 +9270,16 @@
 			(type default)
 		)
 		(uuid "26b4e4a5-301e-4cb7-a426-82172012813d")
+	)
+	(wire
+		(pts
+			(xy 227.33 86.36) (xy 229.87 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29d5c4a0-8216-4930-859a-844d6e2d19e0")
 	)
 	(wire
 		(pts
@@ -10007,6 +10153,16 @@
 	)
 	(wire
 		(pts
+			(xy 229.87 86.36) (xy 242.57 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7399ef7-0101-43c1-89a2-1fa207a699c9")
+	)
+	(wire
+		(pts
 			(xy 151.13 38.1) (xy 153.67 38.1)
 		)
 		(stroke
@@ -10094,6 +10250,16 @@
 			(type default)
 		)
 		(uuid "f403b917-de3d-4e29-b802-f17fa6f84e79")
+	)
+	(wire
+		(pts
+			(xy 229.87 88.9) (xy 229.87 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f84c9f55-6878-44c0-892a-f3604a3274fc")
 	)
 	(global_label "SCDAT0"
 		(shape input)
@@ -10361,7 +10527,7 @@
 	)
 	(global_label "ROM_CE"
 		(shape input)
-		(at 242.57 86.36 180)
+		(at 227.33 86.36 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10371,7 +10537,7 @@
 		)
 		(uuid "0e06b4df-146d-4584-ab32-9696fc5147d7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 232.1463 86.36 0)
+			(at 216.9063 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14539,6 +14705,28 @@
 			)
 		)
 	)
+	(global_label "GND"
+		(shape input)
+		(at 229.87 93.98 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fac4a5d6-ac64-4bfe-8010-32badbdd1999")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 229.87 100.8357 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "V5"
 		(shape input)
 		(at 153.67 43.18 270)
@@ -16615,6 +16803,76 @@
 			(project "A4092"
 				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/2daf4fe3-1e72-4ad5-914a-264df02f69b3"
 					(reference "RN17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "R_Small_1")
+		(lib_id "Device:R_Small")
+		(at 229.87 91.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b24abe1c-24e8-4aaa-988e-707e9721aacc")
+		(property "Reference" "R13"
+			(at 225.298 90.678 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1K"
+			(at 225.552 92.456 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 229.87 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 229.87 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 229.87 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e7b087bf-8808-4d5b-9e48-b31c9ca59923")
+		)
+		(pin "1"
+			(uuid "6766727c-2133-44a3-b2de-d81effd21f38")
+		)
+		(instances
+			(project ""
+				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/2daf4fe3-1e72-4ad5-914a-264df02f69b3"
+					(reference "R13")
 					(unit 1)
 				)
 			)

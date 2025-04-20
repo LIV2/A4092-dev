@@ -4,6 +4,11 @@
 	(generator_version "9.0")
 	(uuid "f9a7659a-a558-4c1a-ba59-fb895a40595b")
 	(paper "A4")
+	(title_block
+		(title "A4092")
+		(rev "PROTO0")
+		(company "amiga.technology")
+	)
 	(lib_symbols
 		(symbol "219_8MST:219-8MST"
 			(pin_names
@@ -11374,6 +11379,18 @@
 			(type none)
 		)
 		(uuid bdbc8f0f-c376-4ab2-9012-6af5572668a5)
+	)
+	(text "TODO: Store settings in flash memory?"
+		(exclude_from_sim no)
+		(at 37.084 148.59 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "1c933111-f662-4e79-89ab-d1f75df1a58c")
 	)
 	(text "Active Termination\n"
 		(exclude_from_sim no)

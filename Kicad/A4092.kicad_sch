@@ -4,10 +4,15 @@
 	(generator_version "9.0")
 	(uuid "8f9f4021-47aa-41d9-bea7-f6ccf72098bb")
 	(paper "A4")
+	(title_block
+		(title "A4092")
+		(rev "PROTO0")
+		(company "amiga.technology")
+	)
 	(lib_symbols)
-	(text "Commodore A4091\nRev B Advanced SCSI II Controller Board\nThis Zorro III board was originally designed and sold by Commodore, which did a single\nrun of the Rev A design before shelving it. Commodore was running out of money at the\ntime and didn't want to risk a second production run. The Rev B design was given to\nDKB Software for production, marketing, sales, distribution, and support.\nFeatures:\n* Boot ROM\n* NCR 53C710 SCSI II controller\n* 50 pin internal connector\n* 50 pin external SCSI2 connector\n* 3.5\" hard drive mounts on the card\n* Active SCSI termination\n* Zorro III bus support\nCaveats:\n* Requires Buster 11\n* Does not work with with A3640 Rev 3.0\n* No RAM option\n* No wide SCSI support\nThe Commodore A4091 was reverse-engineered by Stefan Reinauer and Chris Hooper."
+	(text "Advanced SCSI II Controller Board\nThis Zorro III board is based on the A4091 which was designed and sold by Commodore and\nDKB Software.\nFeatures:\n• Boot ROM\n• NCR 53C710 SCSI II controller\n• 50 pin internal connector\n• 50 pin external SCSI2 connector\n• Active SCSI termination\n• Zorro III bus support\nCaveats:\n• Requires Buster 11\n• Does not work with with A3640 Rev 3.0\n• No RAM option\n• No wide SCSI support\n\nThe Commodore A4091 was reverse-engineered by Stefan Reinauer and Chris Hooper. "
 		(exclude_from_sim no)
-		(at 57.912 97.79 0)
+		(at 51.816 105.156 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -18,13 +23,25 @@
 	)
 	(text "GitHub Project:\nhttps://github.com/A4091/\n\nSchematics:\nhttps://github.com/A4091/a4091-hardware/blob/main/schematics/ReA4091_Rev4_2023-05-15_Schematic.pdf"
 		(exclude_from_sim no)
-		(at 155.956 153.416 0)
+		(at 157.734 153.162 0)
 		(effects
 			(font
 				(size 2.54 2.54)
 			)
 		)
 		(uuid "b26551c3-a6a4-43fd-b17b-3a63f4664a89")
+	)
+	(text "Amiga 4092 SCSI-2 Host Controller\n"
+		(exclude_from_sim no)
+		(at 122.428 64.262 0)
+		(effects
+			(font
+				(size 5.08 5.08)
+				(thickness 1.016)
+				(bold yes)
+			)
+		)
+		(uuid "c6531cf0-d2cd-433f-a591-9bba1b6cad6b")
 	)
 	(sheet
 		(at 210.82 21.59)
