@@ -10347,7 +10347,7 @@
 			)
 		)
 	)
-	(global_label "GND"
+	(global_label "ROM_CE"
 		(shape input)
 		(at 242.57 86.36 180)
 		(fields_autoplaced yes)
@@ -10359,7 +10359,7 @@
 		)
 		(uuid "0e06b4df-146d-4584-ab32-9696fc5147d7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 235.7143 86.36 0)
+			(at 232.1463 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
