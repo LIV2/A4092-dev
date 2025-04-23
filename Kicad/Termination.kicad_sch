@@ -11565,6 +11565,12 @@
 		(uuid "2d35e9d3-017f-4c47-8567-22c70e262d14")
 	)
 	(junction
+		(at 118.11 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2d961215-0e4a-4a8b-a832-6ba39a7788c6")
+	)
+	(junction
 		(at 137.16 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -12186,6 +12192,16 @@
 	)
 	(wire
 		(pts
+			(xy 118.11 48.26) (xy 118.11 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "079b2ca6-80b9-4715-a7bd-223571f786d4")
+	)
+	(wire
+		(pts
 			(xy 215.9 97.79) (xy 234.95 97.79)
 		)
 		(stroke
@@ -12216,7 +12232,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 53.34) (xy 123.19 62.23)
+			(xy 124.46 50.8) (xy 124.46 60.96)
 		)
 		(stroke
 			(width 0)
@@ -12296,7 +12312,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 45.72) (xy 118.11 50.8)
+			(xy 118.11 45.72) (xy 118.11 48.26)
 		)
 		(stroke
 			(width 0)
@@ -12556,16 +12572,6 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 53.34) (xy 123.19 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2561ff7e-fae1-4edd-a1f0-35cd5fd5c81a")
-	)
-	(wire
-		(pts
 			(xy 234.95 64.77) (xy 234.95 66.04)
 		)
 		(stroke
@@ -12706,7 +12712,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 62.23) (xy 129.54 50.8)
+			(xy 129.54 60.96) (xy 129.54 50.8)
 		)
 		(stroke
 			(width 0)
@@ -12733,6 +12739,16 @@
 			(type default)
 		)
 		(uuid "34b2f736-cb9f-4ec2-9d45-0b5af5b6554f")
+	)
+	(wire
+		(pts
+			(xy 120.65 50.8) (xy 124.46 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3602f8cf-8983-4f9e-9283-97e0bd0a1a29")
 	)
 	(wire
 		(pts
@@ -13086,6 +13102,16 @@
 	)
 	(wire
 		(pts
+			(xy 119.38 44.45) (xy 120.65 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5873d86d-3d57-4cb0-9d25-c6b409b46391")
+	)
+	(wire
+		(pts
 			(xy 116.84 29.21) (xy 119.38 29.21)
 		)
 		(stroke
@@ -13376,6 +13402,16 @@
 	)
 	(wire
 		(pts
+			(xy 118.11 48.26) (xy 119.38 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "77c6e1c2-fd1a-4694-8fa3-a0b652a4403b")
+	)
+	(wire
+		(pts
 			(xy 215.9 144.78) (xy 217.17 144.78)
 		)
 		(stroke
@@ -13386,6 +13422,16 @@
 	)
 	(wire
 		(pts
+			(xy 121.92 63.5) (xy 121.92 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a0563e0-c264-4d7d-92eb-b926ea59b16f")
+	)
+	(wire
+		(pts
 			(xy 99.06 41.91) (xy 99.06 50.8)
 		)
 		(stroke
@@ -13393,6 +13439,16 @@
 			(type default)
 		)
 		(uuid "7adbeb17-e0f4-4e77-84c7-42a0904fdd8a")
+	)
+	(wire
+		(pts
+			(xy 120.65 67.31) (xy 120.65 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ba25148-a19f-47b0-b9c0-01b192f238fa")
 	)
 	(wire
 		(pts
@@ -13473,6 +13529,16 @@
 			(type default)
 		)
 		(uuid "84328b35-f742-44c4-8d8b-da3e76df0987")
+	)
+	(wire
+		(pts
+			(xy 119.38 48.26) (xy 119.38 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "843d7f19-fdad-4f9d-9f76-20e52ce6d3fc")
 	)
 	(wire
 		(pts
@@ -13656,6 +13722,16 @@
 	)
 	(wire
 		(pts
+			(xy 119.38 52.07) (xy 121.92 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98b08f0b-3a28-4b01-be7c-fdb95cd03149")
+	)
+	(wire
+		(pts
 			(xy 101.6 29.21) (xy 104.14 29.21)
 		)
 		(stroke
@@ -13776,7 +13852,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 41.91) (xy 119.38 53.34)
+			(xy 119.38 41.91) (xy 119.38 44.45)
 		)
 		(stroke
 			(width 0)
@@ -14146,6 +14222,26 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 63.5) (xy 121.92 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5234dab-b80e-498f-bd7e-f721d37240a7")
+	)
+	(wire
+		(pts
+			(xy 120.65 44.45) (xy 120.65 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7c47365-70ae-4b0d-8b2c-dd4e07c96a2e")
+	)
+	(wire
+		(pts
 			(xy 118.11 116.84) (xy 118.11 123.19)
 		)
 		(stroke
@@ -14266,7 +14362,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 62.23) (xy 129.54 62.23)
+			(xy 124.46 60.96) (xy 129.54 60.96)
 		)
 		(stroke
 			(width 0)
@@ -14693,6 +14789,28 @@
 			(type default)
 		)
 		(uuid "fdbecfb5-bb58-49b9-9949-f5ba32988762")
+	)
+	(global_label "SCSI_BUSY"
+		(shape input)
+		(at 120.65 67.31 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "00df58f1-19b6-43c0-a061-ea7ddce5ba2f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 120.65 80.4552 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
 	)
 	(global_label "DIP_SCSI_ADDR0"
 		(shape input)

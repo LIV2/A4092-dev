@@ -9852,7 +9852,7 @@
 			)
 		)
 	)
-	(global_label "Z_BEER"
+	(global_label "Z_BERR"
 		(shape input)
 		(at 341.63 116.84 180)
 		(fields_autoplaced yes)
@@ -9864,7 +9864,7 @@
 		)
 		(uuid "377e8204-eed2-4492-b4e3-551988eb3afc")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 331.6297 116.84 0)
+			(at 331.5087 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
