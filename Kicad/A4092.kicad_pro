@@ -674,6 +674,10 @@
       {
         "netclass": "PWR",
         "pattern": "V3_3"
+      },
+      {
+        "netclass": "PWR",
+        "pattern": "SCSI_TERMPWR"
       }
     ]
   },
