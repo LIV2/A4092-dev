@@ -133,7 +133,8 @@ wire ABOEL_n_int;
 wire ABOEH_n_int;
 wire D2Z_n_int;
 wire Z2D_n_int;
-
+// dblt
+wire DBLT_int;
 
 always @(posedge CLK or negedge IORST_n)
 begin
@@ -281,6 +282,11 @@ assign ABOEL_n = ABOEL_n_int;
 assign ABOEH_n = ABOEH_n_int;
 assign D2Z_n   = D2Z_n_int;
 assign Z2D_n   = Z2D_n_int;
+
+assign DBLT_int = !BMASTER && !MASTER && configured && !READ && !slave_cycle && !FCS_n_sync[1] && !LOCK;
+
+assign DBLT = DBLT_int;
+
 
 intreg_access INTREG_ACCESS (
   .CLK(CLK),
