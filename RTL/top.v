@@ -119,6 +119,7 @@ reg autoconfig_cycle;
 wire autoconfig_dtack;
 wire scsi_dtack;
 wire rom_dtack;
+wire sid_dtack;
 
 always @(posedge CLK or negedge IORST_n)
 begin
@@ -156,9 +157,10 @@ begin
         begin
           if (FCS_n_sync[1]) begin
             z3_state <= Z3_IDLE;
-          end else if ((autoconfig_dtack && autoconfig_cycle) || 
+          end else if ((autoconfig_dtack && autoconfig_cycle) ||
 		       (scsi_dtack && scsi_cycle) ||
-		       rom_dtack) begin
+		       rom_dtack ||
+		       sid_dtack) begin
             z3_state <= Z3_END;
           end
         end
@@ -222,6 +224,18 @@ rom_access ROM_ACCESS (
   .ROM_CE_n(ROM_CE_n),
   .ROM_OE_n(ROM_OE_n),
   .ROM_WE_n(ROM_WE_n)
+);
+
+sid_access SID_ACCESS (
+  .CLK(CLK),
+  .RESET_n(IORST_n),
+  .ADDR({ADDR, A[7:0]}),
+  .READ(READ),
+  .FCS_n(FCS_n_sync[1]),
+  .slave_cycle(!MASTER && !BMASTER),
+  .configured(configured),
+  .sid_dtack(sid_dtack),
+  .SID_n(SID_n)
 );
 
 endmodule
