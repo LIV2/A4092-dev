@@ -121,6 +121,7 @@ wire scsi_dtack;
 wire rom_dtack;
 wire sid_dtack;
 wire int_dtack;
+wire [3:0] intreg_dout;
 
 always @(posedge CLK or negedge IORST_n)
 begin
@@ -251,6 +252,11 @@ intreg_access INTREG_ACCESS (
   .NCR_INT(NCR_INT),
   .int_dtack(int_dtack),
   .INT_n(INT_n)
+  .DOUT(intreg_dout)
 );
+
+assign D[31:28] = (autoconfig_cycle) ? autoconfig_dout :
+                  (int_dtack)        ? intreg_dout     :
+                  4'hF;
 
 endmodule
