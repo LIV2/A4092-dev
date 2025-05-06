@@ -12,12 +12,22 @@ module intreg_access (
 
     output reg int_dtack,
     output reg INT_n,
-    output reg [3:0] DOUT
+    output reg [3:0] DOUT,
+    output wire MTCR_n,
+    output wire CBACK_n,
+    output wire STERM_n
 );
 
 // INTREG = 0x900000, INTVEC = 0x900004
 wire match_intreg = slave_cycle && configured && (ADDR[27:1] == (28'h900000 >> 1));
 wire match_intvec = slave_cycle && configured && (ADDR[27:1] == (28'h900004 >> 1));
+wire match_mtcr   = slave_cycle && configured && (ADDR[27:1] == (28'h900008 >> 1));
+wire match_cback  = slave_cycle && configured && (ADDR[27:1] == (28'h90000C >> 1));
+wire match_sterm  = slave_cycle && configured && (ADDR[27:1] == (28'h900010 >> 1));
+
+assign MTCR_n  = !(match_mtcr  && !FCS_n);
+assign CBACK_n = !(match_cback && !FCS_n);
+assign STERM_n = !(match_sterm && !FCS_n);
 
 reg int_pending;
 
@@ -43,19 +53,18 @@ always @(posedge CLK or negedge RESET_n) begin
         if (!FCS_n && READ) begin
             if (match_intvec)
                 DOUT <= 4'h1; // INTVEC = 0x18 → DOUT = 0x1 (upper nibble)
-            else
-                DOUT <= 4'hF;
+            else if (match_intreg)
+                DOUT <= 4'hF; // dummy value for INTREG
+        end else begin
+            DOUT <= 4'hF;
         end
 
         // dtack logic
-        case (int_dtack)
-            1'b0:
-                if (!FCS_n && READ && (match_intreg || match_intvec))
-                    int_dtack <= 1;
-            1'b1:
-                if (FCS_n)
-                    int_dtack <= 0;
-        endcase
+        if (!FCS_n && READ && (match_intreg || match_intvec)) begin
+            int_dtack <= 1;
+        end else if (FCS_n) begin
+            int_dtack <= 0;
+        end
     end
 end
 

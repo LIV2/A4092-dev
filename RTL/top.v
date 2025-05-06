@@ -15,7 +15,6 @@ module A4092(
     input [1:0] SIZ,
     input NACK,
     output INT_n,
-    output MTCR_n,
     output SID_n,
     input [31:0] D, // Only [8:0] and [31:24] are used
     output CLK,
@@ -30,11 +29,9 @@ module A4092(
     input SLACK,
     input NCR_INT,
     input SREG,
-    output STERM_n,
     input ROM_OE,
     input SBR,
     input SBG,
-    output CBACK_n,
     input CBREQ,
     input BERR_n,
     input BGn,
@@ -48,7 +45,11 @@ module A4092(
     output CFGOUT_n,
     output SLAVE_n,
     input SENSEZ3,
-    output CINH_n
+    output CINH_n,
+    output ROM_WE_n,
+    output MTCR_n,
+    output CBACK_n,
+    output STERM_n
     );
 
 `include "globalparams.vh"
@@ -122,6 +123,9 @@ wire rom_dtack;
 wire sid_dtack;
 wire int_dtack;
 wire [3:0] intreg_dout;
+wire MTCR_n_int;
+wire CBACK_n_int;
+wire STERM_n_int;
 
 always @(posedge CLK or negedge IORST_n)
 begin
@@ -251,6 +255,14 @@ sid_access SID_ACCESS (
   .SID_n(SID_n)
 );
 
+assign MTCR_n  = MTCR_n_int;
+assign CBACK_n = CBACK_n_int;
+assign STERM_n = STERM_n_int;
+
+assign D[31:28] = (autoconfig_cycle) ? autoconfig_dout :
+                  (int_dtack)        ? intreg_dout     :
+                  4'hF;
+
 intreg_access INTREG_ACCESS (
   .CLK(CLK),
   .RESET_n(IORST_n),
@@ -261,12 +273,11 @@ intreg_access INTREG_ACCESS (
   .configured(configured),
   .NCR_INT(NCR_INT),
   .int_dtack(int_dtack),
-  .INT_n(INT_n)
-  .DOUT(intreg_dout)
+  .INT_n(INT_n),
+  .DOUT(intreg_dout),
+  .MTCR_n(MTCR_n_int),
+  .CBACK_n(CBACK_n_int),
+  .STERM_n(STERM_n_int)
 );
-
-assign D[31:28] = (autoconfig_cycle) ? autoconfig_dout :
-                  (int_dtack)        ? intreg_dout     :
-                  4'hF;
 
 endmodule
