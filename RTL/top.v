@@ -120,6 +120,7 @@ wire autoconfig_dtack;
 wire scsi_dtack;
 wire rom_dtack;
 wire sid_dtack;
+wire int_dtack;
 
 always @(posedge CLK or negedge IORST_n)
 begin
@@ -160,7 +161,8 @@ begin
           end else if ((autoconfig_dtack && autoconfig_cycle) ||
 		       (scsi_dtack && scsi_cycle) ||
 		       rom_dtack ||
-		       sid_dtack) begin
+		       sid_dtack ||
+		       int_dtack) begin
             z3_state <= Z3_END;
           end
         end
@@ -236,6 +238,19 @@ sid_access SID_ACCESS (
   .configured(configured),
   .sid_dtack(sid_dtack),
   .SID_n(SID_n)
+);
+
+intreg_access INTREG_ACCESS (
+  .CLK(CLK),
+  .RESET_n(IORST_n),
+  .ADDR({ADDR, A[7:0]}),
+  .READ(READ),
+  .FCS_n(FCS_n_sync[1]),
+  .slave_cycle(!MASTER && !BMASTER),
+  .configured(configured),
+  .NCR_INT(NCR_INT),
+  .int_dtack(int_dtack),
+  .INT_n(INT_n)
 );
 
 endmodule
