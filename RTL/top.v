@@ -77,19 +77,13 @@ begin
   end
 end
 
-// Autoconf
-wire [3:0] autoconfig_dout;
-wire autoconfig_cfgout;
-
-wire [3:0] scsi_base_addr;
-
+// Address latching
 reg [27:8] ADDR;
 reg autoconfig_addr_match;
 reg scsi_addr_match;
-
 wire match = autoconfig_addr_match || scsi_addr_match;
 wire configured;
-wire validspace = FC[1] ^ FC[0]; // 1 when FC indicates user/supervisor data/program space
+wire validspace = FC[1] ^ FC[0];
 wire shutup;
 
 // Latch address bits 27-8 on FCS_n asserted
@@ -97,8 +91,8 @@ wire shutup;
 always @(negedge FCS_n or negedge IORST_n)
 begin
   if (!IORST_n) begin
-    ADDR                  <= 20'b0;
-    scsi_addr_match        <= 0;
+    ADDR                  <= 0;
+    scsi_addr_match       <= 0;
     autoconfig_addr_match <= 0;
   end else begin
     MASTER <= READ; // CEAB for address bits
@@ -124,6 +118,7 @@ reg scsi_cycle;
 reg autoconfig_cycle;
 wire autoconfig_dtack;
 wire scsi_dtack;
+wire rom_dtack;
 
 always @(posedge CLK or negedge IORST_n)
 begin
@@ -161,7 +156,9 @@ begin
         begin
           if (FCS_n_sync[1]) begin
             z3_state <= Z3_IDLE;
-          end else if (autoconfig_dtack && autoconfig_cycle || scsi_dtack && scsi_cycle) begin
+          end else if ((autoconfig_dtack && autoconfig_cycle) || 
+		       (scsi_dtack && scsi_cycle) ||
+		       rom_dtack) begin
             z3_state <= Z3_END;
           end
         end
@@ -180,6 +177,12 @@ begin
     endcase
   end
 end
+
+
+// Autoconf
+wire [3:0] scsi_base_addr;
+wire [3:0] autoconfig_dout;
+wire autoconfig_cfgout;
 
 Autoconfig AUTOCONFIG (
   .scsi_base_addr (scsi_base_addr),
@@ -202,6 +205,23 @@ SCSI SCSI (
   .CLK (CLK_50M),
   .RESET_n (IORST_n),
   .DTACK (DTACK_n)
+);
+
+rom_access ROM_ACCESS (
+  .CLK(CLK),
+  .RESET_n(IORST_n),
+  .ADDR(ADDR),
+  .READ(READ),
+  .FCS_n(FCS_n_sync[1]),
+  .slave_cycle(!MASTER && !BMASTER), // or use a named wire `slave_cycle`
+  .configured(configured),
+  .shutup(shutup),
+
+  .rom_dtack(rom_dtack),
+  .rom_selected(), // optional, used if you want to debug or route match logic
+  .ROM_CE_n(ROM_CE_n),
+  .ROM_OE_n(ROM_OE_n),
+  .ROM_WE_n(ROM_WE_n)
 );
 
 endmodule
