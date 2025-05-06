@@ -119,6 +119,7 @@ reg scsi_cycle;
 reg autoconfig_cycle;
 wire autoconfig_dtack;
 wire scsi_dtack;
+wire [27:0] full_addr = {ADDR, A[7:0]};
 wire rom_dtack;
 wire sid_dtack;
 wire int_dtack;
@@ -126,6 +127,13 @@ wire [3:0] intreg_dout;
 wire MTCR_n_int;
 wire CBACK_n_int;
 wire STERM_n_int;
+// buffer control
+wire DBOE_n_int;
+wire ABOEL_n_int;
+wire ABOEH_n_int;
+wire D2Z_n_int;
+wire Z2D_n_int;
+
 
 always @(posedge CLK or negedge IORST_n)
 begin
@@ -220,10 +228,15 @@ Autoconfig AUTOCONFIG (
 // | `0x900004`            | 4 bytes  | INTVEC                | `intreg_access` |
 // | `0x900008`–`0xFFFFFF` | 6.25 MB+ | **Unused / Reserved** |                 |
 
-SCSI SCSI (
-  .CLK (CLK_50M),
-  .RESET_n (IORST_n),
-  .DTACK (DTACK_n)
+scsi_access SCSI_ACCESS (
+  .CLK(CLK),
+  .RESET_n(IORST_n),
+  .ADDR(full_addr),
+  .READ(READ),
+  .FCS_n(FCS_n_sync[1]),
+  .slave_cycle(!MASTER && !BMASTER),
+  .configured(configured),
+  .scsi_dtack(scsi_dtack)
 );
 
 rom_access ROM_ACCESS (
@@ -263,6 +276,12 @@ assign D[31:28] = (autoconfig_cycle) ? autoconfig_dout :
                   (int_dtack)        ? intreg_dout     :
                   4'hF;
 
+assign DBOE_n  = DBOE_n_int;
+assign ABOEL_n = ABOEL_n_int;
+assign ABOEH_n = ABOEH_n_int;
+assign D2Z_n   = D2Z_n_int;
+assign Z2D_n   = Z2D_n_int;
+
 intreg_access INTREG_ACCESS (
   .CLK(CLK),
   .RESET_n(IORST_n),
@@ -278,6 +297,23 @@ intreg_access INTREG_ACCESS (
   .MTCR_n(MTCR_n_int),
   .CBACK_n(CBACK_n_int),
   .STERM_n(STERM_n_int)
+);
+
+buffer_control BUFFER_CONTROL (
+  .CLK(CLK),
+  .RESET_n(IORST_n),
+  .READ(READ),
+  .slave_cycle(!MASTER && !BMASTER),
+  .configured(configured),
+  .BMASTER(BMASTER),
+  .MASTER(MASTER),
+  .ADDR({ADDR, A[7:0]}),
+  .FCS_n(FCS_n_sync[1]),
+  .DBOE_n(DBOE_n_int),
+  .ABOEL_n(ABOEL_n_int),
+  .ABOEH_n(ABOEH_n_int),
+  .D2Z_n(D2Z_n_int),
+  .Z2D_n(Z2D_n_int)
 );
 
 endmodule
