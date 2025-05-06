@@ -206,6 +206,16 @@ Autoconfig AUTOCONFIG (
   .shutup (shutup)
 );
 
+// | **Offset**            | **Size** | **Function**          | **Module**      |
+// | --------------------- | -------- | --------------------- | --------------- |
+// | `0x000000`–`0x07FFFF` | 512 KB   | Flash ROM             | `rom_access`    |
+// | `0x080000`–`0x0BFFFF` | 256 KB   | **Unused / Reserved** |                 |
+// | `0x0C0000`–`0x0FFFFF` | 256 KB   | SCSI ID read          | `sid_access`    |
+// | `0x100000`–`0x8FFFFF` | \~7.5 MB | SCSI registers (710)  | `scsi`          |
+// | `0x900000`            | 4 bytes  | INTREG                | `intreg_access` |
+// | `0x900004`            | 4 bytes  | INTVEC                | `intreg_access` |
+// | `0x900008`–`0xFFFFFF` | 6.25 MB+ | **Unused / Reserved** |                 |
+
 SCSI SCSI (
   .CLK (CLK_50M),
   .RESET_n (IORST_n),
