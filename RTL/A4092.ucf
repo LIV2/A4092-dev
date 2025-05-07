@@ -1,54 +1,134 @@
-NET "A<0>"     LOC = "P16";
-NET "A<1>"     LOC = "P17";
-NET "A<2>"     LOC = "P19";
-NET "A<3>"     LOC = "P20";
-NET "A<4>"     LOC = "P21";
-NET "A<5>"     LOC = "P22";
-NET "A<6>"     LOC = "P23";
-NET "A<7>"     LOC = "P24";
-NET "A<8>"     LOC = "P25";
-NET "A<17>"    LOC = "P26";
-NET "A<18>"    LOC = "P27";
-NET "A<19>"    LOC = "P28";
-NET "CLK_50M"     LOC = "P30";
+# P1 - VCCIO
+# P2 - NC
+NET "ROM_CE"      LOC = "P3";
+NET "ROM_WE"      LOC = "P4";
+NET "ROM_OE"      LOC = "P5";
+NET "A<0>"     LOC = "P6";
+NET "A<1>"     LOC = "P7";
+# P8 - VCCINT
+NET "A<2>"     LOC = "P9";
+NET "A<3>"     LOC = "P10";
+NET "A<4>"     LOC = "P11";
+NET "A<5>"     LOC = "P12";
+NET "A<6>"     LOC = "P13";
+NET "A<7>"     LOC = "P14";
+NET "A<8>"     LOC = "P15";
+NET "A<17>"    LOC = "P16";
+NET "A<18>"    LOC = "P17";
+# P18 - GND
+NET "A<19>"    LOC = "P19";
+NET "A<23>"    LOC = "P20";
+NET "A<24>"    LOC = "P21";
+NET "A<25>"    LOC = "P22";
+NET "A<26>"    LOC = "P23";
+NET "A<27>"    LOC = "P24";
+NET "A<28>"    LOC = "P25";
+NET "A<29>"    LOC = "P26";
+NET "A<30>"    LOC = "P27";
+NET "A<31>"    LOC = "P28";
+# P29 - GND
+NET "CLK_50M"  LOC = "P30";
 NET "CLK_50M" TNM_NET = "clk";
 TIMESPEC "TS_clk" = PERIOD "clk" 20 ns HIGH 50%;
-NET "A<23>"    LOC = "P31";
-NET "A<24>"    LOC = "P2";
-NET "A<25>"    LOC = "P3";
-NET "A<26>"    LOC = "P4";
-NET "A<27>"    LOC = "P5";
-NET "A<28>"    LOC = "P6";
-NET "A<29>"    LOC = "P7";
-NET "A<30>"    LOC = "P9";
-NET "A<31>"    LOC = "P10";
-NET "AS_n"        LOC = "P11";
-NET "PLD_DS_n"    LOC = "P12";
-NET "DS_n<0>"     LOC = "P13";
-NET "DS_n<1>"     LOC = "P14";
-NET "DS_n<2>"     LOC = "P15";
-NET "DS_n<3>"     LOC = "P142";
-NET "IORST_n"       LOC = "P143";
-NET "IORST_n" TIG;  # Ignore timing on async reset
-NET "FC<0>"       LOC = "P32";
-NET "FC<1>"       LOC = "P33";
-NET "FC<2>"       LOC = "P34";
+NET "AS_n"        LOC = "P31";
+NET "PLD_DS_n"    LOC = "P32";
+# P33 - NC
+# P34 - NC
+# P35 - NC
+# P36 - GND
+# P37 - VCCIO
 NET "Z_7M"        LOC = "P38";
 NET "Z_7M" TNM_NET = "Z_7M";
 TIMESPEC "TS_Z_7M" = PERIOD "Z_7M" 139.68 ns HIGH 50%;
-NET "FCS_n"       LOC = "P39";
+# P39 - NC
 NET "DOE"         LOC = "P40";
 NET "READ"        LOC = "P41";
+# P42 - VCCINT
 NET "SIZ<0>"      LOC = "P43";
 NET "SIZ<1>"      LOC = "P44";
-NET "NACK"        LOC = "P45"; # SCSI
-NET "INT_n"       LOC = "P46";
+# P45 - NC
+# P46 - NC
+# P47 - GND
 NET "MTCR_n"      LOC = "P48";
 NET "SID_n"       LOC = "P49";
-# P50
-NET "D<0>"        LOC = "P51";
-NET "D<1>"        LOC = "P118";
+# P50 - NC
+# P51 - NC
+# P52 - NC
+# P53 - NC
+# P54 - NC
+# P55 - VCCIO
+# P56 - NC
+# P57 - NC
+# P58 - NC
+# P59 - NC
+# P60 - NC
+# P61 - NC
+# P62 - GND
+# P63 - TDI
+# P64 - NC
+# P65 - TMS
+# P66 - NC
+# P67 - TCK
+# P68 - NC
+# P69 - NC
+# P70 - NC
+# P71 - NC
+# P72 - GND
+# P73 - VCCIO
+NET "FCS_n"       LOC = "P74";
+NET "FC<0>"       LOC = "P75";
+NET "FC<1>"       LOC = "P76";
+NET "FC<2>"       LOC = "P77";
+NET "DS_n<0>"     LOC = "P78";
+NET "DS_n<1>"     LOC = "P79";
+NET "DS_n<2>"     LOC = "P80";
+NET "DS_n<3>"     LOC = "P81";
+# P82 - NC
+NET "SBR"         LOC = "P83";
+# P84 - VCCINT
+NET "SBG"         LOC = "P85";
+NET "CBACK_n"     LOC = "P86";
+NET "CBREQ"       LOC = "P87";
+NET "BERR_n"      LOC = "P88";
+# P89 - GND
+# P90 - GND
+NET "CLK"         LOC = "P91";
+NET "BMASTER"     LOC = "P92";
+NET "DBLT"        LOC = "P93";
+NET "DBOE_n"      LOC = "P94";
+NET "ABOEL_n"     LOC = "P95";
+NET "ABOEH_n"     LOC = "P96";
+NET "D2Z_n"       LOC = "P97";
+NET "Z2D_n"       LOC = "P98";
+# P99 - GND
+NET "MASTER"      LOC = "P100";
+NET "SLACK"       LOC = "P101";
+# P102 - NC
+NET "NCR_INT"     LOC = "P103";
+NET "SREG"        LOC = "P104";
+NET "STERM_n"     LOC = "P105";
+NET "INT2_n"      LOC = "P106";
+# P107 - NC
+# P108 - GND
+# P109 - VCCIO
+NET "BGn"         LOC = "P110";
+NET "BRn"         LOC = "P111";
+NET "Z_FCS"       LOC = "P112";
+NET "LOCK"        LOC = "P113";
+# P114 - GND
+NET "DTACK_n"     LOC = "P115";
+NET "MTACK_n"     LOC = "P116";
+NET "CINH_n"      LOC = "P117";
+NET "SENSEZ3"     LOC = "P118";
+NET "CFGIN_n"     LOC = "P119";
+NET "CFGOUT_n"    LOC = "P120";
+NET "SLAVE_n"     LOC = "P121";
+# P122 - TDO
+# P123 - GND
+NET "D<0>"        LOC = "P124";
+NET "D<1>"        LOC = "P125";
 NET "D<2>"        LOC = "P126";
+# P127 - VCCIO
 NET "D<3>"        LOC = "P128";
 NET "D<4>"        LOC = "P129";
 NET "D<5>"        LOC = "P130";
@@ -62,39 +142,8 @@ NET "D<28>"       LOC = "P137";
 NET "D<29>"       LOC = "P138";
 NET "D<30>"       LOC = "P139";
 NET "D<31>"       LOC = "P140";
-  
-NET "CLK"         LOC = "P91";
-NET "BMASTER"     LOC = "P92";
-NET "DBLT"        LOC = "P93";
-NET "DBOE_n"      LOC = "P94";
-NET "ABOEL_n"     LOC = "P95";
-NET "ABOEH_n"     LOC = "P96";
-NET "D2Z_n"       LOC = "P97";
-NET "Z2D_n"       LOC = "P98";
-NET "MASTER"      LOC = "P100";
-NET "SLACK"       LOC = "P101";
-# P102
-NET "NCR_INT"     LOC = "P103";
-NET "SREG"        LOC = "P104";
-NET "STERM_n"     LOC = "P105";
-NET "ROM_OE"      LOC = "P107";
-
-NET "SBR"         LOC = "P83";
-NET "SBG"         LOC = "P85";
-NET "CBACK_n"     LOC = "P86";
-NET "CBREQ"       LOC = "P87";
-NET "BERR_n"      LOC = "P88";
-
-# P106
-NET "BGn"         LOC = "P110";
-NET "BRn"         LOC = "P111";
-NET "Z_FCS"       LOC = "P112";
-NET "LOCK"        LOC = "P113";
-NET "DTACK_n"     LOC = "P115";
-NET "MTACK_n"     LOC = "P116";
-NET "INT2_n"      LOC = "P117";
-NET "CFGIN_n"     LOC = "P119";
-NET "CFGOUT_n"    LOC = "P120";
-NET "SLAVE_n"     LOC = "P121";
-NET "SENSEZ3"     LOC = "P124";
-NET "CINH_n"      LOC = "P125";
+# P141 - VCCINT
+# P142 - NC
+NET "IORST_n"       LOC = "P143";
+NET "IORST_n" TIG;  # Ignore timing on async reset
+# P144 - GND
