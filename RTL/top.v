@@ -287,6 +287,8 @@ assign DBLT_int = !BMASTER && !MASTER && configured && !READ && !slave_cycle && 
 
 assign DBLT = DBLT_int;
 
+assign INT2_n = INT_n || ~SREG;
+
 
 intreg_access INTREG_ACCESS (
   .CLK(CLK),
