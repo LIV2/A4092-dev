@@ -287,7 +287,57 @@ assign DBLT_int = !BMASTER && !MASTER && configured && !READ && !slave_cycle && 
 
 assign DBLT = DBLT_int;
 
+assign INT_n    = INT_n_int;           // forwarded from intreg_access
+assign DTACK_n  = dtack ? 1'b0 : 1'bz; // tri-state DTACK when not driven
+
 assign INT2_n = INT_n || ~SREG;
+
+assign SLAVE_n  = !(slave_cycle && configured);
+assign CFGOUT_n = autoconfig_cfgout;
+assign CINH_n   = !(slave_cycle && configured);
+
+assign MTACK_n_int = !(slave_cycle && !READ && !MTCR_n && !FCS_n_sync[1]);
+
+assign CBACK_n  = CBACK_n_int;  // from intreg_access
+assign MTACK_n  = MTACK_n_int;  // wired
+assign STERM_n  = STERM_n_int;  // from intreg_access
+
+// NCR SCSI Address Strobe
+reg ASQ;
+always @(posedge CLK) begin
+  if (!IORST_n) ASQ <= 1;
+  else if (!FCS_n_sync[1] && scsi_cycle) ASQ <= 0;
+  else if (FCS_n_sync[1]) ASQ <= 1;
+end
+assign AS_n = ASQ;
+
+// SCSI Data Strobes
+wire A1 = ADDR[2];
+wire A0 = ADDR[1];
+wire SIZ1 = SIZ[1];
+wire SIZ0 = SIZ[0];
+
+assign DS_n[3] = ~(READ && scsi_cycle && (!A1 && !A0));
+
+assign DS_n[2] = ~(READ && scsi_cycle &&
+                  (!A1 && !SIZ0) ||
+                  (!A1 &&  A0)    ||
+                  (!A1 &&  SIZ1));
+
+assign DS_n[1] = ~(READ && scsi_cycle &&
+                  (!A1 && !SIZ1 && !SIZ0) ||
+                  (!A1 &&  SIZ1 &&  SIZ0) ||
+                  (!A1 &&  A0    && !SIZ0) ||
+                  ( A1 && !A0));
+
+assign DS_n[0] = ~(READ && scsi_cycle &&
+                  ( A0    &&  SIZ1 &&  SIZ0) ||
+                  (!SIZ1 && !SIZ0) ||
+                  ( A1    &&  A0) ||
+                  ( A1    &&  SIZ1));
+
+// DOE (data output enable for Zorro write to NCR)
+assign DOE = (scsi_cycle && !READ && !FCS_n_sync[1]);
 
 
 intreg_access INTREG_ACCESS (
