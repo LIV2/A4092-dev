@@ -17,7 +17,7 @@ module A4092(
     output INT_n,
     output SID_n,
     input [31:0] D, // Only [8:0] and [31:24] are used
-    output CLK,
+    output reg CLK,
     input BMASTER,
     output DBLT,
     output DBOE_n,
@@ -53,6 +53,15 @@ module A4092(
     );
 
 `include "globalparams.vh"
+
+// clocks
+wire CLKI      // inverted 25 MHz
+
+always @(posedge CLK_50M)
+  CLK <= ~CLK; // 25MHz 50% duty cycle
+
+assign CLKI = ~CLK; // inverted clock
+
 
 // Synchronizers
 reg [1:0] DS0_n_sync;
