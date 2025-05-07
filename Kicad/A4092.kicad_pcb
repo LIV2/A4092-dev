@@ -28566,7 +28566,7 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "9558d6a3-83b2-453c-a615-8e979caeb711")
+			(uuid "d3d647d9-213c-44fd-a4ce-8cfb9139c0a1")
 		)
 		(fp_line
 			(start 8.9408 3.377001)
@@ -28576,7 +28576,7 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "ef180f49-eed3-4060-8a2c-823700b0579b")
+			(uuid "0b33316f-01b9-4afb-95b2-92726434163b")
 		)
 		(fp_line
 			(start -1.3208 -3.226999)
@@ -28586,7 +28586,7 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "0ebbe803-da86-4e09-976a-94bff31aad7e")
+			(uuid "8c3c7e1a-56d8-44a9-b483-73ad8596d25b")
 		)
 		(fp_line
 			(start 8.9408 -3.226999)
@@ -28596,29 +28596,18 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "b0d5fa90-b365-4067-a7a0-9e8f7a66d612")
+			(uuid "aff4c29b-db9c-4ef0-a452-7f8639e47a35")
 		)
 		(fp_circle
-			(center -3.0988 0)
-			(end -2.7178 0)
+			(center 0 -1.93)
+			(end 0.381 -1.93)
 			(stroke
 				(width 0.508)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.SilkS")
-			(uuid "c1c9fb8e-882e-404d-ac1e-773b3711d2ca")
-		)
-		(fp_circle
-			(center -3.0988 0)
-			(end -2.7178 0)
-			(stroke
-				(width 0.508)
-				(type solid)
-			)
-			(fill no)
-			(layer "B.SilkS")
-			(uuid "31e967cf-8197-4038-bbfb-8559a3c2d082")
+			(uuid "3de9dc49-f146-49e5-a8f0-305e31e6fe19")
 		)
 		(fp_line
 			(start -1.4478 3.504001)
@@ -28628,7 +28617,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "c8ee3d2f-08f7-4e71-ba6d-0c28acd7c641")
+			(uuid "05a8283d-51f1-4649-9005-7c25bdb096af")
 		)
 		(fp_line
 			(start 9.0678 3.504001)
@@ -28638,7 +28627,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "b1b05a69-c05c-4ff8-86f0-7400e167bfd2")
+			(uuid "7c0bfa63-ae5c-480b-8719-770aa951536a")
 		)
 		(fp_line
 			(start -1.4478 -3.353999)
@@ -28648,7 +28637,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "76aa4f92-f884-428c-8c8e-e747516448d3")
+			(uuid "8e91d11f-3eb9-4d45-86eb-321721a2d6ad")
 		)
 		(fp_line
 			(start 9.0678 -3.353999)
@@ -28658,7 +28647,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "b42fdee0-7cd6-4ddd-8fc6-00df6a8334b9")
+			(uuid "3997cb37-fde7-4943-bb4d-2a0d56a62a31")
 		)
 		(fp_line
 			(start -1.1938 3.250001)
@@ -28668,7 +28657,7 @@
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "1b9b5ec1-28cc-4aef-a667-deabbf7f0eeb")
+			(uuid "b912742f-8d2c-49ef-814c-180a56b99a68")
 		)
 		(fp_line
 			(start 8.8138 3.250001)
@@ -28678,7 +28667,7 @@
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "c18de0de-1732-44b1-a387-1624ea3ee251")
+			(uuid "35d23db8-e0a3-4feb-a89c-b50b7397588c")
 		)
 		(fp_line
 			(start -1.1938 -3.099999)
@@ -28688,7 +28677,7 @@
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "0da6ae53-3655-499b-833b-fac876b7e693")
+			(uuid "2f0c6afc-2137-4c4a-805a-14e00d7e38e3")
 		)
 		(fp_line
 			(start 8.8138 -3.099999)
@@ -28698,7 +28687,7 @@
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "6c1bbfe0-bd01-4383-a50c-8c5bdec5e00f")
+			(uuid "d0323da8-0021-47c5-aa9a-e13faaef9a49")
 		)
 		(fp_circle
 			(center 0 -1.905)
@@ -28709,7 +28698,7 @@
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "98454d6d-b00f-40c7-8858-f452d6333b96")
+			(uuid "b81e15c8-a74c-4ae0-8501-3b1a5fa3389b")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 3.81 0 270)
@@ -28768,17 +28757,6 @@
 			(uuid "16e311a1-45d6-4d1c-9c16-31cfce8fe040")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/Libraries/022112042.stp"
-			(offset
-				(xyz 3.7 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz -90 -0 -0)
-			)
-		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 		(layer "F.Cu")
@@ -44042,17 +44020,6 @@
 				)
 			)
 		)
-		(fp_text user "*"
-			(at -4.6482 -10.3759 0)
-			(layer "F.SilkS")
-			(uuid "9bc2762f-a93c-42a8-ba6f-449703130c6f")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(fp_text user "OFF"
 			(at -6.8628 -10.61 0)
 			(unlocked yes)
@@ -44065,7 +44032,7 @@
 				)
 			)
 		)
-		(fp_text user "*"
+		(fp_text user "•"
 			(at -4.6482 -10.3759 0)
 			(unlocked yes)
 			(layer "F.SilkS")
@@ -44073,7 +44040,8 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
+					(thickness 0.2)
+					(bold yes)
 				)
 			)
 		)
@@ -63093,6 +63061,19 @@
 			(font
 				(size 5 5)
 				(thickness 0.8)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "V12 GND GND V5"
+		(at 213.02 143.08 90)
+		(layer "F.SilkS")
+		(uuid "12823ed4-8b5c-4039-9f26-d65ca5b1ab26")
+		(effects
+			(font
+				(size 1 0.8)
+				(thickness 0.2)
+				(bold yes)
 			)
 			(justify left bottom)
 		)
