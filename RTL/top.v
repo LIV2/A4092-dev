@@ -30,13 +30,13 @@ module A4092(
     input NCR_INT,
     input SREG,
     input ROM_OE,
-    input SBR,
-    input SBG,
+    input SBR_n,
+    input SBG_n,
     input CBREQ,
     input BERR_n,
     input BGn,
     input BRn,
-    input Z_FCS,
+    //input Z_FCS,
     input LOCK,
     inout DTACK_n,
     output MTACK_n,
@@ -373,5 +373,22 @@ buffer_control BUFFER_CONTROL (
   .D2Z_n(D2Z_n_int),
   .Z2D_n(Z2D_n_int)
 );
+
+wire FCS = ~FCS_n;
+wire DTACK = ~DTACK_n;
+wire RST = ~IORST_n;
+
+zorro_master_arbiter ZMA (
+    .CLK(CLK),
+    .RESET_n(IORST_n),
+    .FCS(FCS),
+    .DTACK(DTACK),
+    .RST(RST),
+    .SBR_n(SBR_n),
+    .MASTER(MASTER),
+    .SBG_n(SBG_n),
+    .BMASTER(BMASTER)
+);
+
 
 endmodule
