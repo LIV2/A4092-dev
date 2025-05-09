@@ -12978,7 +12978,7 @@
 		(dnp no)
 		(uuid "540f9223-09a0-4af7-a58b-93c58f519861")
 		(property "Reference" "C1101"
-			(at 18.796 80.518 0)
+			(at 17.272 78.994 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13480,7 +13480,7 @@
 		(dnp no)
 		(uuid "6f44f4b9-2b5d-43a3-8cfd-61e540dd48c5")
 		(property "Reference" "C1202"
-			(at 22.86 46.228 0)
+			(at 24.13 44.196 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13497,7 +13497,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:CP_Elec_4x5.7"
+		(property "Footprint" "Capacitor_Tantalum_SMD:CP_EIA-3216-10_Kemet-I_HandSolder"
 			(at 26.67 48.26 0)
 			(effects
 				(font
@@ -13549,7 +13549,7 @@
 		(dnp no)
 		(uuid "74b79735-2951-454e-b2aa-3957292bf1d8")
 		(property "Reference" "C1102"
-			(at 22.86 80.518 0)
+			(at 23.876 78.994 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13566,7 +13566,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:CP_Elec_4x5.7"
+		(property "Footprint" "Capacitor_Tantalum_SMD:CP_EIA-3216-10_Kemet-I_HandSolder"
 			(at 26.67 82.55 0)
 			(effects
 				(font
@@ -14517,7 +14517,7 @@
 		(dnp no)
 		(uuid "e5c8c191-836c-4b5b-920d-8405f83627dd")
 		(property "Reference" "C1201"
-			(at 18.796 46.228 0)
+			(at 17.272 44.196 0)
 			(effects
 				(font
 					(size 1.27 1.27)
