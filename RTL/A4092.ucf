@@ -1,8 +1,8 @@
 # P1 - VCCIO
 # P2 - NC
-NET "ROM_CE"      LOC = "P3";
-NET "ROM_WE"      LOC = "P4";
-NET "ROM_OE"      LOC = "P5";
+NET "ROM_CE_n"      LOC = "P3";
+NET "ROM_WE_n"      LOC = "P4";
+NET "ROM_OE_n"      LOC = "P5";
 NET "A<0>"     LOC = "P6";
 NET "A<1>"     LOC = "P7";
 # P8 - VCCINT
@@ -84,9 +84,9 @@ NET "DS_n<1>"     LOC = "P79";
 NET "DS_n<2>"     LOC = "P80";
 NET "DS_n<3>"     LOC = "P81";
 # P82 - NC
-NET "SBR"         LOC = "P83";
+NET "SBR_n"         LOC = "P83";
 # P84 - VCCINT
-NET "SBG"         LOC = "P85";
+NET "SBG_n"         LOC = "P85";
 NET "CBACK_n"     LOC = "P86";
 NET "CBREQ"       LOC = "P87";
 NET "BERR_n"      LOC = "P88";

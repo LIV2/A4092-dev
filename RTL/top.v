@@ -14,9 +14,8 @@ module A4092(
     input READ,
     input [1:0] SIZ,
     input NACK,
-    output INT_n,
     output SID_n,
-    input [31:0] D, // Only [8:0] and [31:24] are used
+    inout [31:0] D, // Only [8:0] and [31:24] are used
     output reg CLK,
     output BMASTER,
     output DBLT,
@@ -29,7 +28,6 @@ module A4092(
     input SLACK,
     input NCR_INT,
     input SREG,
-    input ROM_OE,
     input SBR_n,
     output SBG_n,
     input CBREQ,
@@ -46,10 +44,12 @@ module A4092(
     output SLAVE_n,
     input SENSEZ3,
     output CINH_n,
-    output ROM_WE_n,
     output MTCR_n,
     output CBACK_n,
-    output STERM_n
+    output STERM_n,
+    output ROM_OE_n,
+    output ROM_CE_n,
+    output ROM_WE_n
     );
 
 `include "globalparams.vh"
@@ -160,7 +160,8 @@ begin
       Z3_IDLE:
         begin
           dtack <= 0;
-          if (!FCS_n_sync[1] && match && validspace) begin
+          if (!FCS_n_sync[1] && match && validspace & BMASTER) begin
+          //if (!FCS_n_sync[1] && match && validspace) begin
             z3_state         <= Z3_START;
             autoconfig_cycle <= autoconfig_addr_match;
             scsi_cycle        <= scsi_addr_match;
@@ -299,10 +300,10 @@ assign DBLT_int = !BMASTER && !MASTER && configured && !READ && !slave_cycle && 
 
 assign DBLT = DBLT_int;
 
-assign INT_n    = INT_n_int;           // forwarded from intreg_access
+//assign INT_n    = INT_n_int;           // forwarded from intreg_access
 assign DTACK_n  = dtack ? 1'b0 : 1'bz; // tri-state DTACK when not driven
 
-assign INT2_n = INT_n || ~SREG;
+assign INT2_n = INT_n_int || ~SREG;
 
 assign SLAVE_n  = !(slave_cycle && configured);
 assign CFGOUT_n = autoconfig_cfgout;
@@ -362,7 +363,7 @@ intreg_access INTREG_ACCESS (
   .configured(configured),
   .NCR_INT(NCR_INT),
   .int_dtack(int_dtack),
-  .INT_n(INT_n),
+  .INT_n(INT_n_int),
   .DOUT(intreg_dout),
   .MTCR_n(MTCR_n_int),
   .CBACK_n(CBACK_n_int),
