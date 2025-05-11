@@ -18,7 +18,7 @@ module A4092(
     output SID_n,
     input [31:0] D, // Only [8:0] and [31:24] are used
     output reg CLK,
-    input BMASTER,
+    output BMASTER,
     output DBLT,
     output DBOE_n,
     output ABOEL_n,
@@ -31,7 +31,7 @@ module A4092(
     input SREG,
     input ROM_OE,
     input SBR_n,
-    input SBG_n,
+    output SBG_n,
     input CBREQ,
     input BERR_n,
     input BGn,
@@ -55,13 +55,12 @@ module A4092(
 `include "globalparams.vh"
 
 // clocks
-wire CLKI      // inverted 25 MHz
+wire CLKI;      // inverted 25 MHz
 
 always @(posedge CLK_50M)
   CLK <= ~CLK; // 25MHz 50% duty cycle
 
 assign CLKI = ~CLK; // inverted clock
-
 
 // Synchronizers
 reg [1:0] DS0_n_sync;
@@ -90,6 +89,7 @@ end
 // Address latching
 reg [27:8] ADDR;
 reg autoconfig_addr_match;
+wire [3:0] scsi_base_addr;
 reg scsi_addr_match;
 wire match = autoconfig_addr_match || scsi_addr_match;
 wire configured;
@@ -144,6 +144,9 @@ wire D2Z_n_int;
 wire Z2D_n_int;
 // dblt
 wire DBLT_int;
+wire INT_n_int;
+
+wire slave_cycle = !MASTER && !BMASTER;
 
 always @(posedge CLK or negedge IORST_n)
 begin
@@ -207,7 +210,6 @@ end
 
 
 // Autoconf
-wire [3:0] scsi_base_addr;
 wire [3:0] autoconfig_dout;
 wire autoconfig_cfgout;
 
@@ -244,7 +246,7 @@ scsi_access SCSI_ACCESS (
   .ADDR(full_addr),
   .READ(READ),
   .FCS_n(FCS_n_sync[1]),
-  .slave_cycle(!MASTER && !BMASTER),
+  .slave_cycle(slave_cycle),
   .configured(configured),
   .scsi_dtack(scsi_dtack)
 );
@@ -255,7 +257,7 @@ rom_access ROM_ACCESS (
   .ADDR(ADDR),
   .READ(READ),
   .FCS_n(FCS_n_sync[1]),
-  .slave_cycle(!MASTER && !BMASTER), // or use a named wire `slave_cycle`
+  .slave_cycle(slave_cycle),
   .configured(configured),
   .shutup(shutup),
 
@@ -272,7 +274,7 @@ sid_access SID_ACCESS (
   .ADDR({ADDR, A[7:0]}),
   .READ(READ),
   .FCS_n(FCS_n_sync[1]),
-  .slave_cycle(!MASTER && !BMASTER),
+  .slave_cycle(slave_cycle),
   .configured(configured),
   .sid_dtack(sid_dtack),
   .SID_n(SID_n)
@@ -291,6 +293,7 @@ assign ABOEL_n = ABOEL_n_int;
 assign ABOEH_n = ABOEH_n_int;
 assign D2Z_n   = D2Z_n_int;
 assign Z2D_n   = Z2D_n_int;
+
 
 assign DBLT_int = !BMASTER && !MASTER && configured && !READ && !slave_cycle && !FCS_n_sync[1] && !LOCK;
 
@@ -321,8 +324,8 @@ end
 assign AS_n = ASQ;
 
 // SCSI Data Strobes
-wire A1 = ADDR[2];
-wire A0 = ADDR[1];
+wire A1 = A[2];
+wire A0 = A[1];
 wire SIZ1 = SIZ[1];
 wire SIZ0 = SIZ[0];
 
@@ -355,7 +358,7 @@ intreg_access INTREG_ACCESS (
   .ADDR({ADDR, A[7:0]}),
   .READ(READ),
   .FCS_n(FCS_n_sync[1]),
-  .slave_cycle(!MASTER && !BMASTER),
+  .slave_cycle(slave_cycle),
   .configured(configured),
   .NCR_INT(NCR_INT),
   .int_dtack(int_dtack),
@@ -370,7 +373,7 @@ buffer_control BUFFER_CONTROL (
   .CLK(CLK),
   .RESET_n(IORST_n),
   .READ(READ),
-  .slave_cycle(!MASTER && !BMASTER),
+  .slave_cycle(slave_cycle),
   .configured(configured),
   .BMASTER(BMASTER),
   .MASTER(MASTER),
