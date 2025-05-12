@@ -4,6 +4,7 @@ module intreg_access (
     input wire CLK,
     input wire RESET_n,
     input wire [27:0] ADDR,
+    input wire LOCK, // real A1/Lock signal
     input wire READ,
     input wire FCS_n,
     input wire slave_cycle,
@@ -19,11 +20,11 @@ module intreg_access (
 );
 
 // INTREG = 0x900000, INTVEC = 0x900004
-wire match_intreg = slave_cycle && configured && (ADDR[27:1] == (28'h900000 >> 1));
-wire match_intvec = slave_cycle && configured && (ADDR[27:1] == (28'h900004 >> 1));
-wire match_mtcr   = slave_cycle && configured && (ADDR[27:1] == (28'h900008 >> 1));
-wire match_cback  = slave_cycle && configured && (ADDR[27:1] == (28'h90000C >> 1));
-wire match_sterm  = slave_cycle && configured && (ADDR[27:1] == (28'h900010 >> 1));
+wire match_intreg = slave_cycle && configured && !LOCK && (ADDR[27:1] == (28'h900000 >> 1));
+wire match_intvec = slave_cycle && configured && !LOCK && (ADDR[27:1] == (28'h900004 >> 1));
+wire match_mtcr   = slave_cycle && configured && !LOCK && (ADDR[27:1] == (28'h900008 >> 1));
+wire match_cback  = slave_cycle && configured && !LOCK && (ADDR[27:1] == (28'h90000C >> 1));
+wire match_sterm  = slave_cycle && configured && !LOCK && (ADDR[27:1] == (28'h900010 >> 1));
 
 assign MTCR_n  = !(match_mtcr  && !FCS_n);
 assign CBACK_n = !(match_cback && !FCS_n);
