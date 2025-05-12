@@ -34,7 +34,7 @@ module A4092(
     input BERR_n,
     input BGn,
     input BRn,
-    //input Z_FCS,
+    input Z_FCS,
     input LOCK,
     inout DTACK_n,
     output MTACK_n,
@@ -69,6 +69,7 @@ reg [1:0] DS2_n_sync;
 reg [1:0] DS3_n_sync;
 reg [1:0] FCS_n_sync;
 
+// XXX Does this need to be unbuffered FCS?
 always @(posedge CLK or negedge IORST_n)
 begin
   if (!IORST_n) begin
@@ -388,7 +389,7 @@ buffer_control BUFFER_CONTROL (
   .Z2D_n(Z2D_n_int)
 );
 
-wire FCS = ~FCS_n;
+wire FCS = Z_FCS;
 wire DTACK = ~DTACK_n;
 wire RST = ~IORST_n;
 
