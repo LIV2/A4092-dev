@@ -13,7 +13,6 @@ module A4092(
     output DOE,
     input READ,
     input [1:0] SIZ,
-    input NACK,
     output SID_n,
     inout [31:0] D, // Only [8:0] and [31:24] are used
     output reg CLK,
@@ -24,13 +23,13 @@ module A4092(
     output ABOEH_n,
     output D2Z_n,
     output Z2D_n,
-    output reg MASTER,
-    input SLACK,
-    input NCR_INT,
+    output reg MASTER_n,
+    input SLACK_n,
+    input SINT_n,
     input SREG,
     input SBR_n,
     output SBG_n,
-    input CBREQ,
+    input CBREQ_n,
     input BERR_n,
     input BGn,
     input BRn,
@@ -105,7 +104,7 @@ begin
     scsi_addr_match       <= 0;
     autoconfig_addr_match <= 0;
   end else begin
-    MASTER <= READ; // CEAB for address bits
+    MASTER_n <= READ; // CEAB for address bits
     ADDR[27:8] <= A[27:8];
 
     if (A[31:28] == scsi_base_addr && configured) begin
@@ -146,7 +145,7 @@ wire Z2D_n_int;
 wire DBLT_int;
 wire INT_n_int;
 
-wire slave_cycle = !MASTER && !BMASTER;
+wire slave_cycle = !MASTER_n && !BMASTER;
 
 always @(posedge CLK or negedge IORST_n)
 begin
@@ -296,7 +295,7 @@ assign D2Z_n   = D2Z_n_int;
 assign Z2D_n   = Z2D_n_int;
 
 
-assign DBLT_int = !BMASTER && !MASTER && configured && !READ && !slave_cycle && !FCS_n_sync[1] && !LOCK;
+assign DBLT_int = !BMASTER && !MASTER_n && configured && !READ && !slave_cycle && !FCS_n_sync[1] && !LOCK;
 
 assign DBLT = DBLT_int;
 
@@ -377,7 +376,7 @@ buffer_control BUFFER_CONTROL (
   .slave_cycle(slave_cycle),
   .configured(configured),
   .BMASTER(BMASTER),
-  .MASTER(MASTER),
+  .MASTER_n(MASTER_n),
   .ADDR({ADDR, A[7:0]}),
   .FCS_n(FCS_n_sync[1]),
   .DBOE_n(DBOE_n_int),
@@ -392,7 +391,7 @@ wire DTACK = ~DTACK_n;
 wire RST = ~IORST_n;
 
 zorro_master_arbiter ZMA (
-    .CLK(CLK),
+    .CLK(Z_7M), // 7M
     .RESET_n(IORST_n),
     .FCS(FCS),
     .DTACK(DTACK),

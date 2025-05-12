@@ -7,7 +7,7 @@ module buffer_control (
     input wire slave_cycle,
     input wire configured,
     input wire BMASTER,
-    input wire MASTER,
+    input wire MASTER_n,
     input wire [27:0] ADDR,
     input wire FCS_n,
 
