@@ -29456,6 +29456,17 @@
 			(uuid "16e311a1-45d6-4d1c-9c16-31cfce8fe040")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Libraries/022112042.stp"
+			(offset
+				(xyz 3.8 0 1.6)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 		(layer "F.Cu")

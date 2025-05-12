@@ -240,4 +240,15 @@
 		(uuid "cb753551-8ae5-498d-ad60-d79536a91cac")
 	)
 	(embedded_fonts no)
+	(model "${KIPRJMOD}/Libraries/022112042.stp"
+		(offset
+			(xyz 3.8 0 1.6)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -0 -0)
+		)
+	)
 )
