@@ -15,6 +15,7 @@ module A4092(
     input READ,
     input [1:0] SIZ,
     output SID_n,
+    output DIP_EXT_TERM,
     inout [31:0] D, // Only [8:0] and [31:24] are used
     output reg CLK,
     output BMASTER,
@@ -270,11 +271,20 @@ rom_access ROM_ACCESS (
   .ROM_WE_n(ROM_WE_n)
 );
 
+`ifndef USE_DIP_SWITCH
+wire [7:0] dip_shadow;
+`endif
+
 sid_access SID_ACCESS (
   .CLK(CLK),
   .RESET_n(IORST_n),
   .ADDR({ADDR, A[7:0]}),
   .READ(READ),
+`ifndef USE_DIP_SWITCH
+  .DIN(D[31:24]),
+  .DOUT(dip_shadow),
+  .dip_ext_term(DIP_EXT_TERM),
+`endif
   .FCS_n(FCS_n_sync[1]),
   .slave_cycle(slave_cycle),
   .configured(configured),
@@ -286,9 +296,12 @@ assign MTCR_n  = MTCR_n_int;
 assign CBACK_n = CBACK_n_int;
 assign STERM_n = STERM_n_int;
 
-assign D[31:28] = (autoconfig_cycle) ? autoconfig_dout :
+assign D[31:24] = (autoconfig_cycle) ? autoconfig_dout :
                   (int_dtack)        ? intreg_dout     :
-                  4'hF;
+`ifndef USE_DIP_SWITCH
+                  (sid_dtack) ? dip_shadow :
+`endif
+                  8'hFF;
 
 assign DBOE_n  = DBOE_n_int;
 assign ABOEL_n = ABOEL_n_int;

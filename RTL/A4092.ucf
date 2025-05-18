@@ -51,7 +51,7 @@ NET "SIZ<1>"      LOC = "P44";
 # P47 - GND
 NET "MTCR_n"      LOC = "P48";
 NET "SID_n"       LOC = "P49";
-# P50 - NC
+NET "DIP_EXT_TERM" LOC = "P50";
 # P51 - NC
 # P52 - NC
 # P53 - NC

@@ -10,6 +10,15 @@ CPLDFITFLAGS=-loc on -slew slow -init low -terminate keeper  -unused ground -pow
 
 .PHONY:	all clean timing
 
+# default is DIP switch, not FLASH
+#USE_DIP_SWITCH ?= 1
+# default is FLASH
+USE_DIP_SWITCH ?= 0
+
+ifeq ($(USE_DIP_SWITCH),1)
+  DEFINES += USE_DIP_SWITCH
+endif
+
 all:	$(PROJECT).jed timing
 
 $(PROJECT).prj: *.v
