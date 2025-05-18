@@ -8986,10 +8986,6 @@
 		(uuid "b037ec87-1bd3-4e0b-8218-e39a7dac43a6")
 	)
 	(no_connect
-		(at 3.81 114.3)
-		(uuid "b1997082-7bcd-4b9b-bec3-b94a451b9901")
-	)
-	(no_connect
 		(at 86.36 21.59)
 		(uuid "ba59f20e-9dec-452f-81bf-f9dae52bced4")
 	)
