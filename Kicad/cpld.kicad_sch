@@ -4723,10 +4723,6 @@
 		(uuid "30deb223-478c-461b-89de-0c12ef596fa3")
 	)
 	(no_connect
-		(at 34.29 137.16)
-		(uuid "4b12d133-0831-4060-a85d-fa91dadb56d1")
-	)
-	(no_connect
 		(at 100.33 38.1)
 		(uuid "79740ee3-36ff-45af-9a71-bba11f864f9d")
 	)
@@ -6334,6 +6330,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PLD_EXT_TERM"
+		(shape input)
+		(at 34.29 137.16 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "737d7c4c-d764-4e2b-9f77-8626d660e0fc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 17.6374 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
