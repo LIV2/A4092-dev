@@ -12630,6 +12630,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C6602097"
+			(at 40.64 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d5bce37f-582e-40d1-ac9f-6723cfb451cf")
 		)
@@ -12813,7 +12822,7 @@
 				)
 			)
 		)
-		(property "Footprint" "kicad-official/Resistor_SMD.pretty:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 88.9 151.13 0)
 			(effects
 				(font
@@ -13217,7 +13226,7 @@
 				)
 			)
 		)
-		(property "Footprint" "kicad-official/Resistor_SMD.pretty:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 95.25 154.94 0)
 			(effects
 				(font
@@ -13583,6 +13592,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C6602097"
+			(at 40.64 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2e9c1a4c-2720-44d4-815e-38c5e78e3c36")
 		)
@@ -13905,6 +13923,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C7189"
+			(at 26.67 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "06162163-6798-46e1-aff4-6b899b6da5c7")
 		)
@@ -13966,6 +13993,15 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small symbol"
+			(at 26.67 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C7189"
 			(at 26.67 82.55 0)
 			(effects
 				(font
@@ -14819,6 +14855,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C543080"
+			(at 24.13 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "23a68a90-7595-46e5-9af6-fdb14e7cc1b3")
 		)
@@ -15410,6 +15455,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C7494769"
+			(at 270.51 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4a0be699-111c-4a8d-a4a1-175404dc1b6a")
 		)
@@ -15904,6 +15958,15 @@
 		)
 		(property "Description" "Generic connector, double row, 02x25, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 127 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C7494769"
+			(at 127 34.29 90)
 			(effects
 				(font
 					(size 1.27 1.27)
