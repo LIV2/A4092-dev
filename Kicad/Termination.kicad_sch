@@ -12048,7 +12048,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "0b5b2964-c262-4e60-bb36-4922f9c7491d")
 		(property "Reference" "RN4"
 			(at 110.744 102.87 90)
@@ -12143,6 +12143,15 @@
 					(size 1.27 1.27)
 				)
 				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C784824"
+			(at 123.19 106.68 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 				(hide yes)
 			)
 		)
@@ -12345,6 +12354,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C2662010"
+			(at 107.95 59.69 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0409fb4c-6d94-4bc5-be1b-0d76e55ccc58")
 		)
@@ -12541,6 +12559,15 @@
 					(size 1.27 1.27)
 				)
 				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C2662010"
+			(at 205.74 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 				(hide yes)
 			)
 		)
@@ -12764,6 +12791,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" ""
+			(at 242.57 80.01 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "8"
 			(uuid "f1e702d2-1f3a-4a2c-8297-f4f475b3d6ea")
 		)
@@ -12842,6 +12878,15 @@
 		)
 		(property "Description" "Resistor, small symbol"
 			(at 88.9 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" ""
+			(at 88.9 151.13 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13030,6 +13075,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C2662010"
+			(at 205.74 110.49 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b0816b35-6953-4214-b737-5e0c4e4fffa4")
 		)
@@ -13070,7 +13124,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "43222bf4-30a6-4011-9cbc-ac5ded070ff7")
 		(property "Reference" "RN5"
 			(at 143.256 102.616 90)
@@ -13168,6 +13222,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C784824"
+			(at 137.16 106.68 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "a2ebed33-e254-447a-988f-83831217f9ca")
 		)
@@ -13253,6 +13316,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" ""
+			(at 95.25 154.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bf847b3d-4852-4573-8a67-e3cede169c41")
 		)
@@ -13318,6 +13390,15 @@
 		)
 		(property "Description" ""
 			(at 240.03 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" ""
+			(at 240.03 118.11 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13412,6 +13493,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C14663"
+			(at 21.59 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bc72e516-3c49-46bf-a94c-8b0749e7c25f")
 		)
@@ -13434,7 +13524,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "6082e927-e443-4b51-8b17-9667c76dd140")
 		(property "Reference" "SW1"
@@ -13474,6 +13564,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 142.24 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" ""
 			(at 142.24 123.19 0)
 			(effects
 				(font
@@ -13836,6 +13935,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C2662010"
+			(at 205.74 124.46 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "e5ce3642-d1f0-40c8-8832-e446fa679f22")
 		)
@@ -14081,6 +14189,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" ""
+			(at 224.79 38.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "77778cf1-ecb7-4229-85c8-3952cf9f9d4c")
 		)
@@ -14277,6 +14394,15 @@
 					(size 1.27 1.27)
 				)
 				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C2662010"
+			(at 146.05 59.69 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 				(hide yes)
 			)
 		)
@@ -14479,6 +14605,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C2662010"
+			(at 121.92 59.69 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "5a8b2ad8-aa6e-46d4-a59d-2b8b58269324")
 		)
@@ -14561,6 +14696,15 @@
 		)
 		(property "Description" ""
 			(at 237.49 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" ""
+			(at 237.49 38.1 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14767,6 +14911,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C2662010"
+			(at 205.74 58.42 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c1000237-b7cb-46e7-9068-9d5c6692fe7f")
 		)
@@ -14807,7 +14960,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "cf989a0f-45c1-4ded-80fb-2969ea75c267")
 		(property "Reference" "U8"
@@ -14979,6 +15132,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 21.59 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C14663"
 			(at 21.59 48.26 0)
 			(effects
 				(font
@@ -15165,6 +15327,15 @@
 					(size 1.27 1.27)
 				)
 				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C2662010"
+			(at 173.99 59.69 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 				(hide yes)
 			)
 		)
@@ -15364,6 +15535,15 @@
 					(size 1.27 1.27)
 				)
 				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C2662010"
+			(at 160.02 59.69 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 				(hide yes)
 			)
 		)
@@ -15789,6 +15969,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C2662010"
+			(at 205.74 72.39 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "6f214614-81d3-4b0b-b9f6-7539921fc9c3")
 		)
@@ -15871,6 +16060,15 @@
 		)
 		(property "Description" ""
 			(at 242.57 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" ""
+			(at 242.57 118.11 90)
 			(effects
 				(font
 					(size 1.27 1.27)

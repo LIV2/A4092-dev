@@ -7859,7 +7859,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "20e8de50-f8cc-436a-87eb-6ca9bcd6b5a6")
 		(property "Reference" "J2"
@@ -7898,6 +7898,15 @@
 		)
 		(property "Description" "Generic connector, single row, 01x06, script generated"
 			(at 166.37 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C6332199"
+			(at 166.37 25.4 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7987,6 +7996,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C14663"
+			(at 157.48 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "99f88726-05f9-4617-8991-6255df79c92a")
 		)
@@ -8049,6 +8067,15 @@
 			)
 		)
 		(property "Description" "CPLD, 144 Macrocells, 3200 Usable Gates"
+			(at 67.31 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C1521137"
 			(at 67.31 104.14 0)
 			(effects
 				(font
@@ -8553,6 +8580,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" ""
+			(at 160.02 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "edb159ba-acba-4a04-8de4-61300b16346f")
 		)
@@ -8615,6 +8651,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 177.8 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C14663"
 			(at 177.8 68.58 0)
 			(effects
 				(font
@@ -8693,6 +8738,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C14663"
+			(at 176.53 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6930d252-ecbb-4732-828b-1382db68b4ab")
 		)
@@ -8753,6 +8807,15 @@
 		)
 		(property "Description" "Ferrite bead, small symbol"
 			(at 111.76 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" ""
+			(at 111.76 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8822,6 +8885,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 157.48 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C14663"
 			(at 157.48 59.69 0)
 			(effects
 				(font
@@ -8900,6 +8972,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C14663"
+			(at 186.69 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "558d7330-ac44-4e73-a192-88cded744432")
 		)
@@ -8962,6 +9043,15 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small symbol"
+			(at 184.15 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" ""
 			(at 184.15 97.79 0)
 			(effects
 				(font
@@ -9037,6 +9127,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" ""
+			(at 111.76 154.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b1c1eb1e-a6d9-4bca-98e2-f89baf967a5d")
 		)
@@ -9097,6 +9196,15 @@
 		)
 		(property "Description" "Ferrite bead, small symbol"
 			(at 111.76 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" ""
+			(at 111.76 144.78 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9174,6 +9282,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C14663"
+			(at 167.64 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c67bb950-fde6-4700-9e9d-647320b4f2ed")
 		)
@@ -9242,6 +9359,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C6186"
+			(at 173.99 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "f43d2ef4-2083-4dda-9a07-a8eac19019b2")
 		)
@@ -9286,7 +9412,7 @@
 				)
 			)
 		)
-		(property "Footprint" "YC324-FK-071KL:RESCAXS127P508X320X70-8N"
+		(property "Footprint" "CAY16_102J4LF:BO_CAY16"
 			(at 185.42 35.56 0)
 			(effects
 				(font
@@ -9361,6 +9487,15 @@
 					(size 1.27 1.27)
 				)
 				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C327044"
+			(at 185.42 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 				(hide yes)
 			)
 		)
@@ -9444,6 +9579,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 167.64 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C14663"
 			(at 167.64 68.58 0)
 			(effects
 				(font

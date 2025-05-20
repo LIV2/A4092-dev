@@ -15948,6 +15948,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C784824"
+			(at 259.08 118.11 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c213acde-0a5e-4ef1-b3b6-7814438fb642")
 		)
@@ -16087,6 +16096,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C784824"
+			(at 278.13 118.11 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0411846e-6b03-41ae-be8a-da23f75db018")
 		)
@@ -16167,6 +16185,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 125.73 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C2865087"
 			(at 125.73 114.3 0)
 			(effects
 				(font
@@ -16772,6 +16799,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C2865087"
+			(at 27.94 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "53"
 			(uuid "cf6bb4cf-347f-4389-b55f-57abf5911530")
 		)
@@ -16996,6 +17032,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 27.94 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C2865087"
 			(at 27.94 114.3 0)
 			(effects
 				(font
@@ -17295,6 +17340,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 43.18 219.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C6051"
 			(at 43.18 219.71 0)
 			(effects
 				(font
@@ -17724,7 +17778,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "b610fc22-e90b-49a9-abd7-68d88886b77d")
 		(property "Reference" "C5"
@@ -17893,6 +17947,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C784824"
+			(at 260.35 165.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "66cb4ff1-c280-48c3-8fe4-9959cf4724e6")
 		)
@@ -17973,6 +18036,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 237.49 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C130197"
 			(at 237.49 26.67 0)
 			(effects
 				(font
@@ -18248,6 +18320,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 125.73 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C2865087"
 			(at 125.73 26.67 0)
 			(effects
 				(font
