@@ -15597,7 +15597,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C100042"
 			(at 234.95 129.54 0)
 			(effects
 				(font
@@ -15991,7 +15991,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C100042"
 			(at 165.1 46.99 0)
 			(effects
 				(font
@@ -16155,7 +16155,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C965821"
 			(at 186.69 146.05 0)
 			(effects
 				(font
@@ -16537,7 +16537,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C100042"
 			(at 182.88 67.31 0)
 			(effects
 				(font
@@ -16848,7 +16848,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C100042"
 			(at 199.39 46.99 0)
 			(effects
 				(font
@@ -17028,7 +17028,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "b24abe1c-24e8-4aaa-988e-707e9721aacc")
 		(property "Reference" "R13"
 			(at 225.298 90.678 0)
@@ -17311,7 +17311,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C9900133089"
 			(at 133.35 55.88 0)
 			(effects
 				(font
@@ -17941,7 +17941,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C114662"
 			(at 191.77 146.05 90)
 			(effects
 				(font
@@ -18099,7 +18099,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C100042"
 			(at 182.88 26.67 0)
 			(effects
 				(font
@@ -18178,7 +18178,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C9900133089"
 			(at 58.42 58.42 0)
 			(effects
 				(font

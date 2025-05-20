@@ -1607,12 +1607,6 @@
 		(uuid "33c1a697-7332-453e-8967-5e265d62b0de")
 	)
 	(junction
-		(at 39.37 53.34)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "36ce650c-fa98-41ce-928e-43e71d7b8415")
-	)
-	(junction
 		(at 49.53 39.37)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1623,12 +1617,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "406aa243-15ad-44a2-922c-361f8f51bcc1")
-	)
-	(junction
-		(at 39.37 58.42)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4d93d979-bb43-41be-b572-03b025255cd9")
 	)
 	(junction
 		(at 95.25 43.18)
@@ -1842,16 +1830,6 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 58.42) (xy 39.37 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "435979c9-70a7-4e31-b1b6-eeef3604c720")
-	)
-	(wire
-		(pts
 			(xy 29.21 44.45) (xy 39.37 44.45)
 		)
 		(stroke
@@ -1919,16 +1897,6 @@
 			(type default)
 		)
 		(uuid "58a04e89-c3c3-481f-9456-46a9afb605e7")
-	)
-	(wire
-		(pts
-			(xy 29.21 53.34) (xy 39.37 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "591b2d59-0277-431d-a5db-4a6e488d22fd")
 	)
 	(wire
 		(pts
@@ -2049,16 +2017,6 @@
 			(type default)
 		)
 		(uuid "8e3df9be-a616-470a-8ee6-9b01583038e4")
-	)
-	(wire
-		(pts
-			(xy 39.37 53.34) (xy 49.53 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "987c4cc7-3740-4954-9d87-ed3378fc60ed")
 	)
 	(wire
 		(pts
@@ -2202,16 +2160,6 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 58.42) (xy 49.53 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e5c5fd75-7d50-418c-9eb1-45b472300f57")
-	)
-	(wire
-		(pts
 			(xy 124.46 26.67) (xy 132.08 26.67)
 		)
 		(stroke
@@ -2289,28 +2237,6 @@
 			(type default)
 		)
 		(uuid "ff221a1e-0924-4965-b210-b4995608a1bf")
-	)
-	(global_label "GND"
-		(shape input)
-		(at 49.53 58.42 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "052717ca-ece8-4937-91a0-bd46bca0ba19")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 49.53 65.2757 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
 	)
 	(global_label "GND"
 		(shape input)
@@ -2994,28 +2920,6 @@
 			)
 		)
 	)
-	(global_label "V5"
-		(shape input)
-		(at 29.21 53.34 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "e8e7f69f-e84f-4b18-973f-0d2e8d76610e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 23.9267 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(symbol
 		(lib_id "Device:C_Small")
 		(at 74.93 40.64 0)
@@ -3070,7 +2974,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C14663"
 			(at 74.93 40.64 0)
 			(effects
 				(font
@@ -3228,7 +3132,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C14663"
 			(at 95.25 40.64 0)
 			(effects
 				(font
@@ -3307,7 +3211,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C14663"
 			(at 39.37 41.91 0)
 			(effects
 				(font
@@ -3405,85 +3309,6 @@
 			(project "A4092"
 				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/166c366c-e5f9-4398-87d9-75fc4b57be99"
 					(reference "C603")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Small")
-		(at 29.21 55.88 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "21ec35f0-96d4-480c-b07a-5e120a72c7df")
-		(property "Reference" "C30"
-			(at 31.75 54.6162 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nF"
-			(at 31.75 57.1562 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
-			(at 29.21 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 29.21 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 29.21 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part #" ""
-			(at 29.21 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "006781ed-b879-43a3-bad4-0bbee69602e3")
-		)
-		(pin "2"
-			(uuid "66cce141-fae4-4939-b155-cfbe55e37eaf")
-		)
-		(instances
-			(project "A4092"
-				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/166c366c-e5f9-4398-87d9-75fc4b57be99"
-					(reference "C30")
 					(unit 1)
 				)
 			)
@@ -3699,7 +3524,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C14663"
 			(at 29.21 41.91 0)
 			(effects
 				(font
@@ -3813,85 +3638,6 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 49.53 55.88 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4bc0db3a-ee95-426e-a80f-6b302fd582f9")
-		(property "Reference" "C20"
-			(at 52.07 54.6162 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nF"
-			(at 52.07 57.1562 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
-			(at 49.53 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 49.53 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 49.53 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part #" ""
-			(at 49.53 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "dc49cc15-c4ef-47be-9f5f-11599a77e6d4")
-		)
-		(pin "1"
-			(uuid "a26008f6-134f-4bdc-bda3-55581f376a9e")
-		)
-		(instances
-			(project "A4092"
-				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/166c366c-e5f9-4398-87d9-75fc4b57be99"
-					(reference "C20")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Small")
 		(at 83.82 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3945,7 +3691,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C14663"
 			(at 83.82 40.64 0)
 			(effects
 				(font
@@ -4168,7 +3914,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C14663"
 			(at 110.49 29.21 0)
 			(effects
 				(font
@@ -4414,7 +4160,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C14663"
 			(at 100.33 29.21 0)
 			(effects
 				(font
@@ -4433,85 +4179,6 @@
 			(project "A4092"
 				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/166c366c-e5f9-4398-87d9-75fc4b57be99"
 					(reference "C103")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Small")
-		(at 39.37 55.88 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a6aae160-1063-494c-84ff-6e7b70e16304")
-		(property "Reference" "C31"
-			(at 41.91 54.6162 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nF"
-			(at 41.91 57.1562 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
-			(at 39.37 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 39.37 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 39.37 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part #" ""
-			(at 39.37 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "f85a68ca-3231-4805-89d2-50b934cfeabb")
-		)
-		(pin "1"
-			(uuid "6c69ca6b-466e-4bdc-9480-7ca1d971ede6")
-		)
-		(instances
-			(project "A4092"
-				(path "/8f9f4021-47aa-41d9-bea7-f6ccf72098bb/166c366c-e5f9-4398-87d9-75fc4b57be99"
-					(reference "C31")
 					(unit 1)
 				)
 			)
@@ -4726,7 +4393,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C14663"
 			(at 105.41 40.64 0)
 			(effects
 				(font
@@ -4836,7 +4503,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "bece8c9d-33bb-490d-9b5a-1baa2426c6d1")
 		(property "Reference" "C801"
 			(at 129.032 40.64 0)
@@ -4883,7 +4550,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C14663"
 			(at 125.73 41.91 0)
 			(effects
 				(font
@@ -4962,7 +4629,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C14663"
 			(at 59.69 41.91 0)
 			(effects
 				(font
@@ -5294,7 +4961,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C14663"
 			(at 49.53 41.91 0)
 			(effects
 				(font
@@ -5372,7 +5039,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C14663"
 			(at 82.55 29.21 0)
 			(effects
 				(font
@@ -5608,7 +5275,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C14663"
 			(at 139.7 41.91 0)
 			(effects
 				(font
@@ -5687,7 +5354,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C14663"
 			(at 90.17 29.21 0)
 			(effects
 				(font
@@ -5781,7 +5448,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C43381"
 			(at 48.3106 81.4843 0)
 			(effects
 				(font
