@@ -9462,28 +9462,6 @@
 			)
 		)
 	)
-	(global_label "PLD_DS0"
-		(shape input)
-		(at 280.67 128.27 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2e5ea3f2-d1a6-406c-8e2e-32b577ddb05d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 280.67 139.4799 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "Z_CFGIN"
 		(shape input)
 		(at 341.63 66.04 180)
@@ -9656,6 +9634,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PLD_DS1"
+		(shape input)
+		(at 275.59 128.27 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "33c76eab-83fe-4862-a439-fedb1d749e2d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 275.59 139.4799 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -10914,28 +10914,6 @@
 			)
 		)
 	)
-	(global_label "PLD_DS3"
-		(shape input)
-		(at 273.05 128.27 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "55dcdf8a-566c-4abe-a15a-7f770459249c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 273.05 139.4799 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "GND"
 		(shape input)
 		(at 99.06 180.34 0)
@@ -12071,6 +12049,28 @@
 		(uuid "7775e0f7-c9ef-443d-92bd-675497628685")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 119.2372 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PLD_DS3"
+		(shape input)
+		(at 280.67 128.27 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "78dff02c-6b59-4cf6-b1f1-885d4599972f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 280.67 139.4799 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13378,6 +13378,28 @@
 			)
 		)
 	)
+	(global_label "PLD_DS0"
+		(shape input)
+		(at 273.05 128.27 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "aa33e050-2e5e-49a4-a2dc-3c2a234a6117")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 273.05 139.4799 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "Z_D17"
 		(shape input)
 		(at 378.46 90.17 0)
@@ -14214,6 +14236,28 @@
 			)
 		)
 	)
+	(global_label "PLD_DS2"
+		(shape input)
+		(at 278.13 128.27 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "bf665850-9835-4ad7-a751-8512e257bc07")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 278.13 139.4799 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "D26"
 		(shape input)
 		(at 125.73 67.31 180)
@@ -14720,28 +14764,6 @@
 			)
 		)
 	)
-	(global_label "PLD_DS2"
-		(shape input)
-		(at 275.59 128.27 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d8382c57-2c71-43ca-9ce9-80abf802d2c0")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 275.59 139.4799 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "DBLT"
 		(shape input)
 		(at 196.85 29.21 0)
@@ -14782,28 +14804,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "PLD_DS1"
-		(shape input)
-		(at 278.13 128.27 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "dd102ecf-f638-4516-babc-db932f383328")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 278.13 139.4799 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
