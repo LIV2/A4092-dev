@@ -17278,6 +17278,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" "C95177"
+			(at 229.87 72.39 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "938b6963-c9f2-48c9-a605-fae1c6a96942")
 		)
@@ -17826,6 +17835,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part #" ""
+			(at 322.58 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "24a5d5cd-3a0f-4e1b-b500-076f98cd7d95")
 		)
@@ -18251,6 +18269,15 @@
 		)
 		(property "Description" "Ferrite bead, small symbol"
 			(at 231.14 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C95177"
+			(at 231.14 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
