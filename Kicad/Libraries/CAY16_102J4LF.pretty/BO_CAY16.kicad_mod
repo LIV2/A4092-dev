@@ -270,18 +270,6 @@
 		(uuid "96572cab-15d2-4fde-8e0d-df1c85318229")
 	)
 	(fp_text user "*"
-		(at -1.2827 -2.413 0)
-		(unlocked yes)
-		(layer "F.SilkS")
-		(uuid "c3c0a43a-d3f5-4e3f-8f83-2a535cf32f0c")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(fp_text user "*"
 		(at -0.5207 -1.1938 0)
 		(layer "F.Fab")
 		(uuid "2c5cec31-aa85-4c45-b7af-2e8851402fcc")

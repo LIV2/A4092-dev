@@ -6351,26 +6351,15 @@
 		(layer "F.Fab")
 		(uuid "37b12d03-829d-4e30-91a6-2ecf270ac3f5")
 	)
-	(fp_text user "*"
-		(at -11.9888 -9.381 0)
+	(fp_text user "•"
+		(at -11 -10 0)
 		(layer "F.SilkS")
 		(uuid "3ae90859-ae55-46e1-b497-fd3bdd29e75f")
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(fp_text user "*"
-		(at -11.9888 -9.381 0)
-		(unlocked yes)
-		(layer "F.SilkS")
-		(uuid "81d340d6-c8ec-45cf-abd4-e5ab4662914c")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
+				(thickness 0.2)
+				(bold yes)
 			)
 		)
 	)
