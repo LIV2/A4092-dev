@@ -8581,8 +8581,8 @@
 	)
 	(text_box "LED headers\n"
 		(exclude_from_sim no)
-		(at 165.735 86.36 0)
-		(size 48.26 71.755)
+		(at 167.64 86.36 0)
+		(size 45.72 68.58)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -8601,8 +8601,8 @@
 	)
 	(text_box "NCR 53C710 caps"
 		(exclude_from_sim no)
-		(at 157.48 14.605 0)
-		(size 55.245 65.405)
+		(at 157.48 15.24 0)
+		(size 55.88 68.58)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -8621,8 +8621,8 @@
 	)
 	(text_box "Clock\n"
 		(exclude_from_sim no)
-		(at 229.87 107.95 0)
-		(size 51.435 48.895)
+		(at 215.9 109.22 0)
+		(size 66.04 45.72)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -8639,10 +8639,10 @@
 		)
 		(uuid "6fdfdd2f-2dfb-4ce1-80f1-6d74942a761e")
 	)
-	(text_box "Flash\n"
+	(text_box "Flash Memory (ROM)"
 		(exclude_from_sim no)
-		(at 215.9 14.605 0)
-		(size 65.405 91.44)
+		(at 215.9 15.24 0)
+		(size 66.04 91.44)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -8661,8 +8661,8 @@
 	)
 	(text_box "Pull-Ups for NCR53C710"
 		(exclude_from_sim no)
-		(at 115.57 86.36 0)
-		(size 48.895 109.22)
+		(at 114.3 86.36 0)
+		(size 50.8 109.22)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -8930,7 +8930,7 @@
 		(uuid "139e7fce-8d71-4581-ab39-8926a82cf2f8")
 	)
 	(no_connect
-		(at 245.11 130.81)
+		(at 241.3 130.81)
 		(uuid "1658634a-5d4a-462e-ab34-079bd95f65a2")
 	)
 	(no_connect
@@ -9145,7 +9145,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 139.7) (xy 234.95 139.7)
+			(xy 248.92 139.7) (xy 231.14 139.7)
 		)
 		(stroke
 			(width 0)
@@ -9165,7 +9165,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 139.7) (xy 252.73 138.43)
+			(xy 248.92 139.7) (xy 248.92 138.43)
 		)
 		(stroke
 			(width 0)
@@ -9675,7 +9675,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 139.7) (xy 234.95 132.08)
+			(xy 231.14 139.7) (xy 231.14 132.08)
 		)
 		(stroke
 			(width 0)
@@ -9825,7 +9825,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 123.19) (xy 234.95 127)
+			(xy 231.14 123.19) (xy 231.14 127)
 		)
 		(stroke
 			(width 0)
@@ -10045,7 +10045,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 123.19) (xy 234.95 123.19)
+			(xy 248.92 123.19) (xy 231.14 123.19)
 		)
 		(stroke
 			(width 0)
@@ -10277,7 +10277,7 @@
 	)
 	(global_label "LED3KPWR"
 		(shape input)
-		(at 176.53 121.92 0)
+		(at 177.8 124.46 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10287,7 +10287,7 @@
 		)
 		(uuid "01d18fb7-a1cb-40a8-bc59-859884ef21ec")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 189.4332 121.92 0)
+			(at 190.7032 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10343,7 +10343,7 @@
 	)
 	(global_label "CLK_50M"
 		(shape input)
-		(at 265.43 130.81 0)
+		(at 261.62 130.81 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10353,7 +10353,7 @@
 		)
 		(uuid "04dd2364-d09e-458b-88df-146bed6cf920")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 276.8213 130.81 0)
+			(at 273.0113 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10409,7 +10409,7 @@
 	)
 	(global_label "V5"
 		(shape input)
-		(at 252.73 123.19 90)
+		(at 248.92 123.19 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10419,7 +10419,7 @@
 		)
 		(uuid "05d8e2be-02c3-4b8a-8bb5-bf7125276ca1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 252.73 117.9067 90)
+			(at 248.92 117.9067 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10563,7 +10563,7 @@
 	)
 	(global_label "V5"
 		(shape input)
-		(at 176.53 116.84 0)
+		(at 177.8 119.38 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10573,7 +10573,7 @@
 		)
 		(uuid "0e17f788-0cbf-4227-bbff-2645453175da")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 181.8133 116.84 0)
+			(at 183.0833 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10915,7 +10915,7 @@
 	)
 	(global_label "V5"
 		(shape input)
-		(at 184.15 146.05 180)
+		(at 185.42 148.59 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10925,7 +10925,7 @@
 		)
 		(uuid "1ce279a0-28ca-481d-8ba5-51a0406f3922")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 178.8667 146.05 0)
+			(at 180.1367 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11201,7 +11201,7 @@
 	)
 	(global_label "LEDR"
 		(shape input)
-		(at 198.12 95.25 0)
+		(at 199.39 97.79 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11211,7 +11211,7 @@
 		)
 		(uuid "2caa9cd6-602c-412f-88ad-eaf0978a8b17")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 205.8223 95.25 0)
+			(at 207.0923 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11575,7 +11575,7 @@
 	)
 	(global_label "LEDR"
 		(shape input)
-		(at 176.53 119.38 0)
+		(at 177.8 121.92 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11585,7 +11585,7 @@
 		)
 		(uuid "43b49031-7db1-4ee0-9ffd-898d1abba874")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 184.2323 119.38 0)
+			(at 185.5023 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11839,7 +11839,7 @@
 	)
 	(global_label "LEDR"
 		(shape input)
-		(at 190.5 134.62 0)
+		(at 191.77 137.16 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11849,7 +11849,7 @@
 		)
 		(uuid "55a4832a-c79d-4b64-88f8-de0f2793ca21")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 198.2023 134.62 0)
+			(at 199.4723 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11861,7 +11861,7 @@
 	)
 	(global_label "LEDR"
 		(shape input)
-		(at 198.12 100.33 0)
+		(at 199.39 102.87 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11871,7 +11871,7 @@
 		)
 		(uuid "575050be-58ad-44d4-ac67-8e9a73ed1420")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 205.8223 100.33 0)
+			(at 207.0923 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11905,7 +11905,7 @@
 	)
 	(global_label "LED3KPWR"
 		(shape input)
-		(at 198.12 121.92 0)
+		(at 199.39 124.46 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11915,7 +11915,7 @@
 		)
 		(uuid "5a8404c8-5292-43e4-b97e-599b82c75536")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 211.0232 121.92 0)
+			(at 212.2932 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12037,7 +12037,7 @@
 	)
 	(global_label "V5"
 		(shape input)
-		(at 176.53 97.79 0)
+		(at 177.8 100.33 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12047,7 +12047,7 @@
 		)
 		(uuid "5e34ea01-2099-4089-8f16-a8bdcbc7e637")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 181.8133 97.79 0)
+			(at 183.0833 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12631,7 +12631,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 252.73 139.7 270)
+		(at 248.92 139.7 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12641,7 +12641,7 @@
 		)
 		(uuid "7a01daa9-e346-47d2-99c1-de8d0a0ad75c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 252.73 146.5557 90)
+			(at 248.92 146.5557 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12697,7 +12697,7 @@
 	)
 	(global_label "LEDR"
 		(shape input)
-		(at 176.53 100.33 0)
+		(at 177.8 102.87 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12707,7 +12707,7 @@
 		)
 		(uuid "7d5f3c68-efd7-4472-8281-fa6f026f21a7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 184.2323 100.33 0)
+			(at 185.5023 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12785,7 +12785,7 @@
 	)
 	(global_label "LED"
 		(shape input)
-		(at 185.42 134.62 180)
+		(at 186.69 137.16 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12795,7 +12795,7 @@
 		)
 		(uuid "88494aa6-ef12-4f77-939d-fa7967339205")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 178.9877 134.62 0)
+			(at 180.2577 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12939,7 +12939,7 @@
 	)
 	(global_label "LEDR"
 		(shape input)
-		(at 198.12 119.38 0)
+		(at 199.39 121.92 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12949,7 +12949,7 @@
 		)
 		(uuid "91c7566a-20fd-40a7-a1d4-d943393439e8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 205.8223 119.38 0)
+			(at 207.0923 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13357,7 +13357,7 @@
 	)
 	(global_label "V5"
 		(shape input)
-		(at 198.12 97.79 0)
+		(at 199.39 100.33 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13367,7 +13367,7 @@
 		)
 		(uuid "af06b990-4292-48df-89f7-95785956e519")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 203.4033 97.79 0)
+			(at 204.6733 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13511,7 +13511,7 @@
 	)
 	(global_label "LED"
 		(shape input)
-		(at 194.31 146.05 0)
+		(at 195.58 148.59 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13521,7 +13521,7 @@
 		)
 		(uuid "b8e720a2-15b3-4b57-820e-0e3fe4efb2b3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 200.7423 146.05 0)
+			(at 202.0123 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13709,7 +13709,7 @@
 	)
 	(global_label "LEDR"
 		(shape input)
-		(at 176.53 95.25 0)
+		(at 177.8 97.79 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13719,7 +13719,7 @@
 		)
 		(uuid "c2e28211-dd92-4dd7-9438-e2487caec2d6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 184.2323 95.25 0)
+			(at 185.5023 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14655,7 +14655,7 @@
 	)
 	(global_label "V5"
 		(shape input)
-		(at 198.12 116.84 0)
+		(at 199.39 119.38 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14665,7 +14665,7 @@
 		)
 		(uuid "f73273d5-b62a-4b20-884d-a855d79a27ea")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 203.4033 116.84 0)
+			(at 204.6733 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15545,7 +15545,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 234.95 129.54 180)
+		(at 231.14 129.54 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15553,7 +15553,7 @@
 		(dnp no)
 		(uuid "45b7d07e-46c4-41ef-b7b4-4186cb115b95")
 		(property "Reference" "C32"
-			(at 236.22 127.762 0)
+			(at 232.41 127.762 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15562,7 +15562,7 @@
 			)
 		)
 		(property "Value" "10nF"
-			(at 235.966 131.572 0)
+			(at 232.156 131.572 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15571,7 +15571,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
-			(at 234.95 129.54 0)
+			(at 231.14 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15580,7 +15580,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 234.95 129.54 0)
+			(at 231.14 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15589,7 +15589,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 234.95 129.54 0)
+			(at 231.14 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15598,7 +15598,7 @@
 			)
 		)
 		(property "LCSC Part #" "C100042"
-			(at 234.95 129.54 0)
+			(at 231.14 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15623,7 +15623,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 262.89 130.81 90)
+		(at 259.08 130.81 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15631,7 +15631,7 @@
 		(dnp no)
 		(uuid "4b1380d2-6e9e-43c1-b73b-78c81266aa30")
 		(property "Reference" "R11"
-			(at 262.89 128.778 90)
+			(at 259.08 128.778 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15639,7 +15639,7 @@
 			)
 		)
 		(property "Value" "120"
-			(at 262.89 130.81 90)
+			(at 259.08 130.81 90)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -15647,7 +15647,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 262.89 130.81 0)
+			(at 259.08 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15656,7 +15656,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 262.89 130.81 0)
+			(at 259.08 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15665,7 +15665,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 262.89 130.81 0)
+			(at 259.08 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15674,7 +15674,7 @@
 			)
 		)
 		(property "LCSC Part #" "C95177"
-			(at 262.89 130.81 90)
+			(at 259.08 130.81 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15699,7 +15699,7 @@
 	)
 	(symbol
 		(lib_id "Oscillator:FT5HV")
-		(at 252.73 130.81 0)
+		(at 248.92 130.81 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15707,7 +15707,7 @@
 		(dnp no)
 		(uuid "4ff3033f-65d4-418f-84cc-fab9994e071a")
 		(property "Reference" "Y1"
-			(at 249.936 124.46 0)
+			(at 246.126 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15716,7 +15716,7 @@
 			)
 		)
 		(property "Value" "Abracon ACO-50MHz"
-			(at 262.382 138.43 0)
+			(at 258.572 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15725,7 +15725,7 @@
 			)
 		)
 		(property "Footprint" "Oscillator:Oscillator_SMD_Fox_FT5H_5.0x3.2mm"
-			(at 252.73 149.86 0)
+			(at 248.92 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15734,7 +15734,7 @@
 			)
 		)
 		(property "Datasheet" "https://foxonline.com/wp-content/uploads/pdfs/T5HN_T5HV.pdf"
-			(at 252.73 130.81 0)
+			(at 248.92 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15743,7 +15743,7 @@
 			)
 		)
 		(property "Description" "HCMOS temperature compensated voltage controlled oscillator"
-			(at 252.73 130.81 0)
+			(at 248.92 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15752,7 +15752,7 @@
 			)
 		)
 		(property "LCSC Part #" "C7431196"
-			(at 252.73 130.81 0)
+			(at 248.92 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16096,7 +16096,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED_Small")
-		(at 186.69 146.05 180)
+		(at 187.96 148.59 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -16104,7 +16104,7 @@
 		(dnp no)
 		(uuid "5f37d85f-4f2f-4c46-8754-a8091a16e61f")
 		(property "Reference" "D2"
-			(at 186.69 149.098 0)
+			(at 187.96 151.638 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16112,7 +16112,7 @@
 			)
 		)
 		(property "Value" "LED (green)"
-			(at 184.15 142.748 0)
+			(at 185.42 145.288 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16120,7 +16120,7 @@
 			)
 		)
 		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
-			(at 186.69 146.05 90)
+			(at 187.96 148.59 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16129,7 +16129,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 186.69 146.05 90)
+			(at 187.96 148.59 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16138,7 +16138,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode, small symbol"
-			(at 186.69 146.05 0)
+			(at 187.96 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16147,7 +16147,7 @@
 			)
 		)
 		(property "Sim.Pin" "1=K 2=A"
-			(at 186.69 146.05 0)
+			(at 187.96 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16156,7 +16156,7 @@
 			)
 		)
 		(property "LCSC Part #" "C965821"
-			(at 186.69 146.05 0)
+			(at 187.96 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16563,7 +16563,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 187.96 134.62 90)
+		(at 189.23 137.16 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -16571,7 +16571,7 @@
 		(dnp no)
 		(uuid "7ed22250-c59c-4b4a-8b51-011149aa9a02")
 		(property "Reference" "R9"
-			(at 187.96 132.588 90)
+			(at 189.23 135.128 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16579,7 +16579,7 @@
 			)
 		)
 		(property "Value" "120"
-			(at 187.96 134.62 90)
+			(at 189.23 137.16 90)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -16587,7 +16587,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 187.96 134.62 0)
+			(at 189.23 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16596,7 +16596,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 187.96 134.62 0)
+			(at 189.23 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16605,7 +16605,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 187.96 134.62 0)
+			(at 189.23 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16614,7 +16614,7 @@
 			)
 		)
 		(property "LCSC Part #" "C114640"
-			(at 187.96 134.62 90)
+			(at 189.23 137.16 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16715,7 +16715,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x03_Pin")
-		(at 171.45 97.79 0)
+		(at 172.72 100.33 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -16724,7 +16724,7 @@
 		(fields_autoplaced yes)
 		(uuid "899b034f-3f78-4771-b012-ce6b2c282b1a")
 		(property "Reference" "J3"
-			(at 172.085 90.17 0)
+			(at 173.355 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16732,7 +16732,7 @@
 			)
 		)
 		(property "Value" "TO-LED"
-			(at 172.085 92.71 0)
+			(at 173.355 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16740,7 +16740,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
-			(at 171.45 97.79 0)
+			(at 172.72 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16749,7 +16749,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 171.45 97.79 0)
+			(at 172.72 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16758,7 +16758,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated"
-			(at 171.45 97.79 0)
+			(at 172.72 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16767,7 +16767,7 @@
 			)
 		)
 		(property "LCSC Part #" "C6332196"
-			(at 171.45 97.79 0)
+			(at 172.72 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17101,7 +17101,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x03_Pin")
-		(at 193.04 119.38 0)
+		(at 194.31 121.92 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17109,7 +17109,7 @@
 		(dnp no)
 		(uuid "b3b7a2df-6ff1-4461-b9b5-3671f8c14bcd")
 		(property "Reference" "J9"
-			(at 193.675 111.76 0)
+			(at 194.945 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17117,7 +17117,7 @@
 			)
 		)
 		(property "Value" "TO-A3000-MB"
-			(at 199.136 114.046 0)
+			(at 200.406 116.586 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17125,7 +17125,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
-			(at 193.04 119.38 0)
+			(at 194.31 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17134,7 +17134,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 193.04 119.38 0)
+			(at 194.31 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17143,7 +17143,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated"
-			(at 193.04 119.38 0)
+			(at 194.31 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17152,7 +17152,7 @@
 			)
 		)
 		(property "LCSC Part #" "C6332196"
-			(at 193.04 119.38 0)
+			(at 194.31 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17180,7 +17180,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x03_Pin")
-		(at 171.45 119.38 0)
+		(at 172.72 121.92 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17188,7 +17188,7 @@
 		(dnp no)
 		(uuid "b704c79e-a79e-434c-a5ff-214a243d0eba")
 		(property "Reference" "J8"
-			(at 172.085 111.76 0)
+			(at 173.355 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17196,7 +17196,7 @@
 			)
 		)
 		(property "Value" "TO-A3000-LED"
-			(at 177.038 114.3 0)
+			(at 178.308 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17204,7 +17204,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
-			(at 171.45 119.38 0)
+			(at 172.72 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17213,7 +17213,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 171.45 119.38 0)
+			(at 172.72 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17222,7 +17222,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated"
-			(at 171.45 119.38 0)
+			(at 172.72 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17231,7 +17231,7 @@
 			)
 		)
 		(property "LCSC Part #" "C6332196"
-			(at 171.45 119.38 0)
+			(at 172.72 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17811,7 +17811,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x03_Pin")
-		(at 193.04 97.79 0)
+		(at 194.31 100.33 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17820,7 +17820,7 @@
 		(fields_autoplaced yes)
 		(uuid "c8e434ca-2386-4927-8af8-6e91650fd8c8")
 		(property "Reference" "J4"
-			(at 193.675 90.17 0)
+			(at 194.945 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17828,7 +17828,7 @@
 			)
 		)
 		(property "Value" "TO-MB"
-			(at 193.675 92.71 0)
+			(at 194.945 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17836,7 +17836,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
-			(at 193.04 97.79 0)
+			(at 194.31 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17845,7 +17845,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 193.04 97.79 0)
+			(at 194.31 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17854,7 +17854,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated"
-			(at 193.04 97.79 0)
+			(at 194.31 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17863,7 +17863,7 @@
 			)
 		)
 		(property "LCSC Part #" "C6332196"
-			(at 193.04 97.79 0)
+			(at 194.31 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17891,7 +17891,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 191.77 146.05 90)
+		(at 193.04 148.59 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17899,7 +17899,7 @@
 		(dnp no)
 		(uuid "d51b03f6-5352-4107-81b4-14857a65d719")
 		(property "Reference" "R10"
-			(at 191.77 144.018 90)
+			(at 193.04 146.558 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17907,7 +17907,7 @@
 			)
 		)
 		(property "Value" "2.2k"
-			(at 191.77 146.05 90)
+			(at 193.04 148.59 90)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -17915,7 +17915,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 191.77 146.05 0)
+			(at 193.04 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17924,7 +17924,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 191.77 146.05 0)
+			(at 193.04 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17933,7 +17933,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 191.77 146.05 0)
+			(at 193.04 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17942,7 +17942,7 @@
 			)
 		)
 		(property "LCSC Part #" "C114662"
-			(at 191.77 146.05 90)
+			(at 193.04 148.59 90)
 			(effects
 				(font
 					(size 1.27 1.27)
