@@ -2194,7 +2194,7 @@
 			(uuid "d4f96bd2-be18-42be-b200-82935aee0c96")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/Libraries/5787170-5.stp"
+		(model "${KIPRJMOD}/../Libraries/5787170-5.stp"
 			(offset
 				(xyz 15.2 9.8 4.5)
 			)
