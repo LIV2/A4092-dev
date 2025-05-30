@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module A4092(
-    input [31:0] A,   // Only bits [8:0], 17,18,19, and 23-31 are used
+    input [31:0] A,   // Only bits [20:0], and [31:23] are used
     input CLK_50M,
     output AS_n,
     input PLD_DS_n,
@@ -16,7 +16,7 @@ module A4092(
     input [1:0] SIZ,
     output SID_n,
     output DIP_EXT_TERM,
-    inout [31:0] D, // Only [8:0] and [31:24] are used
+    inout [31:0] D, // Only [8:0], [15:12] and [31:24] are used
     output reg CLK,
     output BMASTER,
     output DBLT,
@@ -50,7 +50,11 @@ module A4092(
     output STERM_n,
     output ROM_OE_n,
     output ROM_CE_n,
-    output ROM_WE_n
+    output ROM_WE_n,
+    input SPI_MISO,
+    output reg SPI_MOSI,
+    output reg SPI_CLK,
+    output reg SPI_CS_n
     );
 
 `include "globalparams.vh"
@@ -235,13 +239,11 @@ Autoconfig AUTOCONFIG (
 
 // | **Offset**            | **Size** | **Function**          | **Module**      |
 // | --------------------- | -------- | --------------------- | --------------- |
-// | `0x000000`–`0x07FFFF` | 512 KB   | Flash ROM             | `rom_access`    |
-// | `0x080000`–`0x0BFFFF` | 256 KB   | **Unused / Reserved** |                 |
-// | `0x0C0000`–`0x0FFFFF` | 256 KB   | SCSI ID read          | `sid_access`    |
-// | `0x100000`–`0x8FFFFF` | \~7.5 MB | SCSI registers (710)  | `scsi`          |
-// | `0x900000`            | 4 bytes  | INTREG                | `intreg_access` |
-// | `0x900004`            | 4 bytes  | INTVEC                | `intreg_access` |
-// | `0x900008`–`0xFFFFFF` | 6.25 MB+ | **Unused / Reserved** |                 |
+// | `0x000000`–`0x7FFFFF` | 8 MB     | Flash ROM             | `rom_access`    |
+// | `0x800000`–`0x87FFFF` | 512 KB   | SCSI registers (710)  | `scsi`          |
+// | `0x880000`–`0x8BFFFF` | 256 KB   | INTREG / INTVEC       | `intreg_access` |
+// | `0x8C0000`–`0x8FFFFF` | 256 KB   | SCSI ID read          | `sid_access`    |
+// | `0x900000`–`0xFFFFFF` | 7 MB     | **Unused**            |                 |
 
 scsi_access SCSI_ACCESS (
   .CLK(CLK),
