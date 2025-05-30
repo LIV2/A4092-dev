@@ -3,7 +3,7 @@
 module scsi_access (
     input wire CLK,
     input wire RESET_n,
-    input wire [27:0] ADDR,
+    input wire [23:17] ADDR,
     input wire READ,
     input wire FCS_n,
     input wire slave_cycle,
@@ -12,9 +12,9 @@ module scsi_access (
     output reg scsi_dtack
 );
 
-// SCSI region: everything from 0x100000 to 0x8FFFFF (remaining BAR space)
-// We'll assume this is enabled when no other region matches
-wire scsi_region = slave_cycle && configured && (ADDR[27:23] >= 5'h08 && ADDR[27:23] < 5'h48);
+// SCSI region: everything from 0x800000 to 0x87FFFF (512KB)
+
+wire scsi_region = slave_cycle && configured && (ADDR[23:17] >= 8'h40 && ADDR[23:17] < 8'h44);
 
 reg [1:0] scsi_state;
 

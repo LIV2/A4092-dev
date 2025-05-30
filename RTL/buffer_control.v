@@ -8,7 +8,7 @@ module buffer_control (
     input wire configured,
     input wire BMASTER,
     input wire MASTER_n,
-    input wire [27:0] ADDR,
+    input wire [23:17] ADDR,
     input wire FCS_n,
 
     output reg DBOE_n,
@@ -18,10 +18,10 @@ module buffer_control (
     output reg Z2D_n
 );
 
-// From GAL U205/U206 behavior:
+// From GAL U205 behavior:
 // Buffer enable depends on bus direction and control timing
 
-wire scsi_region = configured && slave_cycle && (ADDR[27:23] >= 5'h08 && ADDR[27:23] < 5'h48);
+wire scsi_region = configured && slave_cycle && (ADDR[23:17] >= 8'h40 && ADDR[23:17] < 8'h44);
 
 always @(posedge CLK or negedge RESET_n) begin
     if (!RESET_n) begin
