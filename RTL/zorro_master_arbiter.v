@@ -6,11 +6,13 @@ module zorro_master_arbiter (
     input wire FCS,
     input wire DTACK,
     input wire RST,
+    input wire EBG_n,
     input wire SBR_n,
     input wire MASTER,
 
     output wire SBG_n,
-    output wire BMASTER
+    output wire BMASTER,
+    output wire EBR_n
 );
 
 // Internal state

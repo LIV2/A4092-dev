@@ -1,118 +1,99 @@
 `timescale 1ns / 1ps
 
-// Combined DMA FSM for Zorro III Master cycles driven by NCR53C710
-// Replaces U202 GAL in A4091, supports both DMA read and write
-
+//
+// MODULE: zorro_dma_master
+// DESCRIPTION:
+// Manages a full Zorro III DMA master cycle after the bus has been
+// granted. This module implements the logic from the A4091's U305
+// and U306 GALs.
+//
 module zorro_dma_master (
-    input wire CLK,
-    input wire RESET_n,
-    input wire START_DMA,
-    input wire READ,              // 1 = DMA read from Zorro (to NCR), 0 = DMA write to Zorro (from NCR)
-    input wire [31:0] ADDR,
-    output reg [2:0] FC,
-    output reg [1:0] SIZ,
-    output reg AS_n,
-    output reg [3:0] DS_n,
-    output reg DTACK_ACK,        // Signal to NCR that DMA cycle finished
-    input wire DTACK_n,
-    output reg BRn,
-    input wire BGn,
-    output reg ACTIVE            // High when FSM is in active transfer
-    // No DATA bus connection!
+    input  wire CLK,
+    input  wire RESET_n,
+
+    // Control Signals
+    input  wire BMASTER,      // Input from the arbiter, enables this module
+    input  wire READ,
+    input  wire [1:0] SIZ,    // Sizing signals from SCSI chip
+    input  wire [2:1] A,      // Low address bits from SCSI chip
+    input  wire SCSI_AS_n,    // Address Strobe from SCSI slave logic
+
+    // Zorro Bus Interface
+    input  wire ZORRO_FCS_n,  // FCS as seen from the bus
+    input  wire ZORRO_DTACK_n,// DTACK as seen from the bus
+    output wire DMA_DOE,      // Data Output Enable to be driven on bus
+    output wire [3:0] DMA_DS_n, // Data Strobes to be driven on bus
+    output wire DMA_FCS_n,    // FCS to be driven on bus
+
+    // Outputs
+    output wire SCSI_STERM_n, // Termination signal to SCSI chip
+    output wire BFCS_out      // Buffered FCS for other internal modules
 );
 
-localparam [3:0]
-    IDLE         = 4'd0,
-    REQUEST_BUS  = 4'd1,
-    WAIT_FOR_BG  = 4'd2,
-    SETUP_CYCLE  = 4'd3,
-    ASSERT_SIGS  = 4'd4,
-    WAIT_DTACK   = 4'd5,
-    END_CYCLE    = 4'd6,
-    RELEASE_BUS  = 4'd7;
+// Internal state registers from U305/U306
+reg asq;
+reg cycz3;
+reg efcs;
+reg bdtack;
+reg sterm_n;
 
-reg [3:0] state, next_state;
-reg [31:0] addr_latch;
+// The internal buffered FCS is a combination of the external FCS (during slave mode)
+// and the generated external FCS (during master mode)
+assign BFCS_out = (efcs && BMASTER) | (ZORRO_FCS_n && !BMASTER);
 
-// DS_n generation example:
-// This is minimal and should match your Zorro/68030 bus spec for SCSI cycles
-always @(*) begin
-    DS_n = 4'b1111;
-    if (state == ASSERT_SIGS) begin
-        // Example: DS3 is asserted for every transfer
-        DS_n = 4'b1110;
-        // Optionally use more sophisticated logic here
-    end
-end
-
+// This logic runs on the main 25MHz clock
 always @(posedge CLK or negedge RESET_n) begin
-    if (!RESET_n) begin
-        state <= IDLE;
-        addr_latch <= 32'h0;
+    if(!RESET_n) begin
+        asq     <= 1'b0;
+        cycz3   <= 1'b0;
+        efcs    <= 1'b0;
+        bdtack  <= 1'b0;
+        sterm_n <= 1'b1;
     end else begin
-        state <= next_state;
-        if (state == SETUP_CYCLE) begin
-            addr_latch <= ADDR;
+        // ASQ logic from U305: Qualified SCSI Address Strobe
+        if(!SCSI_AS_n) asq <= 1'b1;
+        else if (BFCS_out) asq <= 1'b0;
+
+        // CYCZ3 logic from U306: Asserts that we are driving a cycle on the Zorro bus
+        if(BMASTER && !BFCS_out && asq && ZORRO_DTACK_n) cycz3 <= 1'b1;
+        else if (!ZORRO_DTACK_n) cycz3 <= 1'b0;
+
+        // EFCS logic from U306: The external FCS we drive during DMA
+        if(BMASTER && cycz3) efcs <= 1'b1;
+        else efcs <= 1'b0;
+
+        // BDTACK logic from U306: A latched version of the Zorro DTACK
+        if (!BFCS_out) begin
+            if(!ZORRO_DTACK_n) bdtack <= 1'b1;
+        end else begin
+            bdtack <= 1'b0;
+        end
+
+        // STERM logic from U306: Termination signal for the SCSI chip
+        if (!BFCS_out) begin
+            if (bdtack) sterm_n <= 1'b0;
+        end else begin
+            sterm_n <= 1'b1;
         end
     end
 end
 
-always @(*) begin
-    next_state = state;
-    BRn = 1;
-    AS_n = 1;
-    FC = 3'b001;     // For data cycles (adjust as needed)
-    SIZ = 2'b10;     // 32-bit, adjust if needed
-    DTACK_ACK = 0;
-    ACTIVE = 1'b1;
+// --- Combinatorial Output Assignments ---
 
-    case (state)
-        IDLE: begin
-            ACTIVE = 0;
-            if (START_DMA)
-                next_state = REQUEST_BUS;
-        end
+// The Data Output Enable for the main data buffers
+assign DMA_DOE = (BMASTER && !READ);
 
-        REQUEST_BUS: begin
-            BRn = 0;
-            if (!BGn)
-                next_state = WAIT_FOR_BG;
-        end
+// The Zorro III Data Strobes generated from SCSI sizing info (from U305)
+wire [3:0] dma_ds_n_logic = { ~( (READ) || (~A[2] & ~A[1]) ),
+                              ~( (READ) || (~A[2] & ~SIZ[0]) || (~A[2] & A[1]) || (~A[2] & SIZ[1]) ),
+                              ~( (READ) || (~A[2] & !SIZ[1] & !SIZ[0]) || (~A[2] & SIZ[1] & SIZ[0]) || (~A[2] & A[1] & !SIZ[0]) || (A[2] & ~A[1]) ),
+                              ~( (READ) || (A[1] & SIZ[1] & SIZ[0]) || (!SIZ[1] & !SIZ[0]) || (A[2] & A[1]) || (A[2] & SIZ[1]) ) };
 
-        WAIT_FOR_BG: begin
-            BRn = 0;
-            next_state = SETUP_CYCLE;
-        end
+// The Data Strobes and FCS are only driven when this module is active
+assign DMA_DS_n = (BMASTER && efcs) ? dma_ds_n_logic : 4'bxxxx;
+assign DMA_FCS_n = !efcs;
 
-        SETUP_CYCLE: begin
-            // Latch addr, prep other signals
-            next_state = ASSERT_SIGS;
-        end
-
-        ASSERT_SIGS: begin
-            AS_n = 0;
-            // Set up DS_n, FC, SIZ as appropriate
-            next_state = WAIT_DTACK;
-        end
-
-        WAIT_DTACK: begin
-            AS_n = 0;
-            if (!DTACK_n)
-                next_state = END_CYCLE;
-        end
-
-        END_CYCLE: begin
-            DTACK_ACK = 1;
-            next_state = RELEASE_BUS;
-        end
-
-        RELEASE_BUS: begin
-            next_state = IDLE;
-        end
-
-        default: next_state = IDLE;
-    endcase
-end
+// Final output for SCSI Termination
+assign SCSI_STERM_n = sterm_n;
 
 endmodule
-
