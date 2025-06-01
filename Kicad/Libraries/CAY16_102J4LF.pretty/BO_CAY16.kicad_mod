@@ -353,7 +353,7 @@
 		(uuid "96b4056b-029e-4fdf-a3ce-8728689f80a3")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/Libraries/CAY16-102J4LF.stp"
+	(model "${KIPRJMOD}/../Libraries/CAY16-102J4LF.stp"
 		(offset
 			(xyz 0 0 0)
 		)
