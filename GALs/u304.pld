@@ -156,4 +156,3 @@ A0		= !DS3 & !DS2 & !DS1 &  DS0
 		# !DS3 &  DS2 &  DS1 &  DS0;
 
 A0.OE		= SCSI & DOE & !MYBUS;
-

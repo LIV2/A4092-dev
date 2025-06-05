@@ -127,4 +127,4 @@ DS0		= READ
 
 [DS3..0].OE	= MYBUS & EFCS;
 
-
+

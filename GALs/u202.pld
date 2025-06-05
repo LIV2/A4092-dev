@@ -116,4 +116,3 @@ CINH.OE		= !SHUTUP & CFGIN & MATCH & dataspace & FCS & !RST;
 INTSPC		= !SHUTUP & CFGIN & CFGOUT & FC0 & FC1 & !RST & !A3 & A2;
 INTSPC.OE	= 'b'1;
 
-

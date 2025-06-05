@@ -105,4 +105,3 @@ NS1.D		= !RST & !stopcnt & NS0 & !NS1
 NACK		=  ROM & state:3
 		# NACK & FCS & !RST;
 NACK.AR		= RST;
-
