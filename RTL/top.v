@@ -226,7 +226,7 @@ assign D[31:28] = (autoconfig_cycle && dtack && READ) ? autoconfig_dout : 4'bzzz
 
 // Bits D[27:8] are not driven by this CPLD during any read cycle it handles.
 // So, they are always tristated from the CPLD's perspective.
-assign D[27:8]  = 20'hzzzzzzzzzzzzzzzzzzzz; // 20 bits
+assign D[27:8]  = 20'bzzzzzzzzzzzzzzzzzzzz; // 20 bits
 
 // Interrupt Vector (iack_dout) or SCSI ID (dip_shadow) are driven on D[7:0].
 // The conditions `!iack_dtack_n` and `sid_dtack` already imply a READ cycle
@@ -302,10 +302,10 @@ scsi_access SCSI_ACCESS (
   .CLK(CLK),
   .RESET_n(IORST_n),
   .ADDR(full_addr[23:17]),
-  .READ(READ),
   .FCS_n(!bfcs),
   .slave_cycle(slave_cycle),
   .configured(configured),
+  .SLACK_n(SLACK_n),
   .scsi_dtack(scsi_dtack)
 );
 
