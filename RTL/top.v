@@ -216,13 +216,26 @@ assign CFGOUT_n = (SENSEZ3_n) ? autoconfig_cfgout : CFGIN_n;
 assign CINH_n   = !(slave_cycle && configured);
 assign DBLT     = DBLT_int;
 
-// Data bus multiplexer
-assign D[31:24] = !iack_dtack_n ? iack_dout :
-                  (autoconfig_cycle) ? {4'b0, autoconfig_dout} :
+// --- Data Bus Multiplexer for Read Cycles ---
+// The CPLD drives the data bus (D) only during a READ cycle when one of
+// its internal registers/logic is selected and ready. Otherwise, D is tristated.
+
+// Autoconfig data is driven on D[31:28].
+// This happens when it's an autoconfig cycle, dtack is active (meaning data phase), and it's a READ.
+assign D[31:28] = (autoconfig_cycle && dtack && READ) ? autoconfig_dout : 4'bzzzz;
+
+// Bits D[27:8] are not driven by this CPLD during any read cycle it handles.
+// So, they are always tristated from the CPLD's perspective.
+assign D[27:8]  = 20'hzzzzzzzzzzzzzzzzzzzz; // 20 bits
+
+// Interrupt Vector (iack_dout) or SCSI ID (dip_shadow) are driven on D[7:0].
+// The conditions `!iack_dtack_n` and `sid_dtack` already imply a READ cycle
+// from their respective modules.
+assign D[7:0]   = !iack_dtack_n ? iack_dout :        // Interrupt vector has priority
 `ifndef USE_DIP_SWITCH
-                  (sid_dtack) ? dip_shadow :
+                  sid_dtack     ? dip_shadow :
 `endif
-                  8'hZZ; // High-impedance
+                                  8'bzzzzzzzz;       // Tristate if neither
 
 // --- SCSI Slave Interface (replaces U304) ---
 reg ssync_n;
