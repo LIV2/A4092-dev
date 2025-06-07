@@ -266,18 +266,7 @@ assign SCSI_AS_n = as_latch_n;
 assign SCSI_DS_n = !scsi_cycle ? 1'b1 : ds_latch_n;
 assign SCSI_SREG_n = sreg_latch_n;
 
-// --- Zorro Master DMA Logic ---
-// This logic generates the Zorro data strobes when the card is bus master
-assign DS_n = BMASTER ? (~(
-                            (READ) ||
-                            (~A[2] & ~A[1]) ||
-                            (~A[2] & ~SIZ[0]) ||
-                            (~A[2] & A[1]) ||
-                            (~A[2] & SIZ[1])
-                          )) : 4'bzzzz;
 // DOE is driven active during master-mode writes.
-assign DOE = (BMASTER & !READ) || (slave_cycle & !READ & !bfcs);
-
 
 // --- Module Instantiations ---
 
