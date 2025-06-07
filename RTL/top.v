@@ -335,7 +335,7 @@ intreg_access INTREG_ACCESS (
   .FCS_n(!bfcs),
   .configured(configured),
   .FC(FC),
-  .ADDR(full_addr[23:1]),
+  .ADDR(full_addr[23:17]),
   .LOCK(Z_LOCK),
   .READ(READ),
   .DS0_n(DS_n[0]),

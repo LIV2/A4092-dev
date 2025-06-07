@@ -20,7 +20,7 @@ module intreg_access (
 
     // -- Zorro III Bus Inputs for IACK Cycle
     input wire [2:0] FC,       // Function Codes
-    input wire [23:1] ADDR,     // Address Bus
+    input wire [23:17] ADDR,     // Address Bus
     input wire LOCK,      // Zorro LOCK signal (original A1)
     input wire READ,
     input wire DS0_n,
@@ -48,8 +48,8 @@ reg [7:0] int_vector;  // Stores the interrupt vector written by the driver
 // The interrupt control register is mapped to the base address 0x880000.
 // A write to this space sets the interrupt vector (INTREG function).
 // A read during an IACK cycle retrieves the vector (INTVEC function).
-wire match_intreg_write = configured && !LOCK && (ADDR[23:4] == 20'h88000) && !READ;
-wire match_intvec_read  = configured && !LOCK && (ADDR[23:4] == 20'h88000) && READ; // Reading from the space provides the vector
+wire match_intreg_write = configured && !LOCK && (ADDR[23:17] == 8'h44) && !READ;
+//wire match_intvec_read  = configured && !LOCK && (ADDR[23:17] == 8'h44) && READ; // Reading from the space provides the vector
 
 // Zorro III Interrupt Acknowledge Cycle Detection
 // An IACK cycle is FC=7 ('111') and targets a specific address range.
