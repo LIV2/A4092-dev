@@ -105,8 +105,8 @@ NET "MASTER_n"    LOC = "P100";
 NET "SLACK_n"     LOC = "P101";
 NET "D<13>"       LOC = "P102";
 NET "SINT_n"      LOC = "P103";
-NET "SCSI_SREG"   LOC = "P104";
-NET "STERM_n"     LOC = "P105";
+NET "SCSI_SREG_n" LOC = "P104";
+NET "SCSI_STERM_n" LOC = "P105";
 NET "INT2_n"      LOC = "P106";
 NET "D<12>"       LOC = "P107";
 # P108 - GND

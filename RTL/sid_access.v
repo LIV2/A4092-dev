@@ -6,8 +6,8 @@ module sid_access (
     input wire [23:17] ADDR,
     input wire READ,
 `ifndef USE_DIP_SWITCH
-    input wire [31:24] DIN,
-    output reg [31:24] DOUT,
+    input wire [7:0] DIN,
+    output reg [7:0] DOUT,
     output wire dip_ext_term,
 `endif
     input wire FCS_n,

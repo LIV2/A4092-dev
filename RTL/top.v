@@ -72,15 +72,14 @@ module A4092(
 
     // Board Control
     output wire SID_n,
-    output wire DIP_EXT_TERM
+    output wire DIP_EXT_TERM,
 
     // Unused:
     // We _never_ issue a CBACK, since BURST isn't supported
-    //  input CBREQ_n,
-    //  output CBACK_n,
-    //  output MTACK_n,
-    //
-    // input Z_FCS,
+    input CBREQ_n,
+    output CBACK_n,
+    output MTACK_n,
+    input Z_FCS
 
 );
 
@@ -119,7 +118,7 @@ wire D2Z_n_int;
 wire Z2D_n_int;
 wire DBLT_int;
 `ifndef USE_DIP_SWITCH
-wire dip_shadow;
+wire [7:0] dip_shadow;
 `endif
 
 wire slave_cycle = !MASTER_n && !BMASTER;
@@ -319,7 +318,7 @@ sid_access SID_ACCESS (
   .ADDR(full_addr[23:17]),
   .READ(READ),
 `ifndef USE_DIP_SWITCH
-  .DIN(D[31:24]),
+  .DIN(D[7:0]),
   .DOUT(dip_shadow),
   .dip_ext_term(DIP_EXT_TERM),
 `endif
