@@ -384,7 +384,7 @@ zorro_dma_master ZDMA (
   .BMASTER(BMASTER),
   .READ(READ),
   .SIZ(SIZ),
-  .A(A[2:1]),
+  .A(A[1:0]),
   .SCSI_AS_n(SCSI_AS_n),
   .ZORRO_FCS_n(FCS_n),
   .ZORRO_DTACK_n(DTACK_n),

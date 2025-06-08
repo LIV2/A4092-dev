@@ -15,7 +15,7 @@ module zorro_dma_master (
     input  wire BMASTER,      // Input from the arbiter, enables this module
     input  wire READ,
     input  wire [1:0] SIZ,    // Sizing signals from SCSI chip
-    input  wire [2:1] A,      // Low address bits from SCSI chip
+    input  wire [1:0] A,      // Low address bits from SCSI chip
     input  wire SCSI_AS_n,    // Address Strobe from SCSI slave logic
 
     // Zorro Bus Interface
@@ -84,10 +84,12 @@ end
 assign DMA_DOE = (BMASTER && !READ);
 
 // The Zorro III Data Strobes generated from SCSI sizing info (from U305)
-wire [3:0] dma_ds_n_logic = { ~( (READ) || (~A[2] & ~A[1]) ),
-                              ~( (READ) || (~A[2] & ~SIZ[0]) || (~A[2] & A[1]) || (~A[2] & SIZ[1]) ),
-                              ~( (READ) || (~A[2] & !SIZ[1] & !SIZ[0]) || (~A[2] & SIZ[1] & SIZ[0]) || (~A[2] & A[1] & !SIZ[0]) || (A[2] & ~A[1]) ),
-                              ~( (READ) || (A[1] & SIZ[1] & SIZ[0]) || (!SIZ[1] & !SIZ[0]) || (A[2] & A[1]) || (A[2] & SIZ[1]) ) };
+wire [3:0] dma_ds_n_logic = {
+    ~( READ || (!A[1] && !A[0]) ),                                      // DS3 equivalent from u305.pld
+    ~( READ || (!A[1] && !SIZ[0]) || (!A[1] && A[0]) || (!A[1] && SIZ[1]) ), // DS2 equivalent from u305.pld
+    ~( READ || (!A[1] && !SIZ[1] && !SIZ[0]) || (!A[1] && SIZ[1] && SIZ[0]) || (!A[1] && A[0] && !SIZ[0]) || (A[1] && !A[0]) ), // DS1 equivalent from u305.pld
+    ~( READ || (A[0] && SIZ[1] && SIZ[0]) || (!SIZ[1] && !SIZ[0]) || (A[1] && A[0]) || (A[1] && SIZ[1]) ) // DS0 equivalent from u305.pld
+};
 
 // The Data Strobes and FCS are only driven when this module is active
 assign DMA_DS_n = (BMASTER && efcs) ? dma_ds_n_logic : 4'bxxxx;
