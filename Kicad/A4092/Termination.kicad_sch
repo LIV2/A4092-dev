@@ -915,7 +915,7 @@
 					)
 				)
 			)
-			(property "Footprint" "CAP_CA0612_3P2X1P6_YAG"
+			(property "Footprint" "CA0612KRNPO9BN101:CAP_CA0612_3P2X1P6_YAG-S"
 				(at 1.016 -6.096 0)
 				(effects
 					(font
@@ -942,14 +942,6 @@
 						(size 1.27 1.27)
 					)
 					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
 				)
 			)
 			(property "ki_keywords" "CA0612KRNPO9BN101"
@@ -12762,7 +12754,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "CA0612KRNPO9BN101:CAP_CA0612_3P2X1P6_YAG"
+		(property "Footprint" "CA0612KRNPO9BN101:CAP_CA0612_3P2X1P6_YAG-S"
 			(at 244.856 75.184 0)
 			(effects
 				(font
@@ -13368,7 +13360,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "CA0612KRNPO9BN101:CAP_CA0612_3P2X1P6_YAG"
+		(property "Footprint" "CA0612KRNPO9BN101:CAP_CA0612_3P2X1P6_YAG-S"
 			(at 242.316 115.316 0)
 			(effects
 				(font
@@ -14160,7 +14152,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "CA0612KRNPO9BN101:CAP_CA0612_3P2X1P6_YAG"
+		(property "Footprint" "CA0612KRNPO9BN101:CAP_CA0612_3P2X1P6_YAG-S"
 			(at 227.076 33.274 0)
 			(effects
 				(font
@@ -14674,7 +14666,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "CA0612KRNPO9BN101:CAP_CA0612_3P2X1P6_YAG"
+		(property "Footprint" "CA0612KRNPO9BN101:CAP_CA0612_3P2X1P6_YAG-S"
 			(at 239.776 33.274 0)
 			(effects
 				(font
@@ -16038,7 +16030,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "CA0612KRNPO9BN101:CAP_CA0612_3P2X1P6_YAG"
+		(property "Footprint" "CA0612KRNPO9BN101:CAP_CA0612_3P2X1P6_YAG-S"
 			(at 232.664 115.316 0)
 			(effects
 				(font
