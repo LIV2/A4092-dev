@@ -19347,6 +19347,15 @@
 				(hide yes)
 			)
 		)
+		(property "FT Rotation Offset" "90"
+			(at 259.08 118.11 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c213acde-0a5e-4ef1-b3b6-7814438fb642")
 		)
@@ -19495,6 +19504,15 @@
 				(hide yes)
 			)
 		)
+		(property "FT Rotation Offset" "90"
+			(at 278.13 118.11 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0411846e-6b03-41ae-be8a-da23f75db018")
 		)
@@ -19585,6 +19603,15 @@
 			)
 		)
 		(property "LCSC Part #" "C2865087"
+			(at 125.73 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "FT Rotation Offset" "270"
 			(at 125.73 118.11 0)
 			(effects
 				(font
@@ -20199,6 +20226,15 @@
 				(hide yes)
 			)
 		)
+		(property "FT Rotation Offset" "270"
+			(at 27.94 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "53"
 			(uuid "cf6bb4cf-347f-4389-b55f-57abf5911530")
 		)
@@ -20433,6 +20469,15 @@
 			)
 		)
 		(property "LCSC Part #" "C2865087"
+			(at 27.94 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "FT Rotation Offset" "270"
 			(at 27.94 118.11 0)
 			(effects
 				(font
@@ -20750,6 +20795,15 @@
 			)
 		)
 		(property "LCSC Part #" "C6051"
+			(at 44.45 215.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "FT Rotation Offset" "270"
 			(at 44.45 215.9 0)
 			(effects
 				(font
@@ -21366,6 +21420,15 @@
 				(hide yes)
 			)
 		)
+		(property "FT Rotation Offset" "90"
+			(at 260.35 165.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "66cb4ff1-c280-48c3-8fe4-9959cf4724e6")
 		)
@@ -21455,6 +21518,15 @@
 			)
 		)
 		(property "LCSC Part #" "C130197"
+			(at 236.22 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "FT Rotation Offset" "270"
 			(at 236.22 31.75 0)
 			(effects
 				(font
@@ -21749,6 +21821,15 @@
 			)
 		)
 		(property "LCSC Part #" "C2865087"
+			(at 125.73 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "FT Rotation Offset" "270"
 			(at 125.73 30.48 0)
 			(effects
 				(font
