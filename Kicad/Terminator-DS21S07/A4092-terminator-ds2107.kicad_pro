@@ -463,7 +463,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "A4092-terminator.kicad_pro",
+    "filename": "A4092-terminator-ds2107.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -513,11 +513,11 @@
       },
       {
         "netclass": "PWR",
-        "pattern": "Vterm"
+        "pattern": "VREF2"
       },
       {
         "netclass": "PWR",
-        "pattern": "2V85"
+        "pattern": "VREF1"
       },
       {
         "netclass": "PWR",
