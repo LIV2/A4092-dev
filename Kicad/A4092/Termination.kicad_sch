@@ -15762,7 +15762,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C221059 "
+		(property "LCSC Part #" "C221059"
 			(at 266.7 77.47 90)
 			(effects
 				(font
@@ -16317,7 +16317,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C221059 "
+		(property "LCSC Part #" "C221059"
 			(at 121.92 34.29 90)
 			(effects
 				(font
