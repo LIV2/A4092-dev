@@ -207,7 +207,7 @@
 		(uuid "67c9153c-66f2-4452-9b8b-efdcb74143c5")
 	)
 	(embedded_fonts no)
-	(model "/Users/stepan/git/A4092-dev/Kicad/Libraries/CA064X101J5GAC7800.step"
+	(model "${KIPRJMOD}/../Libraries/CA064X101J5GAC7800.step"
 		(offset
 			(xyz 0.94 -1.7 0)
 		)
