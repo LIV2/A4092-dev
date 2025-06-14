@@ -23,7 +23,6 @@ filters:
       - ["^CP_EIA-3216-18_Kemet-A", 0.0]
       - ["^SOT-363", 180.0]
 
-
 variants:
   - name: rotated
     comment: 'Just a place holder for the rotation filter'
@@ -34,10 +33,14 @@ variants:
 preflight:
   check_zone_fills: true
   fill_zones: false
-  run_drc: true
-  run_erc: true
+  drc:
+    dont_stop: true
+    format: HTML # HTML,RPT,JSON,CSV
+  erc:
+    dont_stop: true
+    format: HTML # HTML,RPT,JSON,CSV
   update_xml: true
-  ignore_unconnected: true
+  #ignore_unconnected: true
   filters:
     - error: 'pin_not_connected'
       filter: 'Pin not connected'
@@ -122,8 +125,8 @@ outputs:
     run_by_default: true
     options:
       ray_tracing: false
-      output: ../Docs/PCB.png
-      zoom: 8
+      output: ../Docs/A4092-PCB-3D.png
+      zoom: 3
       view: top
       no_tht: true
       orthographic: true
@@ -135,7 +138,7 @@ outputs:
     type: pcbdraw
     comment: "Draw PCB"
     options:
-      output: ../Docs/PCB.png
+      output: ../Docs/A4092-PCB.png
       format: png
       show_solderpaste: false
       show_components: none
