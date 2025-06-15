@@ -36,11 +36,11 @@ preflight:
   drc:
     dont_stop: true
     format: HTML # HTML,RPT,JSON,CSV
+    ignore_unconnected: true
   erc:
     dont_stop: true
     format: HTML # HTML,RPT,JSON,CSV
   update_xml: true
-  #ignore_unconnected: true
   filters:
     - error: 'pin_not_connected'
       filter: 'Pin not connected'
@@ -117,7 +117,7 @@ outputs:
       highlight_pin1: true
       include_nets: true
       dark_mode: true
-      extra_fields: "LCSC #,Mouser #"
+      extra_fields: "LCSC Part #,Mouser #"
 
   - name: 3dImage
     type: render_3d
@@ -185,12 +185,12 @@ outputs:
         - field: References
           name: Designator
         - Footprint
-        - field: 'LCSC #'
+        - field: 'LCSC Part #'
           name: 'LCSC Part #'
       csv:
         hide_pcb_info: true
         hide_stats_info: true
-        quote_all: true
+        # quote_all: true
 
   - name: 'html_bom'
     comment: "BoM"
@@ -210,12 +210,12 @@ outputs:
         - Footprint
         - field: 'Mouser #'
           name: 'Mouser Part'
-        - field: 'LCSC #'
+        - field: 'LCSC Part #'
           name: 'LCSC Part'
       html:
         title: '%f Bill of materials'
         hide_pcb_info: true
         hide_stats_info: true
-        quote_all: true
-        lcsc_link: "LCSC #"
+        # quote_all: true
+        lcsc_link: "LCSC Part #"
         mouser_link: "Mouser #"
