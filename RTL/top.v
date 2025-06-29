@@ -98,6 +98,7 @@ reg  [1:0] z3_state;
 reg  dtack;
 reg  scsi_cycle;
 reg  autoconfig_cycle;
+wire mybus; // bus ownership signal
 
 // Connections to Sub-modules
 wire bfcs; // The internal, buffered FCS signal
@@ -132,6 +133,7 @@ assign DOE   = (BMASTER && !READ) || (slave_cycle && !READ && !bfcs);
 
 
 // --- Clock Generation ---
+reg CLK = 1'b0;  // Ensures consistent power-on behavior
 always @(posedge CLK_50M)
   CLK <= ~CLK;
 
@@ -350,33 +352,40 @@ intreg_access INTREG_ACCESS (
 buffer_control BUFFER_CONTROL (
   .CLK(CLK),
   .RESET_n(IORST_n),
+  // --- Control Signals ---
   .READ(READ),
-  .slave_cycle(slave_cycle),
-  .configured(configured),
-  .BMASTER(BMASTER),
+  .FCS_n(FCS_n),
+  //.FCS_n(!bfcs),
+  .DOE(DOE),
+  .DTACK_n(DTACK_n),
+  // --- Master/Slave Cycle Controls ---
+  .MYBUS(mybus),
   .MASTER_n(MASTER_n),
-  .ADDR(full_addr[23:17]),
-  .FCS_n(!bfcs),
+  .SLAVE_n(SLAVE_n),
+  // --- Outputs to Transceivers ---
   .DBOE_n(DBOE_n_int),
   .ABOEL_n(ABOEL_n_int),
   .ABOEH_n(ABOEH_n_int),
   .D2Z_n(D2Z_n_int),
-  .Z2D_n(Z2D_n_int)
+  .Z2D_n(Z2D_n_int),
+  .DBLT(DBLT_int)
 );
 
 zorro_master_arbiter ZMA (
   .CLK(Z_7M),
   .RESET_n(IORST_n),
-  .FCS(!bfcs),
-  .DTACK(~DTACK_n),
-  .RST(~IORST_n),
-  .EBG_n(BGn), // Connected to actual bus grant
+  .FCS(!FCS_n), // Pass active-high FCS
+  //.FCS(!bfcs),
+  .EBG_n(BGn),
   .SBR_n(SBR_n),
-  .MASTER(MASTER_n),
+  .MASTER(!MASTER_n), // Pass active-high MASTER
+  .MYBUS_n(mybus_n),
   .SBG_n(SBG_n),
   .BMASTER(BMASTER),
   .EBR_n(BRn) // Drives bus request
 );
+
+assign mybus = ~mybus_n;
 
 zorro_dma_master ZDMA (
   .CLK(CLK),
