@@ -87,7 +87,7 @@ module A4092(
 
 // --- Wires and Registers ---
 wire CLKI;
-reg  [27:8] ADDR;
+reg  [27:0] ADDR;
 reg  autoconfig_addr_match;
 reg  scsi_addr_match;
 wire match = autoconfig_addr_match || scsi_addr_match;
@@ -122,8 +122,8 @@ wire DBLT_int;
 wire [7:0] dip_shadow;
 `endif
 
-wire slave_cycle = !MASTER_n && !BMASTER;
-wire [27:0] full_addr = {ADDR, A[7:0]};
+wire slave_cycle = !mybus &&  MASTER_n;
+wire [27:0] full_addr = {ADDR[27:8], A[7:0]};
 
 wire dma_fcs_n, dma_doe;
 wire [3:0] dma_ds_n;
@@ -133,11 +133,28 @@ assign DOE   = (BMASTER && !READ) || (slave_cycle && !READ && !bfcs);
 
 
 // --- Clock Generation ---
-reg CLK = 1'b0;  // Ensures consistent power-on behavior
 always @(posedge CLK_50M)
   CLK <= ~CLK;
 
 assign CLKI = ~CLK;
+
+// --- Memory Map / Device Mapper (U203) ---
+
+/* The basic configuration unit takes 16MB of space.  I slice it up based on A23,
+ * A19..A17.  That's because, while the slicing is rather arbitrary, the interrupt
+ * cycle decode needs A19..A17, so I use these for partitioning too.
+ *
+ *  8C0000       IDREG
+ *  880000       INTREG
+ *  840000       SCSI write
+ *  800000       SCSI read
+ *  000000       ROM
+ */
+
+wire rom_region       = configured && slave_cycle && (ADDR[23:0] >= 24'h000000 && ADDR[23:0] < 24'h800000);
+wire scsi_region      = configured && slave_cycle && (ADDR[23:0] >= 24'h800000 && ADDR[23:0] < 24'h880000);
+wire interrupt_region = configured && slave_cycle && (ADDR[23:0] >= 24'h880000 && ADDR[23:0] < 24'h8c0000);
+wire idreg_region     = configured && slave_cycle && (ADDR[23:0] >= 24'h8c0000 && ADDR[23:0] < 24'h8f0000);
 
 // --- Address Latching and Matching ---
 always @(negedge FCS_n or negedge IORST_n) begin
