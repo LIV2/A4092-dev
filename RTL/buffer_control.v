@@ -30,21 +30,21 @@ module buffer_control (
     output reg DBLT
 );
 
-    // --- CORRECT cycle definitions based on u205.pld ---
+    // --- cycle definitions based on u205.pld ---
     wire master_cycle =  MYBUS && !MASTER_n;
     wire slave_cycle  = !MYBUS &&  MASTER_n;
 
     // Logic from u205.pld, qualified by correct cycle types
-    wire dboe_logic = (slave_cycle  && !SLAVE_n && !READ && !FCS_n) |   // Slave Write
-                      (slave_cycle  && !SLAVE_n &&  READ && !FCS_n &&  DOE) |    // Slave Read
-                      (master_cycle &&  SLAVE_n && !READ && !FCS_n &&  DOE) |    // Master Write
+    wire dboe_logic = (slave_cycle  && !SLAVE_n && !READ && !FCS_n) |          // Slave Write
+                      (slave_cycle  && !SLAVE_n &&  READ && !FCS_n &&  DOE) |  // Slave Read
+                      (master_cycle &&  SLAVE_n && !READ && !FCS_n &&  DOE) |  // Master Write
                       (master_cycle &&  SLAVE_n &&  READ && !FCS_n);           // Master Read
 
     wire d2z_logic  = (slave_cycle  &&  READ && !FCS_n && !SLAVE_n) |   // Slave Read -> Data to Zorro
-                      (master_cycle && !READ && !FCS_n &&  SLAVE_n);     // Master Write -> Data to Zorro
+                      (master_cycle && !READ && !FCS_n &&  SLAVE_n);    // Master Write -> Data to Zorro
 
     wire z2d_logic  = (slave_cycle  && !READ && !FCS_n && !SLAVE_n) |   // Slave Write -> Zorro to Data
-                      (master_cycle &&  READ && !FCS_n &&  SLAVE_n);     // Master Read -> Zorro to Data
+                      (master_cycle &&  READ && !FCS_n &&  SLAVE_n);    // Master Read -> Zorro to Data
 
     wire dblt_latch = ((slave_cycle && !SLAVE_n) || (master_cycle && SLAVE_n)) &&
                       !FCS_n && !DTACK_n && DOE;

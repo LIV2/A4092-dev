@@ -232,6 +232,13 @@ assign DTACK_n  = dtack ? 1'b0 : 1'bz;
 assign SLAVE_n  = !((slave_cycle && configured) || !iack_slave_n);
 assign CFGOUT_n = (SENSEZ3_n) ? autoconfig_cfgout : CFGIN_n;
 assign CINH_n   = !(slave_cycle && configured);
+
+// plumbing for transceivers
+assign DBOE_n   = DBOE_n_int;
+assign ABOEL_n  = ABOEL_n_int;
+assign ABOEH_n  = ABOEH_n_int;
+assign D2Z_n    = D2Z_n_int;
+assign Z2D_n    = Z2D_n_int;
 assign DBLT     = DBLT_int;
 
 // --- Data Bus Multiplexer for Read Cycles ---
