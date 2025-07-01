@@ -7,19 +7,19 @@
 //
 module zorro_master_arbiter (
     // --- Inputs ---
-    input wire C7M,     // This should be the 7MHz arbitration clock (Z_7M)
+    input wire C7M,      // This should be the 7MHz arbitration clock (Z_7M)
     input wire RESET_n,
-    input wire MASTER_n,  // SCSI chip is local master (active high, inverted from MASTER_n)
-    input wire SBR_n,   // SCSI Bus Request (active low)
-    input wire EBG_n,   // Zorro Bus Grant (active low)
-    input wire FCS,     // Zorro FCS
+    input wire MASTER_n, // SCSI chip is local master (active high, inverted from MASTER_n)
+    input wire SBR_n,    // SCSI Bus Request (active low)
+    input wire EBG_n,    // Zorro Bus Grant (active low)
+    input wire FCS,      // Zorro FCS
     input wire DTACK_n,
 
     // --- Outputs ---
     output wire MYBUS_n, // A4091 owns the Zorro bus (active low)
     output wire SBG_n,   // SCSI Bus Grant (active low)
-    output wire EBR_n   // Zorro Bus Request (active low)
-    output wire BMASTER, // Buffered MASTER signal
+    output wire EBR_n,   // Zorro Bus Request (active low)
+    output wire BMASTER  // Buffered MASTER signal
 );
 
     // Internal state from U303
@@ -28,8 +28,10 @@ module zorro_master_arbiter (
     reg rchng;          // A change in registration is required
     reg ssbr;           // Synchronized SCSI Bus Request
     reg mybus;          // Internal, active-high version of MYBUS
-    reg blockbg;        // after 1st sbg must block any further till unregistered and ebg deasserts
-    reg sbg_reg;        // A register to hold the state of SBG_n
+    wire blockbg;        // after 1st sbg must block any further till unregistered and ebg deasserts
+    wire sbg_reg;        // A register to hold the state of SBG_n
+    reg smaster;
+    reg dmaster;
 
     assign MYBUS_n = ~mybus;
     assign SBG_n = ~sbg_reg;
@@ -50,12 +52,17 @@ module zorro_master_arbiter (
             rchng   <= 1'b0;
             ssbr    <= 1'b0;
             mybus   <= 1'b0;
+	    smaster <= 1'b0;
+            dmaster <= 1'b0;
         end else begin
+            smaster <= ~MASTER_n;
+            dmaster <= smaster;
+
             // Synchronize the SCSI Bus Request
             ssbr <= ~SBR_n;
 
             // RCHNG: A change of registration is necessary
-            rchng <= (~reged && ssbr && ~ebr) || (reged && ~MASTER && ~ebr);
+	    rchng <= (~reged && ssbr && ~ebr) || (reged && ~smaster && ~ebr && dmaster);
 
             // EBR: Zorro Bus Request is toggled to register/unregister
             if (rchng && ~ebr)

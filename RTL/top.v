@@ -22,7 +22,7 @@ module A4092(
     inout  wire [3:0] DS_n,
     input  wire [2:0] FC,
     input  wire Z_LOCK, // Zorro LOCK signal
-    input  wire Z_7M, // 7MHz clock for arbitration
+    input  wire C7M, // 7MHz clock for arbitration
     inout  wire FCS_n, // Is input and output (driven during DMA)
     output wire DOE,
     input  wire READ,
@@ -65,10 +65,10 @@ module A4092(
     output wire ROM_WE_n,
 
     // Alternative SPI Interface
-    input SPI_MISO,
-    output reg SPI_MOSI,
-    output reg SPI_CLK,
-    output reg SPI_CS_n,
+    input wire SPI_MISO,
+    output wire SPI_MOSI,
+    output wire SPI_CLK,
+    output wire SPI_CS_n,
 
     // Board Control
     output wire SID_n,
@@ -320,7 +320,7 @@ Autoconfig AUTOCONFIG (
 scsi_access SCSI_ACCESS (
   .CLK(CLK),
   .RESET_n(IORST_n),
-  .ADDR(full_addr[23:17]),
+  .scsi_region(scsi_region),
   .FCS_n(!bfcs),
   .slave_cycle(slave_cycle),
   .configured(configured),
@@ -341,6 +341,13 @@ rom_access ROM_ACCESS (
   .ROM_CE_n(ROM_CE_n),
   .ROM_OE_n(ROM_OE_n),
   .ROM_WE_n(ROM_WE_n)
+);
+
+spi_access SPI_ACCESS (
+    .SPI_MISO(SPI_MISO),
+    .SPI_CLK(SPI_CLK),
+    .SPI_MOSI(SPI_MOSI),
+    .SPI_CS_n(SPI_CS_n)
 );
 
 sid_access SID_ACCESS (
@@ -407,7 +414,7 @@ zorro_master_arbiter ZMA (
   //.FCS(!bfcs),
   .EBG_n(BGn),
   .SBR_n(SBR_n),
-  .MASTER(!MASTER_n), // Pass active-high MASTER
+  .MASTER_n(MASTER_n),
   .MYBUS_n(mybus_n),
   .SBG_n(SBG_n),
   .BMASTER(BMASTER),

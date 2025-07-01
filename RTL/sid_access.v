@@ -21,7 +21,7 @@ module sid_access (
 
 // SID is located at 0x8C0000-0x8FFFFF within the 16MB Z3 BAR
 assign SID_n = !(
-    sidreg_region &&
+    idreg_region
 `ifdef USE_DIP_SWITCH
     && READ
 `endif
