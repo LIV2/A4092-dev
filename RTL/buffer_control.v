@@ -14,10 +14,10 @@ module buffer_control (
     input wire READ,
     input wire FCS_n,
     input wire DOE,
-    input wire DTACK_n,
+    inout wire DTACK_n,
 
     // --- Master/Slave Cycle Controls ---
-    input wire MYBUS,       // A4091 owns the Zorro bus (active high)
+    input wire MYBUS_n,     // A4091 owns the Zorro bus (active low)
     input wire MASTER_n,    // SCSI chip is local master (active low)
     input wire SLAVE_n,     // Board is selected as a slave (active low)
 
@@ -31,8 +31,8 @@ module buffer_control (
 );
 
     // --- cycle definitions based on u205.pld ---
-    wire master_cycle =  MYBUS && !MASTER_n;
-    wire slave_cycle  = !MYBUS &&  MASTER_n;
+    wire master_cycle =  ~MYBUS_n && ~MASTER_n;
+    wire slave_cycle  =  MYBUS_n &&  MASTER_n;
 
     // Logic from u205.pld, qualified by correct cycle types
     wire dboe_logic = (slave_cycle  && !SLAVE_n && !READ && !FCS_n) |          // Slave Write

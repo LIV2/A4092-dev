@@ -37,9 +37,9 @@ NET "SPI_MOSI"    LOC = "P34";
 NET "SPI_MISO"    LOC = "P35";
 # P36 - GND
 # P37 - VCCIO
-NET "Z_7M"        LOC = "P38";
-NET "Z_7M" TNM_NET = "Z_7M";
-TIMESPEC "TS_Z_7M" = PERIOD "Z_7M" 139.68 ns HIGH 50%;
+NET "C7M"        LOC = "P38";
+NET "C7M" TNM_NET = "C7M";
+TIMESPEC "TS_C7M" = PERIOD "C7M" 139.68 ns HIGH 50%;
 NET "SPI_CS_n"    LOC = "P39";
 NET "DOE"         LOC = "P40";
 NET "READ"        LOC = "P41";

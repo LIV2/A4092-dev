@@ -1,7 +1,8 @@
 module rom_access (
     input wire CLK,
     input wire RESET_n,
-    input wire [23:17] ADDR,
+    input wire rom_region,
+
     input wire READ,
     input wire FCS_n,
     input wire slave_cycle,
@@ -16,7 +17,7 @@ module rom_access (
 );
 
     // Match ROM space (0x000000 - 0x7FFFFF)
-    assign rom_selected = slave_cycle && (ADDR[23:17] < 8'h40);
+    assign rom_selected = rom_region;
 
     // Control ROM chip selects
     assign ROM_CE_n = !(rom_selected && !shutup);

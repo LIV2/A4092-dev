@@ -52,7 +52,7 @@ module A4092(
     input  wire SBR_n,    // SCSI bus request (for DMA)
     input  wire [1:0] SIZ, // Sizing bits from SCSI (for DMA)
     output wire SBG_n,    // SCSI bus grant (for DMA)
-    output wire BMASTER,  // Buffered MASTER signal
+    output wire BMASTER,  // Inverted MASTER_n signal
     output reg  MASTER_n, // SCSI chip is master of local bus
     output wire SCSI_AS_n, // Address Strobe to SCSI chip (PLD_AS)
     output wire SCSI_DS_n, // Data Strobe to SCSI chip (PLD_DS)
@@ -98,31 +98,36 @@ reg  [1:0] z3_state;
 reg  dtack;
 reg  scsi_cycle;
 reg  autoconfig_cycle;
-wire mybus; // bus ownership signal
+wire mybus_n; // bus ownership signal
 
 // Connections to Sub-modules
 wire bfcs; // The internal, buffered FCS signal
-wire autoconfig_dtack;
 wire [3:0] autoconfig_dout;
 wire autoconfig_cfgout;
 wire [3:0] scsi_base_addr;
+
+wire autoconfig_dtack;
 wire scsi_dtack;
 wire rom_dtack;
 wire sid_dtack;
+
 wire iack_slave_n;
 wire iack_dtack_n;
 wire [7:0] iack_dout;
+
+// Buffer Control
 wire DBOE_n_int;
 wire ABOEL_n_int;
 wire ABOEH_n_int;
 wire D2Z_n_int;
 wire Z2D_n_int;
 wire DBLT_int;
+
 `ifndef USE_DIP_SWITCH
 wire [7:0] dip_shadow;
 `endif
 
-wire slave_cycle = !mybus &&  MASTER_n;
+wire slave_cycle = mybus_n &&  MASTER_n;
 wire [27:0] full_addr = {ADDR[27:8], A[7:0]};
 
 wire dma_fcs_n, dma_doe;
@@ -233,7 +238,7 @@ assign SLAVE_n  = !((slave_cycle && configured) || !iack_slave_n);
 assign CFGOUT_n = (SENSEZ3_n) ? autoconfig_cfgout : CFGIN_n;
 assign CINH_n   = !(slave_cycle && configured);
 
-// plumbing for transceivers
+// Buffer Control
 assign DBOE_n   = DBOE_n_int;
 assign ABOEL_n  = ABOEL_n_int;
 assign ABOEH_n  = ABOEH_n_int;
@@ -326,7 +331,7 @@ scsi_access SCSI_ACCESS (
 rom_access ROM_ACCESS (
   .CLK(CLK),
   .RESET_n(IORST_n),
-  .ADDR(ADDR[23:17]),
+  .rom_region(rom_region),
   .READ(READ),
   .FCS_n(!bfcs),
   .slave_cycle(slave_cycle),
@@ -341,7 +346,7 @@ rom_access ROM_ACCESS (
 sid_access SID_ACCESS (
   .CLK(CLK),
   .RESET_n(IORST_n),
-  .ADDR(full_addr[23:17]),
+  .idreg_region(idreg_region),
   .READ(READ),
 `ifndef USE_DIP_SWITCH
   .DIN(D[7:0]),
@@ -383,7 +388,7 @@ buffer_control BUFFER_CONTROL (
   .DOE(DOE),
   .DTACK_n(DTACK_n),
   // --- Master/Slave Cycle Controls ---
-  .MYBUS(mybus),
+  .MYBUS_n(mybus_n),
   .MASTER_n(MASTER_n),
   .SLAVE_n(SLAVE_n),
   // --- Outputs to Transceivers ---
@@ -396,7 +401,7 @@ buffer_control BUFFER_CONTROL (
 );
 
 zorro_master_arbiter ZMA (
-  .CLK(Z_7M),
+  .C7M(C7M),
   .RESET_n(IORST_n),
   .FCS(!FCS_n), // Pass active-high FCS
   //.FCS(!bfcs),
@@ -408,8 +413,6 @@ zorro_master_arbiter ZMA (
   .BMASTER(BMASTER),
   .EBR_n(BRn) // Drives bus request
 );
-
-assign mybus = ~mybus_n;
 
 zorro_dma_master ZDMA (
   .CLK(CLK),

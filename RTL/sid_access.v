@@ -3,7 +3,8 @@
 module sid_access (
     input wire CLK,
     input wire RESET_n,
-    input wire [23:17] ADDR,
+    input wire idreg_region,
+
     input wire READ,
 `ifndef USE_DIP_SWITCH
     input wire [7:0] DIN,
@@ -19,14 +20,11 @@ module sid_access (
 );
 
 // SID is located at 0x8C0000-0x8FFFFF within the 16MB Z3 BAR
-// Match A[23:17] == 0x46 (for 0x8C0000)
 assign SID_n = !(
-    slave_cycle &&
-    configured &&
+    sidreg_region &&
 `ifdef USE_DIP_SWITCH
-    READ &&
+    && READ
 `endif
-    (ADDR[23:17] == 8'h46)
 );
 
 // SID DTACK logic: one-cycle delay when selected

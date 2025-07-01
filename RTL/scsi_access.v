@@ -9,7 +9,7 @@
 module scsi_access (
     input wire CLK,
     input wire RESET_n,
-    input wire [23:17] ADDR,     // Address bits to decode SCSI region
+    input wire scsi_region,
     // input wire READ,          // READ is not used in this specific dtack generation logic
     input wire FCS_n,        // Zorro Full Cycle Strobe (active low)
     input wire slave_cycle,  // Indicates a Zorro slave cycle
@@ -18,9 +18,6 @@ module scsi_access (
 
     output reg scsi_dtack    // DTACK signal for the Zorro bus (active high for this module's output)
 );
-
-// Decode for the SCSI region (e.g., 0x800000 - 0x87FFFF)
-wire scsi_region = slave_cycle && configured && (ADDR[23:17] >= 8'h40 && ADDR[23:17] < 8'h44);
 
 // State machine for DTACK generation
 localparam IDLE         = 2'b00;
