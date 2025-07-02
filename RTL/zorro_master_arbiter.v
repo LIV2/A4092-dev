@@ -28,22 +28,35 @@ module zorro_master_arbiter (
     reg rchng;          // A change in registration is required
     reg ssbr;           // Synchronized SCSI Bus Request
     reg mybus;          // Internal, active-high version of MYBUS
-    wire blockbg;        // after 1st sbg must block any further till unregistered and ebg deasserts
-    wire sbg_reg;        // A register to hold the state of SBG_n
+    reg blockbg;        // after 1st sbg must block any further till unregistered and ebg deasserts
+    reg sbg_reg;        // A register to hold the state of SBG_n
+
     reg smaster;
     reg dmaster;
+
+    // wires for combinational logic
+    wire sbg_next;
+    wire blockbg_next;
+
+    // SCSI Bus Grant logic from u303.pld
+    // Describe the NEXT state using purely combinational logic
+    assign blockbg_next = ~MASTER_n || (blockbg && reged) || (blockbg && ~EBG_n);
+
+    assign sbg_next = ( (~FCS && DTACK_n && ~SBR_n && ~EBG_n && ~blockbg_next) ||
+                        (sbg_reg && ~SBR_n && ~blockbg_next) ||
+                        (sbg_reg && MASTER_n && ~blockbg_next) ) && RESET_n;
+
 
     assign MYBUS_n = ~mybus;
     assign SBG_n = ~sbg_reg;
     assign EBR_n = ~ebr;
     assign BMASTER = ~MASTER_n;
 
-    // SCSI Bus Grant logic from u303.pld
-    assign sbg_reg = ( (~FCS && DTACK_n && RESET_n && ~SBR_n && ~EBG_n && ~blockbg) ||
-                       (sbg_reg && ~SBR_n && RESET_n && ~blockbg) ||
-		       (sbg_reg && MASTER_n && RESET_n && ~blockbg) );
+ //   assign sbg_reg = ( (~FCS && DTACK_n && RESET_n && ~SBR_n && ~EBG_n && ~blockbg) ||
+ //                      (sbg_reg && ~SBR_n && RESET_n && ~blockbg) ||
+	//	       (sbg_reg && MASTER_n && RESET_n && ~blockbg) );
 
-    assign blockbg = ~MASTER_n || (blockbg && reged) || (blockbg && ~EBG_n);
+//    assign blockbg = ~MASTER_n || (blockbg && reged) || (blockbg && ~EBG_n);
 
     always @(posedge C7M or negedge RESET_n) begin
         if (!RESET_n) begin
@@ -54,6 +67,8 @@ module zorro_master_arbiter (
             mybus   <= 1'b0;
 	    smaster <= 1'b0;
             dmaster <= 1'b0;
+	    sbg_reg <= 1'b0;
+	    blockbg <= 1'b0;
         end else begin
             smaster <= ~MASTER_n;
             dmaster <= smaster;
@@ -83,6 +98,10 @@ module zorro_master_arbiter (
                 mybus <= mybus;
             else
                 mybus <= 1'b0;
+
+	    // Update the registers with their next state on the clock edge
+            sbg_reg <= sbg_next;
+            blockbg <= blockbg_next;
         end
     end
 endmodule

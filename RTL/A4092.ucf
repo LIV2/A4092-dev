@@ -28,8 +28,8 @@ NET "A<19>"       LOC = "P27";
 NET "A<20>"       LOC = "P28";
 # P29 - GND
 NET "CLK_50M"     LOC = "P30";
-NET "CLK_50M" TNM_NET = "clk";
-TIMESPEC "TS_clk" = PERIOD "clk" 20 ns HIGH 50%;
+NET "CLK_50M" TNM_NET = "CLK_50M";
+TIMESPEC "TS_CLK_50M" = PERIOD "CLK_50M" 20 ns HIGH 50%;
 NET "SCSI_AS_n"   LOC = "P31";
 NET "SCSI_DS_n"   LOC = "P32";
 NET "SPI_CLK"     LOC = "P33";

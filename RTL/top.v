@@ -8,17 +8,16 @@
 //
 module A4092(
     // Address Bus
-    input  wire [31:0] A,
+    inout  wire [31:0] A,
     // Data Bus
-    inout wire [31:0] D,
+    inout  wire [31:0] D,
     // External 50MHz Clock
     input  wire CLK_50M,
     // Internal 25MHz Clock
-    output reg CLK,
-    // 
-    input  wire IORST_n,
+    output wire CLK,
 
     // Zorro Bus Interface
+    input  wire IORST_n,
     inout  wire [3:0] DS_n,
     input  wire [2:0] FC,
     input  wire Z_LOCK, // Zorro LOCK signal
@@ -36,7 +35,7 @@ module A4092(
     input  wire BERR_n,
     input  wire BGn, // Zorro Bus Grant
     output wire BRn, // Zorro Bus Request
-    input wire SENSEZ3_n,
+    input  wire SENSEZ3_n,
 
     // Buffer Control
     output wire DBLT,
@@ -47,13 +46,13 @@ module A4092(
     output wire Z2D_n,
 
     // SCSI Chip Interface
-    input  wire SLACK_n,  // SCSI ack during slave access
-    input  wire SINT_n,   // SCSI interrupt
-    input  wire SBR_n,    // SCSI bus request (for DMA)
-    input  wire [1:0] SIZ, // Sizing bits from SCSI (for DMA)
-    output wire SBG_n,    // SCSI bus grant (for DMA)
-    output wire BMASTER,  // Inverted MASTER_n signal
-    output reg  MASTER_n, // SCSI chip is master of local bus
+    input  wire SLACK_n,   // SCSI ack during slave access
+    input  wire SINT_n,    // SCSI interrupt
+    input  wire SBR_n,     // SCSI bus request (for DMA)
+    output wire [1:0] SIZ, // Sizing bits from SCSI (for DMA)
+    output wire SBG_n,     // SCSI bus grant (for DMA)
+    output wire BMASTER,   // Inverted MASTER_n signal
+    output wire MASTER_n,  // SCSI chip is master of local bus
     output wire SCSI_AS_n, // Address Strobe to SCSI chip (PLD_AS)
     output wire SCSI_DS_n, // Data Strobe to SCSI chip (PLD_DS)
     output wire SCSI_SREG_n, // Register select to SCSI chip
@@ -65,7 +64,7 @@ module A4092(
     output wire ROM_WE_n,
 
     // Alternative SPI Interface
-    input wire SPI_MISO,
+    input  wire SPI_MISO,
     output wire SPI_MOSI,
     output wire SPI_CLK,
     output wire SPI_CS_n,
@@ -76,10 +75,10 @@ module A4092(
 
     // Unused:
     // We _never_ issue a CBACK, since BURST isn't supported
-    input CBREQ_n,
+    input  wire CBREQ_n,
     output wire CBACK_n,
     output wire MTACK_n,
-    input Z_FCS
+    input  wire Z_FCS
 );
 
 `include "globalparams.vh"
@@ -104,10 +103,12 @@ wire bfcs; // The internal, buffered FCS signal
 wire [3:0] autoconfig_dout;
 wire autoconfig_cfgout;
 wire [3:0] scsi_base_addr;
+reg master_n_int;
 
 wire autoconfig_dtack;
 wire scsi_dtack;
 wire rom_dtack;
+wire spi_dtack;
 wire sid_dtack;
 
 wire iack_slave_n;
@@ -125,12 +126,15 @@ wire DBLT_int;
 `ifndef USE_DIP_SWITCH
 wire [7:0] dip_shadow;
 `endif
+wire [7:0] spi_shadow;
 
-wire slave_cycle = mybus_n &&  MASTER_n;
+wire slave_cycle = mybus_n &&  master_n_int;
 wire [27:0] full_addr = {ADDR[27:8], A[7:0]};
 
 wire dma_fcs_n, dma_doe;
 wire [3:0] dma_ds_n;
+
+assign MASTER_n = master_n_int;
 assign FCS_n = BMASTER ? dma_fcs_n : 1'bz;
 assign DS_n  = BMASTER ? dma_ds_n  : 4'bzzzz;
 assign DOE   = (BMASTER && !READ) || (slave_cycle && !READ && !bfcs);
@@ -140,10 +144,12 @@ assign MTACK_n = 1'bz;
 assign CBACK_n = 1'bz;
 
 // --- Clock Generation ---
+reg clk_int;
 always @(posedge CLK_50M)
-  CLK <= ~CLK;
+  clk_int <= ~clk_int;
 
-assign CLKI = ~CLK;
+assign CLKI = ~clk_int;
+assign CLK = clk_int;
 
 // --- Memory Map / Device Mapper (U203) ---
 
@@ -170,7 +176,7 @@ always @(negedge FCS_n or negedge IORST_n) begin
     scsi_addr_match <= 0;
     autoconfig_addr_match <= 0;
   end else begin
-    MASTER_n <= READ;
+    master_n_int <= READ;
     ADDR[27:8] <= A[27:8];
     if (A[31:28] == scsi_base_addr && configured) begin
       scsi_addr_match <= 1;
@@ -215,7 +221,7 @@ always @(posedge CLK or negedge IORST_n) begin
             z3_state <= Z3_IDLE;
           end else if ((autoconfig_dtack && autoconfig_cycle) ||
                        (scsi_dtack && scsi_cycle) ||
-                       (rom_dtack) || (sid_dtack) || !iack_dtack_n) begin
+                       (rom_dtack) || (spi_dtack) || (sid_dtack) || !iack_dtack_n) begin
             z3_state <= Z3_END;
           end
         end
@@ -254,11 +260,10 @@ assign DBLT     = DBLT_int;
 
 // Autoconfig data is driven on D[31:28].
 // This happens when it's an autoconfig cycle, dtack is active (meaning data phase), and it's a READ.
-assign D[31:28] = (autoconfig_cycle && dtack && READ) ? autoconfig_dout : 4'bzzzz;
-
-// Bits D[27:8] are not driven by this CPLD during any read cycle it handles.
-// So, they are always tristated from the CPLD's perspective.
-assign D[27:8]  = 20'bzzzzzzzzzzzzzzzzzzzz; // 20 bits
+assign D[31:28] = (autoconfig_cycle && dtack && READ) ? autoconfig_dout : 
+                  (spi_dtack) ? spi_shadow[7:4] :
+                  4'bZZZZ;
+assign D[15:12] = spi_dtack ? spi_shadow[3:0] : 4'bZZZZ;
 
 // Interrupt Vector (iack_dout) or SCSI ID (dip_shadow) are driven on D[7:0].
 // The conditions `!iack_dtack_n` and `sid_dtack` already imply a READ cycle
@@ -269,36 +274,15 @@ assign D[7:0]   = !iack_dtack_n ? iack_dout :        // Interrupt vector has pri
 `endif
                                   8'bzzzzzzzz;       // Tristate if neither
 
-// --- SCSI Slave Interface (replaces U304) ---
-reg ssync_n;
-reg as_latch_n;
-reg ds_latch_n;
-reg sreg_latch_n;
+// Bits D[27:16] and D[11:8] are not driven by this CPLD.
+// The dummy TIE_OFF_CONDITION silences "never assigned" warnings.
+localparam TIE_OFF_CONDITION = 1'b0;
+assign D[27:16] = TIE_OFF_CONDITION ? 12'd0 : 12'bZZZZZZZZZZZZ;
+assign D[11:8]  = TIE_OFF_CONDITION ? 4'd0  : 4'bZZZZ;
 
-// This block generates the necessary strobes and sizing signals for the
-// NCR 53C710 when the CPU is accessing it (slave mode).
-always @(posedge CLKI or negedge IORST_n) begin
-    if (!IORST_n) begin
-        ssync_n <= 1'b1;
-        as_latch_n <= 1'b1;
-        ds_latch_n <= 1'b1;
-        sreg_latch_n <= 1'b1;
-    end else begin
-	// Synchronize start of SCSI cycle
-        ssync_n <= !(scsi_cycle && DOE && (|DS_n != 4'b1111) && slave_cycle);
-	// Generate Address Strobe
-        as_latch_n <= ssync_n;
-	// Generate Data Strobe
-        ds_latch_n <= !(!ssync_n & READ) && !(as_latch_n & !READ);
-	// Generate Register Select
-        sreg_latch_n <= !(!as_latch_n & CLK) && !(!as_latch_n & !sreg_latch_n);
-    end
-end
-assign SCSI_AS_n = as_latch_n;
-assign SCSI_DS_n = !scsi_cycle ? 1'b1 : ds_latch_n;
-assign SCSI_SREG_n = sreg_latch_n;
+// --- SCSI Slave Interface  ---
 
-// DOE is driven active during master-mode writes.
+
 
 // --- Module Instantiations ---
 
@@ -330,6 +314,30 @@ scsi_access SCSI_ACCESS (
   .scsi_dtack(scsi_dtack)
 );
 
+scsi_slave SCSI_SLAVE (
+  // --- Inputs
+  .CLK(CLK),
+  .CLKI(CLKI),
+  .IORST_n(IORST_n),
+  .SCSI_n(SCSI_n),
+  .READ(READ),
+  .DS_n(DS_n),
+  .DOE(DOE),
+  .DTACK_n(dtack),
+  .STERM_n(STERM_n),
+  .MYBUS_n(mybus_n),
+  .A2(ADDR[2]),
+  .scsi_cycle(scsi_cycle),
+  .slave_cycle(slave_cycle),
+
+  // --- Outputs
+  .SCSI_SREG_n(SREG_n),
+  .SCSI_DS_n(SCSI_DS_n),
+  .SCSI_AS_n(SCSI_AS_n),
+  .SIZ(SIZ),
+  .ADDRL(A[1:0])
+);
+
 rom_access ROM_ACCESS (
   .CLK(CLK),
   .RESET_n(IORST_n),
@@ -346,41 +354,52 @@ rom_access ROM_ACCESS (
 );
 
 spi_access SPI_ACCESS (
+    .ADDR(ADDR[20:0]),
     .SPI_MISO(SPI_MISO),
     .SPI_CLK(SPI_CLK),
     .SPI_MOSI(SPI_MOSI),
-    .SPI_CS_n(SPI_CS_n)
+    .SPI_CS_n(SPI_CS_n),
+    .spi_dtack(spi_dtack),
+    .DOUT(spi_shadow)
 );
 
 sid_access SID_ACCESS (
+  // --- Inputs
   .CLK(CLK),
   .RESET_n(IORST_n),
   .idreg_region(idreg_region),
   .READ(READ),
+  .FCS_n(!bfcs),
+  .slave_cycle(slave_cycle),
+  .configured(configured),
+
 `ifndef USE_DIP_SWITCH
   .DIN(D[7:0]),
   .DOUT(dip_shadow),
   .dip_ext_term(DIP_EXT_TERM),
 `endif
-  .FCS_n(!bfcs),
-  .slave_cycle(slave_cycle),
-  .configured(configured),
   .sid_dtack(sid_dtack),
   .SID_n(SID_n)
 );
 
 intreg_access INTREG_ACCESS (
+  // --- Core Inputs
   .CLK(CLK),
   .RESET_n(IORST_n),
   .FCS_n(!bfcs),
   .configured(configured),
+  // --- Zorro III Bus Inputs
   .FC(FC),
   .ADDR(full_addr[23:17]),
   .LOCK(Z_LOCK),
   .READ(READ),
   .DS0_n(DS_n[0]),
   .MTCR_n(MTCR_n),
+
+  // --- Interrupt Input from SCSI chip
   .NCR_INT(SINT_n),
+
+  // --- Outputs
   .INT2_n(INT2_n),
   .iack_slave_n(iack_slave_n),
   .iack_dtack_n(iack_dtack_n),
@@ -390,16 +409,19 @@ intreg_access INTREG_ACCESS (
 buffer_control BUFFER_CONTROL (
   .CLK(CLK),
   .RESET_n(IORST_n),
+
   // --- Control Signals ---
   .READ(READ),
   .FCS_n(FCS_n),
   //.FCS_n(!bfcs),
   .DOE(DOE),
   .DTACK_n(DTACK_n),
+
   // --- Master/Slave Cycle Controls ---
   .MYBUS_n(mybus_n),
-  .MASTER_n(MASTER_n),
+  .MASTER_n(master_n_int),
   .SLAVE_n(SLAVE_n),
+
   // --- Outputs to Transceivers ---
   .DBOE_n(DBOE_n_int),
   .ABOEL_n(ABOEL_n_int),
@@ -410,17 +432,20 @@ buffer_control BUFFER_CONTROL (
 );
 
 zorro_master_arbiter ZMA (
+  // --- Inputs ---
   .C7M(C7M),
   .RESET_n(IORST_n),
+  .MASTER_n(master_n_int),
+  .SBR_n(SBR_n),
+  .EBG_n(BGn),
   .FCS(!FCS_n), // Pass active-high FCS
   //.FCS(!bfcs),
-  .EBG_n(BGn),
-  .SBR_n(SBR_n),
-  .MASTER_n(MASTER_n),
+  .DTACK_n(~dtack), // FIXME
+  // --- Outputs ---
   .MYBUS_n(mybus_n),
   .SBG_n(SBG_n),
-  .BMASTER(BMASTER),
-  .EBR_n(BRn) // Drives bus request
+  .EBR_n(BRn), // Drives bus request
+  .BMASTER(BMASTER)
 );
 
 zorro_dma_master ZDMA (
