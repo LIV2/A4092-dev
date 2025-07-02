@@ -1,20 +1,23 @@
 `timescale 1ns / 1ps
 
 module sid_access (
+    // --- Inputs
     input wire CLK,
     input wire RESET_n,
     input wire idreg_region,
 
     input wire READ,
-`ifndef USE_DIP_SWITCH
-    input wire [7:0] DIN,
-    output reg [7:0] DOUT,
-    output wire dip_ext_term,
-`endif
     input wire FCS_n,
     input wire slave_cycle,
     input wire configured,
 
+`ifndef USE_DIP_SWITCH
+    input wire [7:0] DIN,
+
+    // --- Outputs
+    output reg [7:0] DOUT,
+    output wire dip_ext_term,
+`endif
     output reg sid_dtack,
     output wire SID_n
 );
@@ -34,6 +37,9 @@ reg [1:0] sid_state;
 // One-byte DIP shadow register
 reg [7:0] dip_shadow;
 
+// DIP_EXT_TERM is the only signal from the DIP switch that
+// goes to actual hardware circuits, namely it enables the
+// onboard active termination circuit.
 assign dip_ext_term = dip_shadow[0];
 `endif
 
