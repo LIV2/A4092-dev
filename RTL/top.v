@@ -77,10 +77,9 @@ module A4092(
     // Unused:
     // We _never_ issue a CBACK, since BURST isn't supported
     input CBREQ_n,
-    output CBACK_n,
-    output MTACK_n,
+    output wire CBACK_n,
+    output wire MTACK_n,
     input Z_FCS
-
 );
 
 `include "globalparams.vh"
@@ -136,6 +135,9 @@ assign FCS_n = BMASTER ? dma_fcs_n : 1'bz;
 assign DS_n  = BMASTER ? dma_ds_n  : 4'bzzzz;
 assign DOE   = (BMASTER && !READ) || (slave_cycle && !READ && !bfcs);
 
+/* Unused */
+assign MTACK_n = 1'bz;
+assign CBACK_n = 1'bz;
 
 // --- Clock Generation ---
 always @(posedge CLK_50M)
