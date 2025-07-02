@@ -324,14 +324,14 @@ scsi_slave SCSI_SLAVE (
   .DS_n(DS_n),
   .DOE(DOE),
   .DTACK_n(dtack),
-  .STERM_n(STERM_n),
+  .SCSI_STERM_n(SCSI_STERM_n),
   .MYBUS_n(mybus_n),
   .A2(ADDR[2]),
   .scsi_cycle(scsi_cycle),
   .slave_cycle(slave_cycle),
 
   // --- Outputs
-  .SCSI_SREG_n(SREG_n),
+  .SCSI_SREG_n(SCSI_SREG_n),
   .SCSI_DS_n(SCSI_DS_n),
   .SCSI_AS_n(SCSI_AS_n),
   .SIZ(SIZ),
