@@ -30,7 +30,7 @@ module intreg_access (
     input wire NCR_INT,
 
     // -- Outputs
-    output reg INT2_n,     // Main interrupt request to Zorro bus
+    output wire INT2_n,     // Main interrupt request to Zorro bus
     output reg iack_slave_n, // Drives SLAVE_n during an IACK cycle
     output reg iack_dtack_n, // Drives DTACK_n during an IACK cycle
     output reg [7:0] DOUT      // Interrupt vector output
@@ -56,6 +56,9 @@ wire match_intreg_write = configured && !LOCK && (ADDR[23:17] == 8'h44) && !READ
 // This logic replicates the qualified interrupt space decode from U203.
 wire iack_cycle_detect = (FC == 3'b111) && READ;
 
+// Drive the main Zorro interrupt line (INT2_n is open-drain)
+assign INT2_n = (int_pending) ? 1'b0 : 1'bZ;
+
 // --- State Machine and Logic ---
 
 always @(posedge CLK or negedge RESET_n) begin
@@ -66,7 +69,6 @@ always @(posedge CLK or negedge RESET_n) begin
         int_servicing <= 1'b0;
         int_poll      <= 1'b0;
         int_vector    <= 8'h0F; // Default to spurious interrupt vector
-        INT2_n        <= 1'b1;
         iack_slave_n  <= 1'b1;
         iack_dtack_n  <= 1'b1;
         DOUT          <= 8'h00;
@@ -82,8 +84,7 @@ always @(posedge CLK or negedge RESET_n) begin
             end
         end
 
-        // 2. Drive the main Zorro interrupt line (INT2_n is open-drain)
-        INT2_n <= ~int_pending;
+	// 2. INT2_n moved out of the state machine
 
         // 3. Latch when the driver has written to the interrupt register (from U203 `INTASS`)
         if (match_intreg_write && !FCS_n) begin
