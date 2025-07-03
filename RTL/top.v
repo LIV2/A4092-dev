@@ -49,10 +49,10 @@ module A4092(
     input  wire SLACK_n,   // SCSI ack during slave access
     input  wire SINT_n,    // SCSI interrupt
     input  wire SBR_n,     // SCSI bus request (for DMA)
+    input  wire MASTER_n,  // SCSI chip is master of local bus
     output wire [1:0] SIZ, // Sizing bits from SCSI (for DMA)
     output wire SBG_n,     // SCSI bus grant (for DMA)
     output wire BMASTER,   // Inverted MASTER_n signal
-    output wire MASTER_n,  // SCSI chip is master of local bus
     output wire SCSI_AS_n, // Address Strobe to SCSI chip (PLD_AS)
     output wire SCSI_DS_n, // Data Strobe to SCSI chip (PLD_DS)
     output wire SCSI_SREG_n, // Register select to SCSI chip
@@ -103,7 +103,6 @@ wire bfcs; // The internal, buffered FCS signal
 wire [3:0] autoconfig_dout;
 wire autoconfig_cfgout;
 wire [3:0] scsi_base_addr;
-reg master_n_int;
 
 wire autoconfig_dtack;
 wire scsi_dtack;
@@ -128,13 +127,12 @@ wire [7:0] dip_shadow;
 `endif
 wire [7:0] spi_shadow;
 
-wire slave_cycle = mybus_n &&  master_n_int;
+wire slave_cycle = mybus_n &&  MASTER_n;
 wire [27:0] full_addr = {ADDR[27:8], A[7:0]};
 
 wire dma_fcs_n, dma_doe;
 wire [3:0] dma_ds_n;
 
-assign MASTER_n = master_n_int;
 assign FCS_n = BMASTER ? dma_fcs_n : 1'bz;
 assign DS_n  = BMASTER ? dma_ds_n  : 4'bzzzz;
 assign DOE   = (BMASTER && !READ) || (slave_cycle && !READ && !bfcs);
@@ -176,7 +174,7 @@ always @(negedge FCS_n or negedge IORST_n) begin
     scsi_addr_match <= 0;
     autoconfig_addr_match <= 0;
   end else begin
-    master_n_int <= READ;
+    //master_n_int <= READ;
     ADDR[27:8] <= A[27:8];
     if (A[31:28] == scsi_base_addr && configured) begin
       scsi_addr_match <= 1;
@@ -419,7 +417,7 @@ buffer_control BUFFER_CONTROL (
 
   // --- Master/Slave Cycle Controls ---
   .MYBUS_n(mybus_n),
-  .MASTER_n(master_n_int),
+  .MASTER_n(MASTER_n),
   .SLAVE_n(SLAVE_n),
 
   // --- Outputs to Transceivers ---
@@ -435,7 +433,7 @@ zorro_master_arbiter ZMA (
   // --- Inputs ---
   .C7M(C7M),
   .RESET_n(IORST_n),
-  .MASTER_n(master_n_int),
+  .MASTER_n(MASTER_n),
   .SBR_n(SBR_n),
   .EBG_n(BGn),
   .FCS(!FCS_n), // Pass active-high FCS
