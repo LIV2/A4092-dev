@@ -78,7 +78,7 @@ module A4092(
     // We _never_ issue a CBACK, since BURST isn't supported
     input  wire CBREQ_n,
     output wire CBACK_n,
-    output wire MTACK_n,
+    output wire MTACK_n
 );
 
 `include "globalparams.vh"
@@ -131,9 +131,10 @@ wire slave_cycle = mybus_n &&  MASTER_n;
 wire dma_fcs_n, dma_doe;
 wire [3:0] dma_ds_n;
 
-assign FCS_n = BMASTER ? dma_fcs_n : 1'bz;
+assign FCS = ~Z_FCS_n;// Only used for Addresslatch U1 and U4 in Slave Mode simply use Z_FCS_n to minimize delay
 assign DS_n  = BMASTER ? dma_ds_n  : 4'bzzzz;
-assign DOE   = (BMASTER && !READ) || (slave_cycle && !READ && !bfcs);
+//assign DOE   = (BMASTER && !READ) || (slave_cycle && !READ && !bfcs);
+assign DOE   = !mybus_n ? dma_doe : 1'bz;	// output from DMA engine when DMA else input...
 
 /* Unused */
 assign MTACK_n = 1'bz;
@@ -177,7 +178,7 @@ always @(negedge Z_FCS_n or negedge IORST_n) begin
     end else begin
       scsi_addr_match <= 0;
     end
-    if ({A[31:24]} == 8'hFF && !configured && !shutup && !CFGIN_n) begin
+    if ({A[31:24]} == 8'hFF && !configured && !shutup && !CFGIN_n && SENSEZ3_n) begin	// SENSEZ3_n = 0 disable autoconfig
       autoconfig_addr_match <= 1;
     end else begin
       autoconfig_addr_match <= 0;
@@ -206,7 +207,7 @@ always @(posedge CLK or negedge IORST_n) begin
       Z3_START: begin
           if (bfcs) begin
             z3_state <= Z3_IDLE;
-          end else if (READ || (|DS_n != 4'b1111)) begin
+          end else if (DOE && DS_n != 4'b1111) begin
             z3_state <= Z3_DATA;
           end
         end
@@ -236,7 +237,9 @@ end
 
 // --- Top-Level Bus Assignments ---
 assign DTACK_n  = dtack ? 1'b0 : 1'bz;
-assign SLAVE_n  = !((slave_cycle && configured) || !iack_slave_n);
+//assign SLAVE_n  = !((slave_cycle && configured) || !iack_slave_n);
+assign SLAVE_n = (!(!bfcs && match && validspace) && iack_slave_n);
+
 assign CFGOUT_n = (SENSEZ3_n) ? autoconfig_cfgout : CFGIN_n;
 assign CINH_n   = !(slave_cycle && configured);
 
