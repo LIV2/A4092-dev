@@ -102,7 +102,7 @@ wire mybus_n; // bus ownership signal
 wire bfcs; // The internal, buffered FCS signal
 wire [3:0] autoconfig_dout;
 wire autoconfig_cfgout;
-wire [3:0] scsi_base_addr;
+wire [7:0] scsi_base_addr;
 
 wire autoconfig_dtack;
 wire scsi_dtack;
@@ -176,7 +176,7 @@ always @(negedge Z_FCS_n or negedge IORST_n) begin
   end else begin
     //master_n_int <= READ;
     ADDR[27:8] <= A[27:8];
-    if (A[31:28] == scsi_base_addr && configured) begin
+    if (A[31:24] == scsi_base_addr && configured) begin
       scsi_addr_match <= 1;
     end else begin
       scsi_addr_match <= 0;
