@@ -85,7 +85,6 @@ module A4092(
 
 // --- Wires and Registers ---
 wire CLKI;
-reg  [27:0] ADDR;
 reg  autoconfig_addr_match;
 reg  scsi_addr_match;
 wire match = autoconfig_addr_match || scsi_addr_match;
@@ -128,7 +127,6 @@ wire [7:0] dip_shadow;
 wire [7:0] spi_shadow;
 
 wire slave_cycle = mybus_n &&  MASTER_n;
-wire [27:0] full_addr = {ADDR[27:8], A[7:0]};
 
 wire dma_fcs_n, dma_doe;
 wire [3:0] dma_ds_n;
@@ -162,20 +160,18 @@ assign CLK = clk_int;
  *  000000       ROM
  */
 
-wire rom_region       = configured && slave_cycle && (ADDR[23:0] >= 24'h000000 && ADDR[23:0] < 24'h800000);
-wire scsi_region      = configured && slave_cycle && (ADDR[23:0] >= 24'h800000 && ADDR[23:0] < 24'h880000);
-wire interrupt_region = configured && slave_cycle && (ADDR[23:0] >= 24'h880000 && ADDR[23:0] < 24'h8c0000);
-wire idreg_region     = configured && slave_cycle && (ADDR[23:0] >= 24'h8c0000 && ADDR[23:0] < 24'h8f0000);
+wire rom_region       = configured && slave_cycle && (A[23:0] >= 24'h000000 && A[23:0] < 24'h800000);
+wire scsi_region      = configured && slave_cycle && (A[23:0] >= 24'h800000 && A[23:0] < 24'h880000);
+wire interrupt_region = configured && slave_cycle && (A[23:0] >= 24'h880000 && A[23:0] < 24'h8c0000);
+wire idreg_region     = configured && slave_cycle && (A[23:0] >= 24'h8c0000 && A[23:0] < 24'h8f0000);
 
 // --- Address Latching and Matching ---
 always @(negedge Z_FCS_n or negedge IORST_n) begin
   if (!IORST_n) begin
-    ADDR <= 0;
     scsi_addr_match <= 0;
     autoconfig_addr_match <= 0;
   end else begin
     //master_n_int <= READ;
-    ADDR[27:8] <= A[27:8];
     if (A[31:24] == scsi_base_addr && configured) begin
       scsi_addr_match <= 1;
     end else begin
@@ -323,7 +319,7 @@ scsi_slave SCSI_SLAVE (
   .DTACK_n(dtack),
   .SCSI_STERM_n(SCSI_STERM_n),
   .MYBUS_n(mybus_n),
-  .A2(ADDR[2]),
+  .A2(A[2]),
   .scsi_cycle(scsi_cycle),
   .slave_cycle(slave_cycle),
 
@@ -351,7 +347,7 @@ rom_access ROM_ACCESS (
 );
 
 spi_access SPI_ACCESS (
-    .ADDR(ADDR[20:0]),
+    .ADDR(A[20:0]),
     .SPI_MISO(SPI_MISO),
     .SPI_CLK(SPI_CLK),
     .SPI_MOSI(SPI_MOSI),
@@ -387,7 +383,7 @@ intreg_access INTREG_ACCESS (
   .configured(configured),
   // --- Zorro III Bus Inputs
   .FC(FC),
-  .ADDR(full_addr[23:17]),
+  .ADDR(A[23:17]),
   .LOCK(Z_LOCK),
   .READ(READ),
   .DS0_n(DS_n[0]),
