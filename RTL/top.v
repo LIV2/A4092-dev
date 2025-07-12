@@ -254,7 +254,10 @@ assign DBLT     = DBLT_int;
 
 // Autoconfig data is driven on D[31:28].
 // This happens when it's an autoconfig cycle, dtack is active (meaning data phase), and it's a READ.
-assign D[31:28] = (autoconfig_cycle && dtack && READ) ? autoconfig_dout : 
+
+// Data goes out to Card internal nonmultiplexed databus, Mux and OE to/from Zorro is done in buffer_control
+//assign D[31:28] = (autoconfig_cycle && dtack && READ) ? autoconfig_dout :
+assign D[31:28] = (autoconfig_cycle && READ) ? autoconfig_dout :
                   (spi_dtack) ? spi_shadow[7:4] :
                   4'bZZZZ;
 assign D[15:12] = spi_dtack ? spi_shadow[3:0] : 4'bZZZZ;
