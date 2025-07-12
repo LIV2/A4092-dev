@@ -75,7 +75,7 @@ NET "A<30>"       LOC = "P70";
 NET "A<31>"       LOC = "P71";
 # P72 - GND
 # P73 - VCCIO
-NET "FCS_n"       LOC = "P74";
+NET "FCS"         LOC = "P74";
 NET "FC<0>"       LOC = "P75";
 NET "FC<1>"       LOC = "P76";
 NET "FC<2>"       LOC = "P77";
@@ -113,7 +113,7 @@ NET "D<12>"       LOC = "P107";
 # P109 - VCCIO
 NET "BGn"         LOC = "P110";
 NET "BRn"         LOC = "P111";
-NET "Z_FCS"       LOC = "P112";
+NET "Z_FCS_n"     LOC = "P112";
 NET "Z_LOCK"      LOC = "P113";
 # P114 - GND
 NET "DTACK_n"     LOC = "P115";

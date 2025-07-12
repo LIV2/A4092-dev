@@ -20,9 +20,10 @@ module A4092(
     input  wire IORST_n,
     inout  wire [3:0] DS_n,
     input  wire [2:0] FC,
-    input  wire Z_LOCK, // Zorro LOCK signal
-    input  wire C7M, // 7MHz clock for arbitration
-    inout  wire FCS_n, // Is input and output (driven during DMA)
+    input  wire Z_LOCK,  // Zorro LOCK signal
+    input  wire C7M,     // 7MHz clock for arbitration
+    inout  wire Z_FCS_n, // ZIII Signal, Is input and output (driven during DMA)
+    output wire FCS,     // Output to U1 and U4 Addresslatch, high = latched!
     output wire DOE,
     input  wire READ,
     inout  wire DTACK_n,
@@ -78,7 +79,6 @@ module A4092(
     input  wire CBREQ_n,
     output wire CBACK_n,
     output wire MTACK_n,
-    input  wire Z_FCS
 );
 
 `include "globalparams.vh"
@@ -168,7 +168,7 @@ wire interrupt_region = configured && slave_cycle && (ADDR[23:0] >= 24'h880000 &
 wire idreg_region     = configured && slave_cycle && (ADDR[23:0] >= 24'h8c0000 && ADDR[23:0] < 24'h8f0000);
 
 // --- Address Latching and Matching ---
-always @(negedge FCS_n or negedge IORST_n) begin
+always @(negedge Z_FCS_n or negedge IORST_n) begin
   if (!IORST_n) begin
     ADDR <= 0;
     scsi_addr_match <= 0;
@@ -409,8 +409,7 @@ buffer_control BUFFER_CONTROL (
 
   // --- Control Signals ---
   .READ(READ),
-  .FCS_n(FCS_n),
-  //.FCS_n(!bfcs),
+  .FCS_n(bfcs),
   .DOE(DOE),
   .DTACK_n(DTACK_n),
 
@@ -453,7 +452,7 @@ zorro_dma_master ZDMA (
   .SIZ(SIZ),
   .A(A[1:0]),
   .SCSI_AS_n(SCSI_AS_n),
-  .ZORRO_FCS_n(FCS_n),
+  .ZORRO_FCS_n(Z_FCS_n),
   .ZORRO_DTACK_n(DTACK_n),
   .DMA_DOE(dma_doe),
   .DMA_DS_n(dma_ds_n),
