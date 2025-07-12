@@ -286,18 +286,17 @@ assign D[11:8]  = TIE_OFF_CONDITION ? 4'd0  : 4'bZZZZ;
 
 Autoconfig AUTOCONFIG (
   .scsi_base_addr(scsi_base_addr),
-  .ADDRL({ADDR[8], A[7:2]}),
+  .ADDRL({A[8:2]}),
   .FCS_n(!bfcs),
   .CLK(CLK),
   .READ(READ),
-  .DIN(D[31:28]),
+  .DIN(D[31:24]),
   .RESET_n(IORST_n),
   .CFGOUT_n(autoconfig_cfgout),
   .autoconfig_cycle(autoconfig_cycle),
   .dtack(autoconfig_dtack),
   .configured(configured),
   .DOUT(autoconfig_dout),
-  .z3_state(z3_state),
   .shutup(shutup)
 );
 
