@@ -76,7 +76,7 @@ always @(posedge CLK or negedge RESET_n) begin
         // 1. Latch the interrupt from the SCSI chip (from U207)
         // This creates a stable interrupt signal that only changes between Zorro cycles.
         if (!FCS_n) begin
-            if(NCR_INT) int_pending <= 1'b1;
+            if(~NCR_INT) int_pending <= 1'b1; // NCR_INT is low active
         end else begin
             // Clear pending interrupt if an IACK cycle completes
             if (iack_dtack_n == 1'b0) begin
