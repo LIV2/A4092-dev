@@ -343,8 +343,6 @@ rom_access ROM_ACCESS (
   .rom_region(rom_region),
   .READ(READ),
   .FCS_n(!bfcs),
-  .slave_cycle(slave_cycle),
-  .configured(configured),
   .shutup(shutup),
   .rom_dtack(rom_dtack),
   .ROM_CE_n(ROM_CE_n),

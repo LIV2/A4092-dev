@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module rom_access (
     input wire CLK,
     input wire RESET_n,
@@ -5,12 +7,9 @@ module rom_access (
 
     input wire READ,
     input wire FCS_n,
-    input wire slave_cycle,
-    input wire configured,
     input wire shutup,
 
     output reg rom_dtack,
-    output wire rom_selected,
     output wire ROM_CE_n,
     output wire ROM_OE_n,
     output wire ROM_WE_n
@@ -22,7 +21,7 @@ module rom_access (
     // Control ROM chip selects
     assign ROM_CE_n = !(rom_selected && !shutup);
     assign ROM_OE_n = !(rom_selected && READ && !FCS_n && !shutup);
-    assign ROM_WE_n = !(rom_selected && !READ && !FCS_n && configured && !shutup);
+    assign ROM_WE_n = !(rom_selected && !READ && !FCS_n && !shutup);
 
     // NACK timing FSM (3 state delay like U207)
     reg [1:0] rom_state;
